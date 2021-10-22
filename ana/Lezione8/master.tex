@@ -1,0 +1,150 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+\newcommand{\vertiii}[1]{{\left\vert\kern-0.25ex\left\vert\kern-0.25ex\left\vert #1 
+    \right\vert\kern-0.25ex\right\vert\kern-0.25ex\right\vert}}
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Analisi funzionale}
+Uno \textbf{spazio vettoriale} (su $\R$) è un insieme (V) su cui sono definite due operazioni:
+\\\textbf{Somma} $+:V \times V\to V$
+\\\textbf{Prodotto per scalare} $\cdot :\R \times \to V$
+\\Tali operazioni godono delle seguenti proprietà
+\\Per la somma
+\begin{itemize}
+	\item $u+v=v+u$ 
+	\item $u+(v+w)=(u+v)+w$
+	\item $u+\underline 0=u$
+	\item $u+(-u)=\underline 0$
+\end{itemize}
+Per il prodotto per scalare
+\begin{itemize}
+	\item $(ts)u=t(su)$
+	\item $t(u+v)=tu+tv$
+	\item $(t+s)u=tu+su$
+	\item $1\cdot u=u$
+\end{itemize}
+\subsubsection{Norma}
+\begin{tcolorbox}
+	Sia $V$ uno spazio vettoriale su $\R$.
+	\\Una norma su $V$ è una funzione $\|.\|:V\to \R^+$ tale che:
+	\begin{itemize}
+		\item $\|v\|>0\forall v\in V-\{\underline 0\} $ (positività)
+		\item $\|tv\|=|t|\|v\|\forall t\in\R,\forall v\in V$ (omogeneità)
+		\item $\|u+v\|\le \|u\|+\|v\|\forall u,v\in V$ (dis. triangolare)
+	\end{itemize}
+\end{tcolorbox}
+\begin{tcolorbox}
+	$(V,\|.\|)$ si dice \textbf{spazio vettoriale normato}.
+\end{tcolorbox}
+Seguono le seguenti proprietà (resettare counter)
+\begin{enumerate}
+	\item $\|\underline 0\|=0$
+	\item $| \|u\|-\|v\| |\le \|u-v\|\forall u,v\in V (dim)$
+\end{enumerate}
+Norma euclidea:
+\[\|x\|_2=\sqrt{x_1^2+x_2^2+\ldots+x_n^2} =\sum_{i=1}^{n} (x_i^2)^\frac{1}{2}\]
+\[\|x\|_\infty=\max_{i=1,\ldots,n}|x_i|\]
+\[\|x\|_p=(\sum_{i=1}^{n}(|x|^p)^{\frac{1}{p}}\]
+La disuguaglianza triangolare per la norma $p$, ovvero disuguaglianza di Minkowski, richiede l'ipotesi $p\ge 1$.
+\subsubsection{Norma su uno spazio funzionale di dimensione infinita}
+$V=C^0([a,b])$
+\[\|f\|_\infty:=\text{max}_{x\in[a,b]}|f(x)|\]
+\[\|f\|_1:=\int_{a}^{b} |f(x)|dx\]
+\begin{tcolorbox}	
+\textbf{Definizione:} Sia $(V,\|.\|)$ sp. vettoriale normato. Allora $d(u,v):=\|\underline{u}-\underline{v}\|$ definisce una distanza su $V$, ovvero
+\[d:V\times V\mapsto \R\]
+tale che
+\begin{enumerate}
+	\item $d(u,v)\ge 0$ con $=0\iff u=v$ positività
+	\item $d(u,v)=d(v,u)$ simmetria
+	\item $d(u,v)\le d(u,w)+d(w,v)$ disuguaglianza triangolare
+\end{enumerate}
+\end{tcolorbox}
+\[d_p(x,y)=\|x-y\|_p=(\sum_{i=1}^{n} \|x_i-y_i\|^p)^{\frac{1}{p}}\]
+\[d_\infty(f,g)=\max_{x\in[a,b]}|f(x)-g(x)|\]
+\[d_1(f,g)=\int_{a}^{b} |f(x)-g(x)|\]
+\begin{tcolorbox}
+	\textbf{Definizione:} $(V,d)$ si dice spazio metrico
+\end{tcolorbox}
+\textbf{Osservazione:} In uno spazio metrico possiamo definire le \textbf{sfere}: dato $r\ge 0,v_0\in V$
+\[B_r(v_0):=\{v\in V:d(v,v_0)<r\} \]
+Si dice sfera chiusa se la disuguaglianza non è stretta.\\
+\begin{tcolorbox}	
+\textbf{Definizione:} Se $\{v_n\} \subseteq  (V,\|.\|)$, si dice che $v_n\to v$ in $V$ se
+\[d(v_n,v)\to 0\text{, oppure }\|v_n-v\|\to 0\]
+\[(\forall \varepsilon>0\exists \nu\in\N:d(v_n,v)=\|v_n-v\|<\varepsilon\forall n\ge \nu)\]
+\end{tcolorbox}
+Alcuni fatti veri in dimensione finita ma falsi in dimensione infinita:
+\begin{enumerate}
+	\item Tutte le norme sono "equivalenti" fra loro
+	\item Tutte le successioni di Cauchy convergono
+	\item Tutti i sottospazi vettoriali sono chiusi
+\end{enumerate}
+1) Norme equivalenti\\
+\textbf{Definizione:} Sia $V$ uno spazio vettoriale (su $\R$), consideriamo su $V$ due possibili norme $ \|.\|,|\|.\||$.
+\\Queste due norme si dicono \textbf{equivalenti} se:
+\begin{enumerate}
+	\item $\exists c>0:\forall v\in V,\|v\|\le c|\|v\||$
+	\item $\exists c'>0:\forall v\in V,|\|v\||\le c\|v\|$
+\end{enumerate}
+Le successioni convergenti nelle due norme sono le stesse.
+\\Interpretazione geometrica:
+\[\|.\|_\infty\le \|.\|_1\iff B_1^1(0)\subseteq  B_1^\infty(0)\]
+\begin{tcolorbox}
+	\textbf{Teorema:} Se $\text{dim}V<+\infty\implies$ tutte le norme su $V$ sono tra loro equivalenti
+\end{tcolorbox}
+In uno spazio a dimensione infinita non è generalmente vero, ad esempio nello spazio delle funzioni continue su $[a,b]$
+\begin{tcolorbox}
+	\textbf{Definizione:} Sia $(V,\|.\|)$ uno spazio vettoriale normato. Una successione $\{v_n\} \subseteq V$ si dice successione di cauchy se 
+	\[\forall \varepsilon>0 \exists \nu\in\N:d(v_n,v_m)<\varepsilon\ \forall n,m\ge \nu\]
+\end{tcolorbox}
+\textbf{Osservazione:} Vale sempre che se $\{v_n\} $converge allora è di Cauchy.
+\[(\|v_n-v_m\|=\|v_n-v+v-v_m\|\le \|v_n-v\|+\|v_m-v\|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon\]
+\begin{tcolorbox}
+	\textbf{Teorema:} Se $\text{dim}V<+\infty$ vale anche il viceversa, ovvero
+	\[\{v_n\} \text{ converge }\iff \{v_n\} \text{ di Cauchy}\]
+\end{tcolorbox}
+Questo teorema è falso se $\text{dim}V=+\infty$
+\\Prendendo lo spazio delle funzioni $V=C^0([a,b])$ con norma 1, si può costruire una successione di Cauchy che non converge.
+\[f_n(x)=\begin{cases}
+	-1\ \ \ x\le -\frac{1}{n}
+	\\\frac{1}{n}\ \ \ -\frac{1}{n}<x<\frac{1}{n}
+	\\1\ \ \ x\ge \frac{1}{n}
+\end{cases}
+\]
+\[\|f_n-f_m\|_1<\varepsilon,\ \int_{a}^{b} |f_n-f_m|=\int_{a}^{b} f_m-f_n\]
+\subsection{Spazio di Banach}
+\begin{tcolorbox}
+	\textbf{Definizione:} Uno spazio vettoriale normato $(V,\|.\|)$ si dice completo o di Banach se tutte le successioni di Cauchy convergono.
+\end{tcolorbox}
+\textbf{Teorema/osservazione: }$V=(C^0([a,b],\|.\|_\infty)$ è di Banach
+\\Generalizzazione:
+\[V=C^k([a,b])\ \ \|f\|_{C^k}:=\sum_{|\alpha|\le k}^{} \|D^\alpha f\|_\infty\]
+\begin{tcolorbox}
+	\textbf{Teorema} Sia $(V,\|.\|)$ spazio vettoriale normato. Se $\text{dim}V<+\infty\implies$ tutti i sottospazi vettoriali $W$ sono \textbf{chiusi}.
+	\[\{v_n\} \subseteq  W,v_n\to v\text{ in }V\implies v\in W\]
+\end{tcolorbox}
+Il teorema diventa falso se $\text{dim}V=+\infty$, ad esempio $V=(C^0([a,b]), \|.\|_\infty)$.
+\end{document}

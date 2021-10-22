@@ -1,0 +1,176 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{cancel}
+
+% figure support
+\usepackage{import}
+\usepackage{tcolorbox}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Introduzione Analisi Complessa}
+\textbf{Definizione}
+\\Una funzione di variabile complessa è una funzione $f:\Omega\subseteq \mathbb{C}\to \mathbb{C}$
+\\Numero complesso: $z=x+iy$ dove $x,y\in \mathbb{R}\ i^{2}=-1$
+\\$f(z)=u(z)+iv(z)=u(x,y)+iv(x,y)$
+\\Dunque ad ogni funzione complessa è possibile associare due funzioni reali in due variabili
+\\$f\leftrightarrow u,v:\Omega\subseteq \mathbb{R}^2\to \mathbb{R}$
+\\\\\textbf{Esempi di funzioni elementari}
+\[
+	f(z)=z_0\in\mathbb{C},\ z_0=x_0+iy_0,\ u=x_0,\  v=y_0
+\]
+\[
+	f(z)=Rez,\  z=x+iy,\  u(x,y)=x
+	,\ v(x,y)=0
+\]
+\[
+	f(z)=Imz,\ z=x+iy\implies f(z)=y
+\]
+\[
+	f(z)=|z|,\ f(z)=\sqrt{x^2+y^2} \implies u(x,y)=\sqrt{x^2+y^2} , \ v(x,y)=0
+\]
+\[
+	f(z)=P(z)=a_nz^n+\ldots+a_1z+a_0
+\]
+In questo ultimo caso è necessario calcolare manualmente le funzioni $u,v$ associate
+\[
+	f(z)=\frac{P(z)}{Q(z)} \text{ con } P,Q \text{ funzioni polinomiali }
+\]
+Quest'ultima funzione non è definita $\forall z \in \mathbb{C}$
+\[
+	f(z)=e^z, \sin z, \cos z, \sinh z, \cosh z
+\]
+\\\textbf{Funzione Esponenziale}
+\\È l'estensione della funzione esponenziale nel campo dei reali
+\[
+	z=x+iy\implies e^z:=e^x\cdot e^{iy}:=e^x\cdot(\cos y+i\sin y)
+\]
+Se $z=x\in R \implies e^z=e^x\implies$ è estensione della funzione reale
+\\$u(x,y)=e^x \cos y,\ v(x,y)=e^x\sin y $
+\[ e^{z+2\pi i}=e ^{x+iy+2\pi i}=e ^{x + i(y +2 \pi }=e^x(\cos (y+2 \pi)+i \sin (y+2 \pi))=e^z\]
+Questo implica che la funzione esponenziale nel campo complesso è periodica di periodo $T=2 \pi i$
+Inoltre,
+\[e^{z_1+z_2}=e^{z_1}e^{z_2}
+\]
+\[
+	e^z=0\iff|e^z|=0
+\]
+\[	
+	|e^x(\cos y + i \sin y)|=|e^x| |\cos y +i\sin y|=e^x=0\ \cancel\forall z  
+\]
+\\\textbf{Funzioni coseno, seno}
+\[\cos z:=\frac{1}{2}(e^{iz}+e^{-iz})\]
+\[\sin z:=\frac{1}{2i}(e^{iz}-e^{-iz})\]
+Sono funzioni definite $\forall z\in \mathbb C$
+\\Come per la funzione esponenziale sono estensioni delle funzioni reali
+\\Dunque se $z=x\in R \implies \cos z = \cos x$
+\[\cos(z+2\pi)=\cos z\]
+$\implies \cos z$ è periodica sia nel campo dei reali sia nel campo dei complessi
+\\Inoltre
+\[\cos z =0\iff z=\frac{\pi}{2}+k\pi,k\in Z\]
+Per le altre funzioni valgono proprietà analoghe essendo definite come estensioni
+\\\textbf{Formule alternative}
+
+
+\section{Limiti}
+\textbf{Definizione: } \[f:\Omega\subseteq\C\to \C, z_0\in \text{acc}(\Omega),l\in\C\]
+\[\lim_{z \to z_0} f(z)=l\iff\forall V(l)\exists
+u(z_0) \text{ tc }\forall z\in (u(z_0) \cap \Omega\setminus\{z_0\}), f(z)\in V(l)\]
+\textbf{Definizione di continuità}
+\[f:\Omega\subseteq\C\to \C, z_0\in a(\Omega)\cap \Omega,\  f \text{ continua } z_0 \iff\exists \lim_{z \to z_0} f(z)=f(z_0)\]
+\textbf{Osservazioni}
+\\$z=x+iy, z_0=x_0+iy_0, l=l_1+il_2, f=u+iv$
+\[\lim_{z \to z_0} f(z)=l\iff 
+\begin{cases}	
+	\lim_{(x,y) \to (x_0,y_0)} u(x,y)=l_1\\ 
+	\lim_{(x,y) \to (x_0,y_0)} v(x,y)=l_2
+\end{cases}
+\]
+Con le stesse notazioni
+\[f \text{ continua in }z_0\iff u,v \text{ continue in } (x_0,y_0)\]
+Sono continue (sul loro dominio di definizione) tutte le funzioni elementari introdotte nella lezione scorsa
+\\Vale l'algebra dei limti e il teorema del limite della funzione composta ($\implies$ composizione di continue rimane continua)
+\\Vale il teorema di unicità del limite
+\subsubsection{Infinito nei complessi}
+Un intorno di $\infty$ nei complessi è il complementare di un qualsiasi disco
+\[z\to \infty \iff z\in u(\infty)\iff |z|>R\iff |z|\to +\infty\]
+\[f(z)\to \infty \iff f(z)\in u(\infty) \iff |f(z)|>R \iff |f(z)|\to +\infty\]
+
+\subsection{Derivabilità}
+\textbf{Definizione: }
+\[f:\Omega \subseteq \C\to \C, z_0\in \text{acc}(\Omega)\cap \Omega\]
+\[f \text{ derivabile (in senso complesso) in } z_0 \iff\exists \lim_{z \to z_0} \frac{f(z)-f(z_0)}{z-z_0}(\in\C)\]
+e tale limite si dice $f'(z_0)$ 
+\\Definizioni alternative:
+\[\exists \lim_{h \to 0} \frac{f(z_0+h)-f(z_0)}{h}\ldots\]
+\[f(z_0+h)=f(z_0)+\lambda\cdot h + o(h)\ \ \ \frac{o(h)}{h}\to 0\]
+Dove $\lambda$ è la derivata prima della funzione nel punto $z_0$
+\\Quest'ultima è la definizione di differenziabilità
+\\\textbf{Attenzione} Se $u,v$ sono differenziabili ciò non implica la differenziabilità/derivabilità di $f$ (Un esempio è $f(z)=Imz$)
+\begin{tcolorbox}
+\textbf{Teorema (caratterizzazione della derivaibilità)}
+\[f:\Omega \subseteq \C\to \C, z_0\in \Omega \cap \text{acc}(\Omega),\ z_0=x_0+iy_0,\ f=u+iv\]
+\[f \text{ derivabile in }z_0\iff u,v \text{ differenziabile in } (x_0,y_0),\]
+\[\text{Inoltre } \begin{cases}	
+u_x(x_0,y_0)=v_y(x_0,y_0)
+\\u_y(x_0,y_0)=-v_x(x_0,y_0)
+\end{cases}
+\]
+(sistema, condizione di cauchy riemann)
+Inoltre, in tal caso 
+\[f'(z_0)=u_x(x_0,y_0)-iu_y(x_0,y_0)\]
+\[f'(z_0)=v_y(x_0,y_0)+iv_x(x_0,y_0)\]
+
+\end{tcolorbox}
+\textbf{Dimostrazione}
+\[(\implies) \text{Per Hp } \exists f'(z_0)=\alpha +i\beta\in\C\implies f(z_0+h)=f(z_0)+f'(z_0)h+g,\ g=o(h)\]
+\[
+	u(x_0+h_1,y_0+h_1)+iv(x_0+h_1,y_0+h_2)=u(x_0,y_0)+iv(x_0,y_0)+(\alpha+i\beta)(h_1+ih_2)+g_1+ig_2
+\]
+\[u(x_0+h_1+h_1,y_0+h_2)=u(x_0,y_0)+(\alpha h_1-\beta h_2)+g_1\]
+\[v(x_0+h_1,y_0+h_2)=v(x_0,y_0)+(\beta h_1+\alpha h_2)+g_2\]
+Queste due equazioni indicanon che $u,v$ sono differenziabili in $(x_0,y_0)$, con 
+\[
+	\begin{cases}
+\nabla u(x_0,y_0)=(\alpha, -\beta)\\ 
+\nabla v(x_0,y_0)=(\beta, \alpha)
+	\end{cases}
+\]
+Questo dimostra inoltre che $f'(z_0)=\alpha+i\beta$
+\\$(\impliedby)$ Procedere al contrario
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Applicazioni del teorema dei residui in campo reale}
+\subsection{Primo tipo}
+\begin{tcolorbox}
+\[\int_{0}^{2\pi} f(\cos t, \sin t)dt\]
+\end{tcolorbox}
+\[\cos t = \frac{e^{it}+e^{-it}}{2}\]
+\[\sin t = \frac{e^{it}-e^{-it}}{2}\]
+Dunque 
+\[\int_{0}^{2\pi} f(\cos t, \sin t)dt=\int_{0}^{2\pi} g(e^{it})ie^{it}dt \]
+\[\int_{C_1(0)}^{} g(z)dz\]
+Se $g$ soddisfa le ipotesi del teorema dei residui su $C_1(0) \subseteq  \Omega$, con $\gamma=C_1(0)$
+\[=2\pi i \sum_{|z_0|<1}^{} \text{Res}(g,z_0)\]
+Esempio: $\int_{0}^{2\pi} \frac{1}{2+\sin t}dt$
+\subsection{Secondo tipo}
+\begin{tcolorbox}	
+	\[\text{V.P.  }\int_{\R}^{} f(x)dx:= \lim_{R \to +\infty} \int_{-R}^{R} f(x)dx \] 
+\end{tcolorbox}
+La definizione cambia leggermente nel caso sia presente una singolarità su $\R$.
+Se $f$ è integrabile (secondo Riemann) allora 
+\[\int_{\R}^{} f(x)dx=\lim_{R \to +\infty} \int_{-R}^{R} f(x)dx\]
+In generale può accadere che il V.P. $\int_{\R}^{} f(x)dx \in\R$ ma $f$ non è integrabile
+\textbf{Esempio:} 
+\[f(x)=\begin{cases}
+	\frac{1}{x}\ \ \ x\ge 1\\
+	1\ \ \ x\in[0,1]\\
+	-1\ \ \ x\in[-1,0]\\
+	\frac{1}{x}\ \ \ x\le -1
+\end{cases}
+\]
+$f$ non è integrabile secondo Riemann, ma il V.P. è uguale a 0.\\\divider
+\\\textbf{Ipotesi: }$f=f(z)$ abbia un numero finito di singolarità nel semipiano $\{\text{Im}z>0\} $ (e nessuna singolarità sull'asse reale)+ (*) ipotesi di decadimento.
+\[I=\lim_{R \to +\infty} \int_{-R}^{-R} f(x)dx+\int_{C_R^+(0)}^{} f(z)dz-\int_{C_R^+(0)}^{} f(z)dz \]
+\begin{figure}[ht]
+    \centering
+    \incfig{semicirconferenza}
+    \caption{Semicirconferenza}
+    \label{fig:semicirconferenza}
+\end{figure}
+\[I=\lim_{R \to +\infty} \int_{\gamma_R}{f(z)dz} -\lim_{R \to +\infty} \int_{C_R(0)^+}^{} f(z)dz\]
+Dove $\gamma_R=[-R,R]+C_R^+(0)$
+\\Per il teorema dei residui
+\[I=2\pi i \sum_{\substack{z_0\in S,\\  \text{Im}z_0>0}}^{} \text{Res}(f,z_0)\]
+L'indice di avvolgimento è uguale a 1.
+\subsubsection{Lemma tecnico di decadimento}
+Se $\exists \alpha >1$ tale che $|f(z)|\le \frac{c}{|z|^\alpha}$ (per $|z|$ abbastanza grande) (*), allora
+\[\lim_{R \to +\infty} \int_{C_R^+(0)}^{} f(z)dz=0\]
+Aggiungendo l'ipotesi di decadimento all'integrale precedente si avrà il risultato scritto.
+\\Si ha un calcolo analogo per il semipiano $\{\text{Im}<0\} $
+\subsection{Terzo tipo}
+\begin{tcolorbox}	
+	\[I=\text{V.P.  }\int_{\R}^{} f(x)e^{i\omega x}dx=2 \pi i \sum_{\substack{z_0\in S\\\text{Im}z_0>0}}^{\infty} \text{Res}(f(z)e^{i\omega z},z_0)\] 
+\end{tcolorbox}
+Dove $\omega \in \R^+$
+\\\textbf{Ipotesi: }$f(z)e^{i\omega x}$ abbia un numero finito di singolarità nel semipiano $\{\text{Im}z>0\} $ (e nessuna singolarità sull'asse reale) + (**) lemma di Jordan.
+\[I=\lim_{R \to +\infty} \int_{-R}^{-R} f(z)e^{i\omega z}dz+\int_{C_R(0)^+}^{} f(z)e^{i\omega z}dz-\int_{C_R(0)^+}^{} f(z)e^{i\omega z}dz \]
+\begin{figure}[ht]
+    \centering
+    \incfig{semicirconferenza}
+    \caption{Semicirconferenza}
+    \label{fig:semicirconferenza}
+\end{figure}
+\[I=\lim_{R \to +\infty} \int_{\gamma_R}{f(z)e^{i\omega z}dz} -\lim_{R \to +\infty} \int_{C_R(0)^+}^{} f(z)e^{i\omega z}dz\]
+Dove $\gamma_R=[-R,R]+C_R^+(0)$
+\\Per il teorema dei residui
+\[I=2\pi i \sum_{\substack{z_0\in S,\\  \text{Im}(z_0)>0}}^{} \text{Res}(f(z)e^{i\omega x},z_0)\]
+L'indice di avvolgimento è uguale a 1.\\
+Il secondo termine dell'integrale si elide grazie a il 
+\subsubsection{Lemma di Jordan}
+Sotto l'ipotesi 
+\[\lim_{R \to +\infty}\text{sup}_{z\in c_R^+(0)}|f(z)|=0  \ \ (**)\]
+\[\lim_{R \to +\infty} \int_{C_R^+(0)}^{} f(z)e^{i\omega x}dz=0\] 
+\textbf{Osservazione:} Variante analoga nel semipiano $\{\text{Im}z<0\} $ quando $\omega \in \R^-$
+\\Jordan vale anche per $\omega \in \R^-$ in $C_R^-(0)$
+\\Esempio: $I= \text{V.P.}\int_{\R}^{} \frac{\cos x}{1+x^2}dx$
+\subsection{Quarto tipo}
+\begin{tcolorbox}
+\[I=\text{V.P.}\int_{\R}^{} f(x)dx\]	
+\end{tcolorbox}
+\textbf{Ipotesi:} $f(z)$ abbia un numero finito di singolarità su $\{\text{Im}>0\} $, \\$\lim_{R \to +\infty} \int_{C_R^+(0)}^{} f(z)dz=0$ (***) e abbia un numero finito di poli semplici su $\R$.
+\[\gamma_{R,\varepsilon}=[-R,x_0-\varepsilon]-C_\varepsilon^+(x_0)+[x_0+\varepsilon,R]+C_R^+(0)\]
+\[I=\lim_{R \to +\infty} \int_{\gamma_{R,\varepsilon}}f(z)dz + \lim_{\varepsilon \to 0} \int_{C_\varepsilon^+(x_0)}^{} f(z)dz-\lim_{R \to +\infty} \int_{C_R^+(0)}{f(z)dz}\]
+\subsubsection{Lemma del polo semplice}
+Se $x_0$ è un polo semplice
+\[\lim_{\varepsilon \to 0} \int_{C_\varepsilon^+(x_0)}^{} f(z)dz=\pi i \text{Res}(f,x_0)\] 
+\begin{figure}[ht]
+    \centering
+    \incfig{quarto-tipo}
+    \caption{Quarto tipo}
+    \label{fig:quarto-tipo}
+\end{figure}
+Esempio: $I=\text{(V.P.)}\int_{\R}^{} \frac{1-\cos 2x}{x^2}dx$
+\section{Cenni aggiuntivi sull'analisi complessa}
+\subsection{Residuo all'infinito}
+\begin{tcolorbox}
+	\textbf{Definizione:} Diciamo che $\infty$ è una singolarità isolata per $f$ se $f$ olomorfa nel complementare di una palla
+\end{tcolorbox}
+In modo equivalente: $g(z)=f(\frac{1}{z})$ ha una singolarità isolata nell'origine.
+\[\text{Olomorfa su }\bigg|\frac{1}{z}\bigg|>R\iff |z|<R\]
+\[\text{Res}(f,\infty):=\text{Res}\bigg(-\frac{1}{z^2}f\bigg(\frac{1}{z}\bigg),0\bigg)\]
+\begin{tcolorbox}
+	\textbf{Teorema:} La somma di tutti i residui di una funzione olomorfa su $\C\setminus \{\text{n. finito di punti}\} $ è zero. (compreso il punto all'infinito).
+\end{tcolorbox}
+Da utilizzare quando si deve calcolare la somma di tanti residui al finito. (stesso indice di avvolgimento)
+\subsection{Funzioni polidrome}
+$z=|z|e^{i\text{Arg}z}$, $\text{Arg}z:=\{\text{arg}+2k\pi:k\in\Z\} $, $\text{arg}z$ argomento principale $\in[0,2\pi]$.
+\[\sqrt[n]{z}=\{\sqrt[n]{|z|}e^{i \frac{\text{Arg}z}{n}} \}=\{\sqrt[n]{|z|}e^{i( \frac{\text{arg}z}{n}+ \frac{2k\pi}{n})}:k=0,\ldots,n-1 \} \]
+\[\log z=\{\log |z|+i\text{Arg}z\}\]
+Alla radice sono associati n valori, al logaritmo $\infty$ valori.
+\\$z \mapsto \sqrt[n]{z},\log z$ non sono funzioni!
+\\Per definire una radice n-esima funzione si può specificare l'intervallo di variabilità di $\text{Arg}z$.
+$z\in\C\mapsto \sqrt[n]{|z|} e^{i \frac{\text{Arg}z}{n}}$ con $\text{Arg}z\in[\overline \theta,\overline\theta+2\pi]$: Branca della radice n-esima.
+\\\textbf{Osservazione:} Una branca della radice n-esima non è continua su $\C$. (è continua su $\C-\{\theta=\overline\theta\}$
+\\Non è possibile incollare due branche diverse ottenendo una funzione olomrofa su $\C$.
+\subsection{Funzioni armoniche}
+\begin{tcolorbox}
+	\textbf{Definizione:} $u:\R^2\to \R$ si dice armonica se 
+	\[\nabla^2 u=0=u_{x x}+u_{y y}\]
+\end{tcolorbox}
+\textbf{Osservazione:} $f=f(z)$ olomorfa, $f=u+iv\implies u,v$ armoniche.
+\[\begin{cases}
+	u_x=v_y
+	\\u_y=-v_x
+\end{cases}
+\begin{cases}
+	u_{x x}=v_{y x}\\
+	u_{y y}=-v_{xy}
+\end{cases}
+\]
+Sommando le due equazioni
+\[u_{x x}+u_{y y}=0\]
+(Analogamente per $\nabla ^2 v=0$
+\\\textbf{Osservazione 2:} $u$ armonica su $\Omega$, con $\Omega$ semplicemente connesso $\implies\exists v$ armonica coniugata di $u$ t.c. $f=u+iv$ olomorfa.
+\end{document}

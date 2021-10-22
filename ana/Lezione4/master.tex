@@ -1,0 +1,82 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Singolarità isolate e loro classificazione}	
+\begin{tcolorbox}
+	Sia $f:\Omega \setminus \{z_0\} \subseteq\C\to \C$, si dice che $z_0$ è una \textbf{singolarità isolata} per $f$ se $\exists u(z_0)\subseteq\Omega$ tale che $f$ sia olomorfa se $u(z_0)\setminus \{z_0\}$  
+\end{tcolorbox}
+Sia $z_0$ una singolarità isolata per $f$.
+\subsubsection{Singolarità eliminabile}
+\begin{tcolorbox}
+Si dice che $z_0$ è una \textbf{singolarità eliminabile} se 
+\[\exists u(z_0),\exists\tilde f:u(z_0)\to \C \text{ tale che }\tilde f|_{u(z_0)\setminus \{z_0\} }=f\]
+e $\tilde f$ sia olomorfa in $u(z_0)$.
+\end{tcolorbox}
+Esempio: $f(z)= \frac{\sin z}{z}$
+\\\textbf{Osservazione:} Se $\exists \tilde f$, $\tilde f$ è unica.
+\\Se una $g$ è olomorfa è anche continua:
+\[\lim_{z \to z_0} [g(z)-g(z_0)]=\lim_{z \to z_0} \frac{g(z)-g(z_0)}{z-z_0}(z-z_0)=g'(z_0)\cdot 0=0\]
+Ne consegue che il valore che assumera $\tilde f$ in $z_0$ è 
+\[\tilde f(z_0)=\lim_{z \to z_0} f(z)\]\\
+\textbf{Osservazione 2:} $z_0$ singolarià eliminabile per $f\implies f$ limitata (in modulo) vicino a $z_0$.
+\[\exists u(z_0), \exists M>0 \text{ tale che } \|f(z)\|\le M\forall u(z_0)-\{z_0\} \]
+Infatti, se $z_0$ singolarità eliminabile per $f\implies \exists \lim_{z \to z_0} f(z)\in\C$
+\begin{tcolorbox}
+	\textbf{Teorema di rimozione della singolarità} 
+	\\Se $f$ olomorfa e limitata in $u(z_0)\setminus \{z_0\} \implies z_0$ è singolarità eliminabile
+\end{tcolorbox}
+Quindi, in conclusione, se $f$ è olomorfa su $u(z_0)\setminus \{z_0\} $, $z_0$ singolarità eliminabile di $f \iff f$ limitata in $u(z_0)\setminus \{z_0\} $ 
+\subsubsection{Polo}
+\begin{tcolorbox}
+	Si dice che $z_0$ è un \textbf{polo} per $f$ se 
+	\[\lim_{z \to z_0} f(z)=\infty\]
+\end{tcolorbox}
+Esempio: $f(z)=\frac{1}{sz^mm}$ con $m\in \N\setminus \{0\} $
+\subsubsection{Singolarità essenziale}
+\begin{tcolorbox}
+	Si dice che $z_0$ è una \textbf{singolarità essenziale} per $f$ se è una singolarità isolata e non è né eliminabile né polo.
+\end{tcolorbox}
+Esempio: $f(z)=e^{\frac{1}{z}}$
+\\\textbf{Teorema di Picard: }$z_0$ singolarità essenziale per $f\implies \forall u(z_0),f(u(z_0))$ (ovvero l'immagine di $f$) è data da $\C$ oppure $\C\setminus \{1 \text{ punto}\}$.
+\subsection{Sviluppabilità in serie di Laurent}
+\begin{tcolorbox}
+	\textbf{Teorema} $f$ olomorfa su $\Omega\setminus \{z_0\} $ aperto di $\C$, allora $f$ è "sviluppabile in serie di Laurent di centro $z_0$", ovvero
+	\[\exists u(z_0)\subseteq  \Omega \text{ tale che }\forall x\in u(z_0)\setminus \{z_0\} \]
+	\[f(z)=\sum_{k=-\infty}^{+\infty} c_k(z-z_0)^k\]
+	\[=\sum_{k\ge 0}^{} c_k(z-z_0)^k+\sum_{k<0}^{} c_k(z-z_0)^k\]
+\end{tcolorbox}
+Ovvero parte regolare dello sviluppo + parte singolare dello sviluppo
+\\\textbf{Inoltre, il calcolo dei coefficienti:} 
+\[c_k=\frac{1}{2\pi i}\int_{C_r(z_0)}^{} \frac{f(z)}{(z-z_0)^{k+1}}dz\] 
+In particolare:
+\[c_{-1}=\frac{1}{2\pi i}\int_{C_r(z_0)}^{} f(z)dz\]
+C'è una relazione tra $c_{-1}$ e gli integrali sui circoli.
+Esempio: $f(z)=\frac{1}{z}$
+\\Tramite serie di Laurent è possibile riconoscere le singolarità
+\\$z_0$ è singolarità eliminabile $\iff$ parte singolare dello sviluppo $=0$.
+\end{document}
+

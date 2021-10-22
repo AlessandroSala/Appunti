@@ -1,0 +1,226 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+\usepackage{centernot}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Integrazione secondo Lebesgue}
+\begin{enumerate}
+	\item Misure e funzioni misurabili
+	\item Definizione di integrale di Lebesgue
+	\item Confronto con Riemann
+	\item Teoremi principali
+\end{enumerate}
+\begin{figure}[ht]
+    \centering
+    \incfig{lebesgue}
+    \caption{Integrale secondo Lebesgue, intuizione geometrica}
+    \label{fig:lebesgue}
+\end{figure}
+\[\int_{a}^{b} f=\lim_{N \to +\infty} \sum_{k=1}^{N}l(f^{-1}(j_k))\cdot y_k\]
+\subsubsection{Misure e funzioni misurabili}
+\begin{tcolorbox}
+	\textbf{Definizione:} Sia $X$ insieme, e sia $F\subseteq P(X)$ una famiglia di sottoinsiemi di $X$.
+	\\$F$ si dice una $\sigma$-algebra se:
+	\\(i) $\varnothing\in F$
+	\\(ii) $A\in F\implies X\setminus A\in F$
+	\\(iii) $\{A_n\} _{n \in \N}\subseteq F\implies \bigcup_{n}A_n\in F$
+\end{tcolorbox}
+\textbf{Osservazione:} $\{A_n\} _{n\in\N}\subseteq F\implies \bigcap_n A_n \in F$
+\\Esempi
+\begin{itemize}
+	\item $X$ qualsiasi, $F=P(X)=$ parti di $X$
+	\item $X=\R^n$, $F=$ la pià piccola $\sigma$-algebra contenente gli aperti ($\sigma$ di Borell) 
+\end{itemize}
+\begin{tcolorbox}
+	\textbf{Definizione: } la coppia $(X,F)$ si dice spazio misurabile
+
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione:} Sia $(X,F)$ spazio misurabile, una misura positiva su $(X,F) $ è una funzione
+\[\mu:F\to \R\cup \{+\infty\} \] 
+tale che
+\begin{enumerate}
+	\item $\mu(A)\ge 0\forall A\in F$ (positività)
+	\item Se $\{A_n\} $ è una famiglia al più numerabile di insiemi di $F$ 2 a 2 disgiunti allora 
+\end{enumerate}
+\[\mu(\cup _n A_n)=\sum_{n\ge 1}^{} \mu(A_n)\]
+(additività, eventualmente $+\infty=+\infty$)
+\end{tcolorbox}
+Esempi:
+\begin{itemize}
+\item $(X,P(X)),\ \mu(A)=\text{card}A$
+\item $(X,P(X))$ fissato $x_0\in X$
+	\[\mu(A)=\begin{cases}
+		1\text{  se }x_0\in A\\
+		0\text{  se }x_0\not\in A
+	\end{cases}\]
+\end{itemize}
+\textbf{Osservazione:} Seguono da 1), 2)
+\begin{enumerate}
+\setcounter{enumi}{2}
+	\item $A_1\subseteq A_2\subseteq \ldots,\ A\in F$\[\implies \mu(\cup_n A_n)=\lim_{n \to \infty} \mu(A_n)\]
+	\item $A_1 \supseteq A_2\supseteq A_3\supseteq \ldots, \ A_i\in F,\mu (A_1)<+\infty$\[\implies\mu( \cap_n A_n)=\lim_{n \to \infty}\mu(A_n)\] 
+\end{enumerate}
+\begin{tcolorbox}
+	\textbf{Teorema:} Esistono su $\R^n$ una $\sigma$-algebra $M$ (misurabile secondo lebesgue) e una misura positiva m (misura di Lebesgue in $\R^n$) tali che:
+	\begin{itemize}
+		\item Tutti gli insiemi aperti appartengono a $M$
+		\item $A\in M$ e $m(A)=0\implies\forall B\subseteq A,\ B\in M \text{ e } m(B)=0$ (completezza)
+		\item $A=\{x\in \R^n: a_i<x_i<b_i\ i=1,\ldots,n\}$\[\implies m(A)=\prod_{i=1}^n(b_i-a_i)=(b_1-a_1)(b_2-a_2)\ldots(b_n-a_n)\]
+	\end{itemize}
+	[\ldots] 
+\end{tcolorbox}
+\textbf{Osservazione: }Non tutti i sottoinsiemi di $\R^n$ sono misurabili secondo Lebesgue.
+\\\textbf{Osservazione: }La misura di Lebesgue in $\R^n$ estende il concetto di volume n-dimensionale
+\\\textbf{Osservazione:} Gli insiemi di misura nulla sono importanti 
+\begin{tcolorbox}
+	\textbf{Definizione:} Una funzione $f:\R^n\to \R$ si dice misurabile secondo Lebesgue se
+	\[\forall A\subseteq \R \text{ aperto},\ f^{-1}(A) \text{ misurabile secondo Lebesgue}\]
+	\[\forall C\subseteq\R\text{ chiuso }, \ f^{-1}(C)\text{ misurabile secondo Lebesgue}\]
+\end{tcolorbox}
+\textbf{Osservazione:} $f$ continua $\implies$f misurabile secondo Lebesgue ($f$ continua $\implies\forall A$ aperto $f^{-1}(A)$ aperto$\implies \forall  A$ aperto $f^{-1}(A)$ misurabili
+\\\textbf{Osservazione 2:} Sono misurabili anche limiti, inferiore, superiore di funzinoni continue (di funzioni misurabili)\bigbreak
+Più in generale se 
+\[f: E\to \R\] con $E$ misurabile, $f$ si dice misurabile secondo Lebesgue se $\forall  A\subseteq\R$ aperto $E\cap f^{-1}(A)$ misraubile secondo Lebesgue
+\subsubsection{Definzione di integrale secondo Lebesgue}
+Sia $f:E$ misurabile $\subseteq\R^n\to \R$ misurabile.
+\\\textbf{Funzioni semplici}
+\\$S$ funzione semplice è una funzione (misurabile) che assume un numero finito di valori (ciascuno su un insieme misurabile).
+\[S=\sum_{k=1}^{N} \alpha_k\chi_{E_i},\ \chi_E=\begin{cases}
+	1\ \ x\in E
+	\\0\ \ x\not\in E
+\end{cases}\]
+Dove gli $E_i$ sono insiemi misurabili 2 a 2 disgiunti 
+\[\int_{E}^{} S:=\sum_{k=1}^{N} \alpha_k m(E_k)\]
+\textbf{Precisazione:} con la convenzione $0\cdot \infty=0$
+\\\textbf{Funzioni misurabili} $f\ge 0$
+\[\int_{E}^{} f:=\sup_{\substack{S \text{ semplici}\\S\ge  f}}\int_{E}^{}S\ \ \ \bigg(=\inf_{\substack{S \text{ semplici}\\S\ge f}} \int_{E}^{S}\bigg)\]
+\textbf{Funzioni misurabili di segno qualsiasi}
+\\Data $f$ misurabile su $E$ misurabile, scriviamo:
+\\$f=f^+-f^-$ con $f^+,f^-\ge 0$, $f^+:=\max \{f,0\} $, $f^-:=-\min \{f,0\} $
+\begin{figure}[ht]
+    \centering
+    \incfig{funzioni-di-segno-qualsiasi}
+    \caption{Funzioni di segno qualsiasi}
+    \label{fig:funzioni-di-segno-qualsiasi}
+\end{figure}
+\[\int_{E}^{} f:=\int_{E}^{} f^+-\int_{E}^{} f^-\]
+A patto che almeno uno tra i due integrali sia finito, (eventualmente l'integrale vale $\pm \infty$
+\begin{tcolorbox}
+	\textbf{Definizione:} $f:E\to \R$ misurabile si dice \emph{integrabile secondo Lebesgue} se
+	\[\int_{E}^{} f\in\R\] 
+\end{tcolorbox}
+\textbf{Osservazione:} $f$ è integrabile secondo Lebesgue $\iff \int_{E}^{} f^{\pm}\in\R $
+\\Quindi $f$ integrabile seconodo Lebesgue $\iff|f|$ integrabile secondo Lebesgue, infatti
+\[|f|=f^++f^-\]
+\subsubsection{Proprietà principali dell'integrale di Lebesgue}
+1) \textbf{Linearità: }$f,g$ Lebesgue integrabili, $\alpha, \beta\in\R\implies \alpha f+\beta g$ Lebesgue integrabile e 
+\[\int_{E}^{} (\alpha f +\beta g)=\alpha \int_{E}^{} f+\beta \int_{E}^{} g\]
+2) \textbf{Monotonia: }$f,g$ Lebesgue integrabili, $f\le g$ q.o. su $E$
+\[\implies \int_{E}^{f} \le \int_{E}^{} g\]
+3) \textbf{Maggiorazione del modulo: }$f$ Lebesgue integrabile 
+\[\implies \bigg|\int_{E}^{} f\bigg|\le \int_{E}^{} |f|\]
+Segue da 2), $-|f|\le f\le |f|\implies-\int_{E}^{} |f|\le \int_{E}^{} f\le \int_{E}^{} |f|$
+\bigbreak4) L'integrale di Lebesgue "non vede" gli insiemi di misura nulla.
+\\Sia $S$ semplice, $E\to \R$
+\[S(x)=\begin{cases}
+	0\text{ su }E\setminus N
+	\\1\text{ su }N
+\end{cases}\ \ m(N)=0\]
+\[\int_{E}^{} S=m(E\setminus N)\cdot 0+m(N)\cdot 1=0\]
+Più in generale, se $f$ misurabile: $E\to \R$ se $f$ si annulla su $E$ tranne che su un insieme di misura nulla
+\[\int_{E}^{} f=0\] 
+Conseguenza: se $f,g$ misurabili: $E\to \R$ se $f=g$ su $E$ tranne che su un insieme di misura nulla
+\[\int_{E}^{} f=\int_{E}^{} g\]  
+\begin{tcolorbox}
+	\textbf{Definizione:} Si dice che una proprietà $P(x)$ vale per q.o. $x\in E$ se $P(x)\text{ vale }\forall x\in E\setminus N,\text{ con }m(N)=0$
+\end{tcolorbox}
+Quindi
+\begin{itemize}
+	\item $f=0$ q.o. su $E\implies \int_{E}^{} =0 $
+	\item $f=g$ q.o. su $E\implies \int_{E}^{} f=\int_{E}^{} g $
+\end{itemize}
+\subsection{Confronto Riemann-Lebesgue}
+\subsubsection{Integrali propri}
+$f$ R-integrabile $\implies f$ L-integrabile, in caso affermativo, i valori degli integrali coincidono, in generale non vale il viceversa.
+\\($\implies$) Le funzioni semplici seconodo Lebesgue $S_L$ sono una classe più ampia delle funzinoi semplici secondo Riemann $S_R$
+\[\sup_{\substack{s\in S_R\\s\le f}}\int_{E}^{}s\le \sup_{\substack{s\in S_L\\s\le f}}\int_{E}^{} s \le \inf_{\substack{s \in S_L\\s\ge f}}\int_{E}^{}  s\le   \inf_{\substack{s\in S_R\\s\ge f}}\int_{E}^{}s\]
+Controesempio: $\exists f$ L-integrabile ma non R-integrabile.
+\[f(x)=\begin{cases}
+	1\text{ se }x\in\Q\\
+	0\text{ se }x\in \R-\Q
+\end{cases}\]
+Non R-integrabile poiché approssimando da sotto e da sopra non si trova lo stesso valore
+\[s\in S_R,s\ge f\implies s\ge 1\text{ su }(0,1)\implies \int_{0}^{1} s\ge 1\]
+\[s\in S_R, s\le f\implies s\le 0\text{ su }(0,1)\implies \int_{0}^{1} s\le 0\]
+$f$ è però L-integrabile, $\int_{0}^{1} f=0$
+\[\int_{0}^{1} f=1\cdot m(0,1)\cap\Q+0\cdot m((0,1)\cap(\R\setminus\Q))=0\]
+\subsubsection{Integrali impropri}
+In $\R$, supponiamo che $f$ limitata, sia R-integrabile su $[-L,L]\forall L>0$.
+\\Allora: $f$ L-integrabile su $\R \iff|f|$ R-integrabile (in senso improprio su $\R$).
+\\E in tal caso l'integrale di Lebesgue di $f$ coincide con l'integrale improprio di $f$.
+\\Analogamente se $f$ non è limitata.
+\\Controesempio: una funazione R-integrabile ma non R-integrabile in modulo e quindi non L-integrabile.
+\[f(x)= \frac{\sin x}{x}\text{  su }(0,+\infty)\]
+Riemann integrabile su $(0,+\infty)$ (tramite analisi complessa)
+\\Ma non è Riemann integrabile in modulo
+\[\int_{0}^{+\infty} \frac{|\sin x|}{x}=+\infty\]
+(Tramite serie)
+\newpage\subsection{Spazi di Lebesgue}
+\begin{tcolorbox}
+	\textbf{Definizione:} Sia $E$ misurabile $\subseteq\R^n$
+	\[L^1(E):= \{f:E\to \R\text{  L-integrabili}\} /_{\sim} \]
+\end{tcolorbox}
+Tale insieme è uno spazio vettoriale per la linearità dell'integrale.
+\begin{tcolorbox}
+	\textbf{Definizione:} Data $f\in L^1(E)$
+	\[\|f\|_1:=\int_{E}^{} |f|\] 
+\end{tcolorbox}
+Tale norma rispetta le tre proprietà necessarie.
+\\C'è un problema, $\int_{E}^{} |f|=0\centernot\implies f=0$ su E, $\implies f=0$ q.o. su $E$.
+\begin{tcolorbox}
+	\textbf{Definizione:} Date $f,g\in L^1(E)$ diciamo che $f$ è equivalente a $g$ se $f=g$ q.o. su $E$.
+\end{tcolorbox}
+Proprietà di una relazione di equivalenza:
+\begin{itemize}
+	\item $f\sim f$
+	\item $f\sim g \iff g\sim f$
+	\item $f\sim g$ e $g\sim h\implies f\sim h$
+\end{itemize}
+Dunque identifichiamo le funzioni equivalenti secondo l'ultima definizione.
+\begin{tcolorbox}
+	\textbf{Teorema:} $(L^1(E),\|.\|)$ è uno spazio di Banach
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione:} \[\{f_n\} \subseteq L^1(E),f_n\to f \text{ in } L^1(E) \iff \lim_{n \to +\infty} \|f_n-f\|_1=0\]
+\end{tcolorbox}
+ovvero
+\[\lim_{n \to +\infty} \int_{E}^{} |f_n-f|dx=0\]
+Consideriamo per semplicità $f=0$
+\\Q: $f_n\to 0$ puntualmente q.o. su $E$, allora $\int_{E}^{} f_n=0$? 
+\end{document}

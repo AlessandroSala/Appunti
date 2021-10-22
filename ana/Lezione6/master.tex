@@ -1,0 +1,103 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Teorema dei residui}
+\textbf{Motivazione dello studio del teorema: }è il calcolo di integrali in campo complesso e anche in campo reale.
+\\Se $f$ è olomorfa su $\Omega \subseteq  \C \implies \int_{\gamma}^{} f(z)dz=0$ dove $\gamma$ è un circuito omotopo a un punto.
+Se $f$ è olomorfa su $\Omega$ tranne che in un numero finito di punti, come si calcola $\int_{\gamma}^{} f(z)dz$?
+\begin{tcolorbox}
+	\textbf{Definizione}\\ 
+	Se $z_0$ è una singolarità isolata per $f$ si dice residuo di $f$ in $z_0$ il coefficiente $c_{-1}$ dello sviluppo in serie di Laurent di $f$ di centro $z_0$.
+\end{tcolorbox}
+\subsection{Calcolo dei residui}
+\begin{itemize}
+	\item Se $z_0$ è una singolarità eliminabile: $\text{Res}(f,z_0)=0$ poiché la parte singolare dello sviluppo $\equiv 0$
+	\item $z_0$ singolarità essenziale: non c'è modo diretto di calcolare il residuo (serve calcolare lo sviluppo)
+	\item Se $z_0$ è un polo di ordine $\nu$
+\end{itemize}
+\[\text{Res}(f,z_0)=\lim_{z \to z_0} \frac{1}{(\nu-1)!}D^{(\nu-1)}[(z-z_0)^\nu f(z)]\]
+In particolare se $z_0$ è un polo semplice
+\[\text{Res}(f,z_0)=\lim_{z \to z_0} [(z-z_0)f(z)]\]
+\subsubsection*{Dimostrazione polo semplice}
+$z_0$ polo semplice $\implies f(z)=\sum_{n\ge -1}^{} c_n(z-z_0)^n$, con $c_{-1}\neq  0$
+\[(z-z_0)f(z)=\sum_{n\ge -1}^{} c_n(z-z_0)^{n+1}=c_{-1}+c_0(z-z_0)+c_1(z-z_0)^2+o(z-z_0)^2\]
+\[\lim_{z \to z_0} [(z-z_0)f(z)]=c_{-1}\]
+\textbf{Osservazione:} $\text{Res}(\frac{g}{h},z_0)=\frac{g(z_0)}{h'(z_0)}$ con $g$ olomorfa, $h$ con uno zero di ordine 1 in $z_0$.\\
+\textbf{Dimostrazione}\\
+Caso $g(z_0)\neq 0\implies z_0$ polo semplice 
+\[(z-z_0) \frac{g(z)}{h(z)}= \frac{g(z_0)(z-z_0)+o(z-z_0)}{h'(z_0)(z-z_0)+o(z-z_0)}\to  \frac{g(z_0)}{h'(z_0)}\]
+Tramite la formula per il residuo del polo semplice
+\[\text{Res}( \frac{g}{h},z_0)= \frac{g(z_0)}{h'(z_0)}\]
+Caso G(z0)=0
+Dico che $z_0$ è una singolarità eliminabile
+\[\frac{g}{h}= \frac{g'(z_0)(z-z_0)+o(z-z_0)}{h'(z_0(z-z_0)+o(z-z_0)}\to \frac{g'(z_0)}{h'(z_0)}\in\C\]
+\subsection{Definizione e calcolo dell'indice di avvolgimento}
+\begin{tcolorbox}
+	\textbf{Definizione (intuitivia)}
+	\\Sia $\gamma$ circuito $\subseteq \C$ e sia $z_0 \not\in \gamma$.
+	\\Si dice indice di avvolgimento di $\gamma$ rispetto a $z_0$ è il numero di volte che $\gamma$ gira attorno a $z_0$, contate con segno + nel caso di verso antiorario
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione (formale)} \\
+	Sia $r(t):[a,b]\to \C$ parametrizzazione di $\gamma$ ($\gamma$) circuito $\subseteq \C,\ z_0 \not\in \C $.
+	\\Sia $\rho (t):=|r(t)-z_0|$. Allora $\exists \theta:[a,b]\to \C$ tale che $r(t)=z_0+\rho(t)e^{i\theta(t)}$.
+	\[\text{Ind}(\gamma,z_0):= \frac{\theta(b)-\theta(a)}{2\pi}\in\Z\]
+\end{tcolorbox}
+L'indice è un numero $\in\Z$ poiché $r(a)=r(b)\implies\rho(a)=|r(a)-z_0|=|r(b)-z_0|=\rho(b)$
+\[r(a)=\rho (a)+e^{i\theta(a)}\]
+\[r(b)=\rho(b)+e^{i\theta(b)}\]
+\[\implies e^{i\theta(a)}=e^{i\theta(b)}\]
+\[\implies i\theta(a)-i\theta(b)=2k\pi i = \theta(a)-\theta(b)=2k \pi\]
+\textbf{Osservazioni}
+\begin{enumerate}
+	\item L'indice non cambia per parametrizzazioni equivalenti (dello stesso circuito)
+	\item L'indice di avvolgimento non cambia sostituendo $\gamma$ con un circuito omotopo a $\gamma$ in $\C\setminus \{z_0\} $
+\end{enumerate}
+\subsubsection{Modalità analitica per calcolare l'indice}
+\[\text{Ind}(\gamma, z_0)=\frac{1}{2\pi i} \int_{\gamma}^{} \frac{1}{z-z_0}dz\]
+\textbf{Dimostrazione} 
+\\$r(t)=z_0+\rho(t)e^{i\theta(t)},\ t\in[a,b]$.
+\[\int_{\gamma}^{} \frac{1}{z-z_0}dz=\int_{a}^{b} \frac{\rho'(t)e^{i\theta(t)}+\rho(t)i\theta'(t)e^{i\theta(t)}}{z_0+\rho(t)e^{i\theta(t)}-z_0}dt\]
+\[=\int_{a}^{b} \frac{\rho'(t)etsi\theta(t)}{\rho(t)e^{i\theta(t)}}dt+i \int_{a}^{ b} \frac{\rho(t)\theta'(t)e^{i\theta(t)}}{\rho(t) e^{i\theta(t)}}dt\]
+\[=\log\rho(t)|_a^b+i[\theta(b)-\theta(a)]=i[\theta(b)-\theta(a)]\]
+Dunque dividendo
+\[\frac{1}{2\pi i}\int_{\gamma}^{} \frac{1}{z-z_0}dz=\frac{\theta(b)-\theta(a)}{2\pi}\]
+\subsection{Teorema dei residui}
+\begin{tcolorbox}
+	Sia $\Omega$ aperto $\subseteq\C$ e sia  $\gamma \subseteq\C$ circuito omotopo a un punto (in $\Omega$).
+	\\Sia $f:\Omega\setminus S\to \C$ olomorfa, dove $S$ "insieme singolare" soddisfa
+	\begin{itemize}
+		\item $\gamma \subseteq\Omega \setminus S$
+		\item $\text{acc} (S)\cap\Omega = \emptyset$
+	\end{itemize}
+	Allora:
+	\\$\text{Ind}(\gamma,z_0)\neq 0$ per al più un numero finito di punti e vale
+	\[\int_{\gamma}^{} f(z)dz=2\pi i \sum_{z_0\in S}^{} \text{Res}(f,z_0)\text{Ind}(\gamma,z_0)\] 
+\end{tcolorbox}
+
+\end{document}
