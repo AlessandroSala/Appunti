@@ -191,36 +191,4 @@ Riemann integrabile su $(0,+\infty)$ (tramite analisi complessa)
 \\Ma non è Riemann integrabile in modulo
 \[\int_{0}^{+\infty} \frac{|\sin x|}{x}=+\infty\]
 (Tramite serie)
-\newpage\subsection{Spazi di Lebesgue}
-\begin{tcolorbox}
-	\textbf{Definizione:} Sia $E$ misurabile $\subseteq\R^n$
-	\[L^1(E):= \{f:E\to \R\text{  L-integrabili}\} /_{\sim} \]
-\end{tcolorbox}
-Tale insieme è uno spazio vettoriale per la linearità dell'integrale.
-\begin{tcolorbox}
-	\textbf{Definizione:} Data $f\in L^1(E)$
-	\[\|f\|_1:=\int_{E}^{} |f|\] 
-\end{tcolorbox}
-Tale norma rispetta le tre proprietà necessarie.
-\\C'è un problema, $\int_{E}^{} |f|=0\centernot\implies f=0$ su E, $\implies f=0$ q.o. su $E$.
-\begin{tcolorbox}
-	\textbf{Definizione:} Date $f,g\in L^1(E)$ diciamo che $f$ è equivalente a $g$ se $f=g$ q.o. su $E$.
-\end{tcolorbox}
-Proprietà di una relazione di equivalenza:
-\begin{itemize}
-	\item $f\sim f$
-	\item $f\sim g \iff g\sim f$
-	\item $f\sim g$ e $g\sim h\implies f\sim h$
-\end{itemize}
-Dunque identifichiamo le funzioni equivalenti secondo l'ultima definizione.
-\begin{tcolorbox}
-	\textbf{Teorema:} $(L^1(E),\|.\|)$ è uno spazio di Banach
-\end{tcolorbox}
-\begin{tcolorbox}
-	\textbf{Definizione:} \[\{f_n\} \subseteq L^1(E),f_n\to f \text{ in } L^1(E) \iff \lim_{n \to +\infty} \|f_n-f\|_1=0\]
-\end{tcolorbox}
-ovvero
-\[\lim_{n \to +\infty} \int_{E}^{} |f_n-f|dx=0\]
-Consideriamo per semplicità $f=0$
-\\Q: $f_n\to 0$ puntualmente q.o. su $E$, allora $\int_{E}^{} f_n=0$? 
 \end{document}

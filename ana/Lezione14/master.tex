@@ -1,0 +1,65 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Distribuzioni}
+\begin{tcolorbox}
+\textbf{Definizione: }Sia $\Omega$ aperto di $\R^n$ 
+\[C_0^\infty(\Omega)=\{\text{funzioni }C^\infty\text{ su }\Omega\text{ con supporto compatto in }\Omega\}\]
+È uno spazio vettoriale
+\end{tcolorbox}
+Muniamo $C_0^\infty$ di una \textbf{convergenza} 
+\begin{tcolorbox}
+	\textbf{Definizione: }Sia $\{\varphi_k\} \subseteq  C_0^\infty(\Omega)$. Diciamo che 
+	\[\varphi_k\to 0\text{ in }C_0^\infty(\Omega)\text{ se }\]
+\begin{enumerate}
+	\item $\exists K$ compatto, indipendente da h, tale che $\text{supp}(\varphi_h)\subseteq  K\ \forall h> >\nu$
+	\item $\varphi_h\to 0$ uniformemente su $K$ con tutte le derivate $\forall \alpha$ multiindice $D^\alpha\varphi_h\to 0$ unif. su $K$
+\end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione: }Lo spazio $C_0^\infty(\Omega)$ munito della convergenza definita sopra si indica con $\mathcal D(\Omega)$ e si chiama \emph{spazio delle funzioni test}
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione: }Lo spazio delle distribuzioni su $\Omega $, che si indica con $\mathcal D'(\Omega)$ è lo spazio degli operatori $T:\mathcal D(\Omega)\to \R$ lineari e continui rispetto alla convergenza introdotta su $\mathcal D(\Omega)$.\\Ovvero, una distribuzione è un operatore $T:\mathcal D(\Omega)\to \R$ tale che 
+	\begin{itemize}
+		\item $T$ lineare
+		\item $T$ continuo ($\varphi_h\to 0$ in $\mathcal D(\Omega)\impliesT(\varphi_h)\to 0$ in $\R$)
+	\end{itemize}
+\end{tcolorbox}
+\textbf{Esempi} 
+\begin{enumerate}
+	\item Sia $u\in L^{1}(\Omega)$, ad $u$ posso associare una distribuzione $T_u\in \mathcal D'(\Omega)$
+\end{enumerate}
+\[T_u(\varphi):=\int_{\Omega}^{} u\varphi\ \ \forall \varphi\in \mathcal D(\Omega)\]
+È ben definito:
+\[\bigg| \int_{\Omega}^{} u\varphi\bigg|\le \int_{\Omega}^{} |u\varphi|\le \int_{K}^{} \max |\varphi | |u|\le \max_k|\varphi|\int_{K}^{} |u|  \]  
+È lineare:
+\[T_u(\alpha\varphi+\beta\psi)=\int_{\Omega}^{} u(\alpha\varphi+\beta\psi\]
+completare
+
+\end{document}

@@ -1,0 +1,145 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\begin{itemize}
+	\item Definizione e teoremi di completezza
+	\item Criteri di convergenza
+	\item Risultati di confronto
+	\item Approssimazione con funzioni regolari (prodotto di convoluzione)
+	\item Teorema di differenziazione (funzioni assolutamente continue)
+\end{itemize}
+Appartenenza a $L^p$: verifica dell'integrale
+\[f\in L^p(E) \iff \int_{E}^{} |f|^p<+\infty\]
+Convergenza in $L^p$
+\[\{f_n\} \subseteq L^p(E),\ f\in L^p(E),\  \bigg(\int_{E}^{} |f_n-f|^p\bigg)^{\frac{1}{p}}\to 0\]
+Candidato limite: $f$ limite puntuale q.o.
+\[\lim_n \int_E|f_n-f|^p=\int_{E}^{} \lim |f_n-f|^p \ ?\] 
+\subsubsection{Caso limite L infinito}
+\begin{tcolorbox}
+	\textbf{Definizione:} \[L^\infty:=\{f:E\to \R\text{ misurabili}:\text{ ess-}\sup_{x\in E}|f(x)|<+\infty\}/_\sim \]
+
+\end{tcolorbox}	
+\[\sup_{x\in E}|f(x)|:=\min \{M:|f(x)|\le M\ \forall x\in E\}\]
+\[\text{ess-}\sup_{x\in E}|f(x)|:=\min \{M:|f(x)|\le M\text{ q.o. } x\in E\}\]
+\begin{tcolorbox}
+	\textbf{Teorema:} $(L^\infty(E),\|.\|_{\infty})$ è uno spazio di Banach
+\end{tcolorbox}
+\textbf{Osservazioni} 
+\[f\in L^\infty(E) \iff\text{ess-sup}_{x\in E}|f(x)|<+\infty\]
+Convergenza
+\[\{f_n\} \subseteq L^\infty(E),\ f\in L^\infty(E): \text{ess-sup}_{x\in E}|f_n(x)-f(z)|\to 0\]
+Dunque convergenza uniforme a meno di un insieme di misura nulla.
+\\\textbf{Esempi} di funzioni in $L^\infty(\R)$
+\[f(x)=c>0,\ \|f\|_\infty=c\]
+\[f(x)=\begin{cases}
+	1\ \ \ x\not\in \N
+	\\n\ \ \ x=n\in \N
+\end{cases}
+\]
+\textbf{Osservazione:} Se $f\in L^p(E),\ \forall p\in[1,+\infty]$
+\[\implies \lim_{p \to +\infty} \|f\|_{L^p(E)}=\|f\|_{L^\infty(E)}\]
+Analogo in $\R^2$
+\[\lim_{p \to +\infty} \|x\|_p=\lim_{p \to +\infty} (|x_1|^p+|x_2|^p)^{\frac{1}{p}}=\max \{|x_1|,|x_2|\}\] 
+\subsection{Risultati di confronto}
+$p\le q\ p,q\in[1,+\infty]\implies  L^p(E)\subseteq \text{ oppure }\supseteq L^q(E)?$
+\\In generale no
+\\\textbf{Controesempio 1:} $L^1(0,+\infty), \ L^2(o,+\infty),L^\infty(0,+\infty)$
+\[f(x)=1,\ \text{ess-sup}_{x\in\R}|f(x)|=1,\ \int_{\R_+}^{} |f|=\int_{\R_+}^{} |f|^2=+\infty\]  
+\[f\in L^{\infty}(\R_+)\text{ ma }f\not\in L^1(\R_+),f\not\in L^2(\R_+)\]
+\textbf{Controesempio 2:} 
+\begin{figure}[ht]
+    \centering
+    \incfig{esempio2}
+    \caption{Controesempio 2}
+    \label{fig:esempio2}
+\end{figure}
+\[\int_{0}^{+\infty} |f|=\int_{0}^{1} \frac{1}{\sqrt{x} }<+\infty,\ \text{ess-sup}_{x\in\R_+}|f(x)|=+\infty=\int_{0}^{+\infty}|f|^2\]
+\[f\in L^1(\R_+)\text{ ma }f\not\in L^\infty(\R_+),\ f\not\in L^2(\R_+)\]
+\textbf{Controesempio 3:} 
+\begin{figure}[ht]
+    \centering
+    \incfig{controesempio3}
+    \caption{Controesempio 3}
+    \label{fig:controesempio3}
+\end{figure}
+Si ricava in modo immediato che 
+\[f\in L^2(\R_+)\text{ ma }f\not\in L^\infty(\R_+),\ f\not\in L^1(\R_+)\]
+\subsubsection{Disuguaglianza di Holder}
+\begin{tcolorbox}
+	Sia $E$ misurabile $\subseteq \R^n$ qualsiasi, e $p \in [1,+\infty]$.
+	\\Siano $f\in L^p(E),\ g\in L^{p'}(E)$, con $p':=$ esponente coniugato di $p$
+	\[\frac{1}{p}+\frac{1}{p'}=1\]
+	Con la convenzione $\frac{1}{\infty}=0$ 
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Disuguaglianza di Holder: }Sia $f\in L^p(E),\ g\in L^{p'}(E)$
+	\[\|f\cdot g\|_1\le \|f\|_p\|g\|_{p'}\]
+\end{tcolorbox}
+\subsubsection{Conseguenze di Holder sul confronto tra i vari spazi}
+\textbf{Proprietà di immersione (1)}\\ 
+Sia $E\subseteq \R^n$ con $m(E)<+\infty$ e sia $q\ge p$, allora $L^q(E)\subseteq L^p(E)$, e 
+\[\|f\|_{L^p(E)}\le m(E)^{\frac{q-p}{qp}}\ \|f\|_{L^q(E)}\ \ \forall f\in L^q(E)\]
+In particolare se $q=+\infty$ ho che $\forall p\in[1,+\infty),L^\infty(E)\subseteq L^p(E)$
+\[\|f\|_{L^p(E)}\le m(E)^{1 / p}\|f\|_{L^\infty(E)}\]
+Infatti
+\[\int_{E}^{} |f|^p\le \int_{E}^{} \text{ess-sup}_{x\in E}|f|^p=m(E)\cdot (\text{ess-sup}_{x\in E}|f|)^p\]
+Elevando a $\frac{1}{p}$
+\[\|f\|_p=\bigg(\int_{E}{|f|^p\bigg)^{\frac{1}{p}}}\le (m(E))^{\frac{1}{p}}\text{ess-sup}_{x\in E}|f|=m(E)^{1 / p}\|f\|_{L^\infty(E)}  \]
+\textbf{Dimostrazione di (*) a partire da Holder}\\
+Suppongo $f\in L^q(E)$, $\implies f\in L^{\frac{q}{p}}$
+\[\int_{E}^{} |f|^p=\int_{E}^{} |f|^p\chi_E \le \|f^p\|_{L^{\frac{q}{p}}}\cdot \|\chi_E\|_{L^{(q / p)'}}\]
+\begin{itemize}
+	\item $f\in L^{q / p}$ infatti 
+	\item $\chi_E\in L^{q / p )'}$ infatti
+\end{itemize}
+\[\int_{E}^{} |\chi_E|^{(q / p)'}=\bigg(\frac{q}{p}\bigg)'=\frac{q}{q-p}\]
+\[\ \| |f|^p\|_{L^{q / p}}=\bigg(\int_{E}^{} |f|^q\bigg)^{\frac{p}{q}}\]
+\[\|\chi_E\|_{L^{(q / p)'}}=\bigg( \int_{E}^{} |\chi_E|^{(\frac{q}{p})'}\bigg)^{\frac{1}{\frac{q}{p})'}}=m(E)^{\frac{q-p}{q}}\]
+Quindi
+\[\int_{E}^{} |f|^p\le m(E)^{\frac{q-p}{q}}\cdot \bigg(\int_{E}^{} |f|^q\bigg)^{\frac{p}{q}}\]
+Elevando tutto alla $\frac{1}{p}$ 
+\[\|f\|_{L^p(E)}\le m(E)^{\frac{q-p}{pq}}\cdot \|f\|_{L^{q}(E)}\]
+\textbf{Proprietà di interpolazione (2)}\\
+Se $f\in L^p(E)\cap L^q(E)$, con $p\le q\implies f\in L^r(E)$ $\forall  r\in [p,q]$ e
+\[\|f\|_{L^r(E)}\le \|f\|_{L^p(E)}^\alpha\cdot \|f\|_{L^{q}(E)}^{1-\alpha}\]
+Dove $\alpha\in (0,1)$ tale che $\frac{1}{r}=\frac{\alpha}{p}+\frac{1-\alpha}{q}$\\ 
+\textbf{Esempio:} Se $f\in L^{1}(E)\cap L^{\infty}(E)\implies f\in L^{r}(E)\forall r\in [1,+\infty]$
+\subsection{Approssimazione con funzioni regolari}
+\begin{tcolorbox}
+	\textbf{Teorema di approssimazione con funzioni regolari}\\
+	Sia $p\in[1,+\infty)$, e sia $E$ misurabile in $\R^n$
+	\\$C_o^\infty(E)$ è un sottospazio \textit{denso} in $L^p(E)$
+	\\$C_0^\infty(E):=\{f:E\to \R\text{ di classe }C^\infty \text{ e aventi supporto compatto in }E\}$ 
+\end{tcolorbox}
+Ovvero 
+\[\forall f\in L^p(E) \exists \{f_n\} \subseteq C_0^\infty(E)\text{ tale che }\|f_n-f\|_{L^p}\to_{n\to +\infty}0\]
+\[\forall f\in L^p(E),\ \forall \varepsilon>0 \exists \varphi\in C_0^\infty(E)\text{ tale che }\|\varphi-f\|_{L^p}<\varepsilon\]
+\textbf{Osservazione:} Falso nel caso $p=+\infty$
+
+
+\end{document}
