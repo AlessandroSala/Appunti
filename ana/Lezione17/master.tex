@@ -1,0 +1,305 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Equazioni alle derivate parziali}
+\subsection{Formulazione variazionali di problemi ellittici}
+\[-a\nabla ^2u+cu=f\text{ in }\Omega\subseteq  \R^n aperto limitato regolare,\ u=u(x_1,\ldots,x_n)\]
+\textbf{Ipotesi}
+\begin{itemize}
+	\item $a>0$ 
+	\item $c\in L^{\infty}(\Omega)$ 
+	\item $f(x)\in L^{2}(\Omega)$
+\end{itemize}
+Se $c=0,\ a=1\implies -\nabla ^2 u=f$ (Equazione di Poisson)\\
+\textbf{Condizione di Dirichlet (omogenea):} $u=0$ su $\partial\Omega$
+\\\textbf{Condizione di Neumann (omogenea):} $\frac{\partial u}{\partial \nu} =0$ su $\partial\Omega$
+\subsubsection{PDE ellittiche del secondo ordine}
+ODE lineare del 2° ordine
+\[au''+bu'+cu=f\]
+Alle derivate parziali (PDE del 2° ordine), $u=u(x),\ x\in \R^n$
+\[-A(x)\cdot \nabla ^2 u(x)+b(x)\cdot \nabla u(x)+cu=f\]
+si dice ellittica se $A$ è definita positiva
+\[\sum_{i,j=1}^{n} A_{i,j}(x)\xi_i\xi_j\ge 0\ \forall \xi \in \R^n\]
+In particolare se $A(x)=\text{I}$ 
+\[\sum_{i,j=1}^{n} A_{i,j}(x)u_{x_i,x_j}=\sum_{i=1}^{n} u_{x_i,x_j}=\Delta u\]
+\subsubsection{Formulazione variazionale del problema di Dirichlet}
+$(D)_c$ Trovare $u\in C^2(\overline\Omega)$ tale che:
+\[\begin{cases}
+	-a\Delta u+cu=f&\text{ in }\Omega
+	\\u=0&\text{ su }\partial \Omega
+\end{cases}\]
+$(D)_v$ Trovare $u\in H_0^1(\Omega)$ tale che:
+\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} \ \forall v\in H_0^1(\Omega)\]
+\begin{tcolorbox}
+	\textbf{Proposizione (D):} Nelle ipotesi sopra:
+	\begin{enumerate}
+		\item $u$ sol. classica $\implies $ u sol. variazionale
+		\item $u$ sol. variazionale, $c,f$ continue, $u\in C^2(\overline\Omega)\implies u$ sol. classica
+	\end{enumerate}
+\end{tcolorbox}
+
+\subsubsection{Formulazione variazionale del problema di Neumann}
+$(N)_c$ Trovare $u\in C^2(\overline\Omega)$ tale che:
+\[\begin{cases}
+	-a\Delta u+cu=f&\text{ in }\Omega
+	\\\frac{\partial u}{\partial \nu} =0&\text{ su }\partial \Omega
+\end{cases}\]
+$(N)_v$ Trovare $u\in H^1(\Omega)$ tale che:
+\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} \ \forall v\in H^1(\Omega)\]
+\begin{tcolorbox}
+	\textbf{Proposizione (N):} Nelle ipotesi sopra:
+	\begin{enumerate}
+		\item $u$ sol. classica $\implies $ u sol. variazionale
+		\item $u$ sol. variazionale, $c,f$ continue, $u\in C^2(\overline\Omega)\implies u$ sol. classica
+	\end{enumerate}
+\end{tcolorbox}
+\subsubsection{Esistenza delle soluzioni}
+\begin{tcolorbox}
+	\textbf{Teorema: }Nelle ip. sopra definite, il problema $(D)_v$: trovare $u\in H_0^1(\Omega)$ tale che
+	\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} fv\ \forall v\in H_0^1(\Omega)\]
+	Ammette una e una sola soluzione. Inoltre $u$ è caratterizzata nel modo seguente:
+	\[\min_{v\in H_0^1(\Omega)}E(v):=\frac{1}{2}\int_{\Omega}^{} (a|\nabla v|^2+cv^2)-\int_{\Omega}^{} fv\]
+
+\end{tcolorbox}
+\textbf{Dimostrazione} 
+\\Considero $H=H^1_0(\Omega)$, munito di $\|\nabla u\|_{L^{2}(\Omega)}=\|\nabla u\|_2$
+\begin{itemize}
+	\item $\varphi(v)=\int_{\Omega}^{} fv\ \forall v\in H $ 
+	\item $b(u,v)=\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv $ 
+
+\end{itemize}
+$\varphi$ è lineare continuo, $b(u,v)$ è bilineare simmetrica, continua, coerciva
+Per Lax-Milgram $\exists $ unico $u\in H$ tale che 
+\[\varphi(v)=b(u,v)\ \forall v\in H\]
+ovvero:
+\[\int_{\Omega}^{} a\nabla u\cdot \nabla v +cuv=\int_{\Omega}^{}fv \ \forall v\in H\]
+Inoltre $u$ risolve
+\[\min_{H}E(v):=\frac{1}{2}b(u,v)-\varphi(v)\]
+Verifica ip. Lax-Milgram:
+\begin{itemize}
+	\item $\varphi$ (lineare) continuo: $\exists M:|\varphi(v)|\le M\|v\|_H$
+\end{itemize}
+\[\int_{\Omega}^{} fv|\le \int_{\Omega}^{} |fv|\le_H\|f\|_2\|v\|_2\le_PC_p(\Omega)\|f\|_2\|\nabla v\|_2\]
+Si avrà dunque $M=C_p(\Omega)\|f\|_2$ e $\|\nabla v\|_2=\|v\|_2$
+\begin{itemize}
+	\item $b(u,v)$ è bilineare simmetrica (dimostrazione semplice)
+\end{itemize}
+\begin{itemize}
+	\item $b(u,v)$ continua
+
+\end{itemize}
+\[|b(u,v)|=\bigg|\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv\bigg|\le \int_{\Omega}^{} |a\nabla u\cdot \nabla v+cuv|\le \int_{\Omega}^{} a|\nabla u\cdot \nabla v|+c|uv| \]
+\[\le \int_{\Omega}^{} a|\nabla u\cdot \nabla v|+\|c\|_{\infty}\int_{\Omega}^{} |uv|   \le a \|\nabla u\|_2 \|\nabla u\|_2+\|c\|_\infty\|u\|_2\|v\|_2\]
+\[\le a \|\nabla u\|_2\|\nabla v\|_2+\|c\|_\infty C_p^2(\Omega)\|\nabla u\|_2\|\nabla v\|_2\]
+\[=(a+\|c\|_\infty C_p(\Omega))\|\nabla u\|_2\]
+finire\\
+\begin{itemize}
+	\item $b(u,v)$ coerciva
+
+\end{itemize}
+$b(u,v)=\int_{\Omega}^{} a|\nabla u|^2+cu^2\ge \int_{\Omega}^{} a|\nabla u|^2=a\|\nabla u\|  $ finire
+
+\subsubsection{Esistenza delle soluzioni per Neumann}
+\begin{tcolorbox}
+	\textbf{Teorema: }Nelle ip. sopra definite, supponiamo anche $c(x)>0$ il problema $(D)_v$: trovare $u\in H^1(\Omega)$ tale che
+	\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} fv\ \forall v\in H^1(\Omega)\]
+	Ammette una e una sola soluzione. Inoltre $u$ è caratterizzata nel modo seguente:
+	\[\min_{v\in H_0^1(\Omega)}E(v):=\frac{1}{2}\int_{\Omega}^{} (a|\nabla v|^2+cv^2)-\int_{\Omega}^{} fv\]
+
+\end{tcolorbox}
+\textbf{Dimostrazione} 
+\\Analoga al caso di Dirichlet lavorando su $H=H^1(\Omega)$ munito di $\|u\|_{H^1}=\|u\|_{L^{2}(\Omega)}+\|\nabla u\|_{L^{2}(\Omega)}$
+\\Tranne che per la coercività di $b$:
+\[b(u,u)=\int_{\Omega}^{} a|\nabla u|^2+cu^2\ge \alpha\|u\|_{H^1}^2?\]
+\[\ge \int_{\Omega}^{} a|\nabla u|^2+c_0u^2\ge \min \{a,c_0\} \int_{\Omega}^{} |\nabla u|^2+|u|^2\]
+\subsubsection{}
+\[\int_{\Omega}^{} \text{div}X=\int_{\partial \Omega}^{} X\cdot \nu \ \forall X\in C^1(\Omega)\]
+$X=v\nabla u$, $v\in C^1$, $u\in C^2$
+\[\text{div}(v\nabla u)=\]
+completare
+\[\int_{\Omega}^{} \nabla u\cdot \nabla v+v\nabla u=\int_{\partial \Omega}^{} v \frac{\partial u}{\partial \nu} \ v\in C^1,u\in C^2\]
+(Formula di Gauss-Green)
+
+\begin{tcolorbox}
+\textbf{Lemma di DuBois-Raymond}
+\\Se $u\in C(\overline{\Omega})$ è tale che:
+\[\int_{\Omega}^{} u\varphi=0\ \forall \varphi\in C_0^\infty(\Omega)\implies u\equiv0\text{ in }\Omega\] 
+\end{tcolorbox}
+Per dimostrarlo si procede per assurdo
+\subsubsection{Dimostrazione proposizione di Dirichlet}
+\begin{enumerate}
+	\item Sia $u$ sol. di $(D)_c$
+
+\end{enumerate}
+Allora $u\in H_0^1(\Omega)$ $(u,v\nabla u\in C\overline{\Omega})\subseteq  L^{2}(\Omega),u=0\text{ su }\partial\Omega)$
+Moltiplico l'equazione per $v\in C_0^\infty(\Omega)$ 
+\[-a\Delta u\cdot v+cuv=fv\text{ in }\Omega\]
+Integrando
+\[\int_{\Omega}^{} -a\Delta u\cdot v+cuv=\int_{\Omega}^{} fv\]
+Per Gauss Green
+\[\int_{\Omega}^{} av \frac{\partial u}{\partial \nu}=0\]
+\[\int_{\Omega}^{} a\nabla u\cdot \nabla v_n+cuv_n=\int_{\Omega}^{} fv_n\ \forall v\in C_0^\infty(\Omega) \]
+Data $v\in H_0^1(\Omega),\exists \{v_n\} \subseteq  C_0^\infty(\Omega):v_n\to ^{H^1}v$ (per definizione di $H^1_0(\Omega)$ 
+\\Passando al limite
+\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} fv\ \forall v\in H_0^1(\Omega) \]
+Tale limite si dimostra
+\[\bigg|\int_{\Omega}^{} fv_n-fv\bigg|\le \int_{\Omega}^{} |f(v_n-v)|\le_H \|f\|_2 \|v_n-v\|_2\to 0\]
+In modo analogo si verificano le altre convergenze
+\begin{enumerate}
+	\item 2) Sia $u\in H_0^1(\Omega)$ sol. variazionale, supponendo $u\in C^2(\overline{\Omega})$, ($c,f$ continue)
+\end{enumerate}
+$u=0$ su $\partial\Omega$ 
+\\Sappiamo che
+\[\int_{\Omega}^{} a\nabla v\cdot \nabla u+cuv=\int_{\Omega}^{} fv\ \forall v\in H^1_0(\Omega)\text{ in particolare }\ \forall v\in C_0^\infty(\Omega)\]
+Tramite Gauss Green
+\[\int_{\Omega}^{} -a\Delta u\cdot v+cuv-fv=0\ \forall v\in C_0^\infty(\Omega)\]
+\[\implies \int_{\Omega}^{} (-a\Delta u+cu -f)v=0\ \forall v\in C_0^\infty(\Omega)\]
+La funzione nelle parentesi è continua su $\overline{\Omega}$
+\\Per il lemma di DBR
+\[\implies -a\Delta u+cu-f=0\text{ in }\Omega\]
+\section{Serie di Fourier in spazi di Hilbert}
+\begin{tcolorbox}
+	\textbf{Definizione: }Sia $H$ di Hilbert. Una famiglia di vettori $\{u_n\} \subseteq  H$ si dice \emph{sistema ortogonale} se $(u_n,u_m)=0\ \forall n\neq m$. 
+	\\Si dice poi \emph{sistema ortonormale} se è ortogonale e $(u_n,u_n)=1\ \forall n$
+\end{tcolorbox}
+\textbf{Esempi:} 
+\begin{itemize}
+	\item $H=\R^3$: $e_1=(1,0,0),\ e_2=(0,1,0),\ e_3=(0,0,1)$ 
+	\item $H=l^2=\{(x_n)_{n\in \N}:x_n\in \R\text{ tali che }\sum_{n\ge 0}^{} x_n^2<+\infty\} $ è uno spazio vettoriale
+		\[\|x\|_{l^2}=\bigg(\sum_{n\ge 0}^{} x_n^2 \bigg)^{\frac{1}{2}}\]
+		è di Hilbert poiché $((x_n),(y_n))=\sum_{}^{} x_ny_n$ 
+		\\$e_n=(0,\ldots,1,\ldots,0)$
+\end{itemize}
+\begin{tcolorbox}
+	\textbf{Definizione: }Sia $H$ di Hilbert e sia $(u_n)$ sistema ortonormale.
+	\\Dato $u\in H$ 
+	\begin{itemize}
+		\item $(u,u_n)\in \R$ \emph{coefficienti di Fourier} di $u$ (rispetto a $(u_n)$ )
+		\item $\sum_{n}^{} (u,u_n)u_n$ \emph{serie di Fourier} di $u$ (rispetto a $(u_n)$ )
+	\end{itemize}
+\end{tcolorbox}
+\textbf{Esempi} 
+\begin{itemize}
+	\item $H=\R^3$, $\{e_1\} $, $(u,e_1)e_1=P(u)\text{ su }\left< e_1 \right> $ 
+	\item "", $\{e_1,e_2\} $, $(u,e_1)e_1+(u,e_2)e_2=P(u)\text{ su }\left< e_1,e_2 \right> $ 
+	\item "", $\{e_1,e_2,e_3\} $, $(u,e_1)e_1+\ldots=P(u)\text{ su }\left< e_1,e_2,e_3 \right> $ 
+	\item $H=l^2$, $\{e_1\} =\{(1,0,\ldots,0)\} $, $(u,e_1)e_1=P_{\left< e_1 \right> }(u)$
+		\\""$\{e_i\} $ pari $\sum_{k}^{} (u,e_{2k})e_{2k}$
+		\\""$\{e_n\} $ con $n$ qualsiasi $\sum_{k}^{} (u,e_k)e_k=u$ 
+\end{itemize}
+\begin{tcolorbox}
+\textbf{Teorema di convergenza per serie di Fourier}
+\\Sia $H$ Hilbert, sia $\{u_n\} $ sistema ortonormale fissato.
+\\Dato $u\in H$, la serie di Fourier di $u$ converge in $H$ e 
+\[\sum_{n}^{} (u,u_n)u_n=u'\]
+Dove $u'$ è la proiezione ortogonale di $u$ su $M$, dove $M$ è la chiusura del sottospazio generato dal sistema.
+\end{tcolorbox}
+\subsubsection{Convergenza in H}
+$\sum_{n}^{} (u,u_n)u_n $ corrisponde a $S_N(u)=\sum_{n=0}^{N} (u,u_n)u_n$, converge a $u'$ se 
+\[\exists \lim_{N \to +\infty} S_N(u)=u' \iff \lim_{N \to +\infty} \|S_N(u)-u'\|=0\]
+\subsubsection{Sottospazio generato}
+Il sottospazio generato, indicato con $\left< u_n \right> $ è definito come
+\[\left< u_n \right> :=\{\text{combinazioni lineari degli }u_n\} \]
+\[M=\overline{\left< u_n \right> }:=\{\text{limiti di comb. lineari degli }u_n\} \]
+$M$ è un sottospazio chiuso.
+\subsubsection{Disuguaglianza di Bessel}
+\begin{tcolorbox}
+	\textbf{Teorema: }Sia $H$ Hilbert, e sia $(u_n)$ sistema ortonormale, dato $u\in H$, vale 
+	\[\sum_{n}^{} (u,u_n)^2\le \|u\|^2\]
+\end{tcolorbox}
+\textbf{Dimostrazione} 
+\\Fisso $N\in \N$ e mostriamo
+\[\sum_{n=0}^{N} (u,u_n)^2\le \|u\|^2\]
+la tesi è dimostrata passando al limite, dunque:
+\[0\le \|u-\sum_{n\le N}^{} (u,u_n)u_n\|^2=(u-\sum_{n\le N}^{} (u,u_n)u_n,u-\sum_{n\le N}^{} (u,u_n)u_n)=\]
+\[=\|u\|^2 -2 \sum_{n\le N}^{} (u,u_n)^2+\sum_{n\le N}^{} (u,u_n)^2\]
+\[=\|u\|^2-\sum_{n\le N}^{} (u,u_n)^2\]
+L'ultima somma vale poiché siamo in un sistema ortonormale:
+\[((u,u_1)u_1+(u,u_2)u_2,((u,u_1)u_1+(u,u_2)u_2)=(u,u_1)^2+(u,u_2)^2\]
+\subsubsection{Dimostrazione teorema di convergenza delle serie di Fourier}
+Per dimostrare la convergenza della serie, basta mostrare che $S_N(u)$ è di Cauchy:
+\[\ \forall \varepsilon\exists \nu:\|S_N-S_M(u)\|^2<\varepsilon\ \forall N,M\ge \nu\]
+ovvero: (supposto $N>M$)
+\[\|S_n(u)-S_M(u)\|^2=(S_N(u)-S_M(u),S_N(u)-S_M(u))=\]
+\[\bigg(\sum_{n=M+1}^{N} (u,u_n)u_n,\sum_{n=M+1}^{N} (u,u_n)u_n\bigg)\]
+\[=\sum_{n=M+1}^{N} (u,u_n)^2=|T_N(u)-T_M(u)|\]
+dove $t_N=\ldots$ 
+Bessel $\implies \{T_N(u)\} $ è di Cauchy
+\\Essendo in un Hilbert $S_N(u)$ converge
+\\Sia ora $u':=\sum_{n}^{} (u,u_n)u_n$ 
+\\Per dimostrare $u'=P_M(u)$ basta mostrare che
+\begin{enumerate}
+	\item $u'\in M$ 
+	\item $u-u'\in M^\perp$
+\end{enumerate}
+Per l'unicità nel teorema delle proiezioni, $u'=P_M(u),\ u-u'=P_{M^\perp}(u)$
+\\Infatti
+\begin{enumerate}
+	\item $u'\in M$ vale per costruzione: completare
+	\item Per mostrare che $u-u'\in M^\perp$ basta far vedere che $(u-u',u_n)=0\ \forall n$, questo assicura che $u-u'$ sarà ortogonale a tutti i limiti delle combinazioni lineari degli $u_n$, ovvero a tutti gli elementi di $M$.\[(u-u',u_m)=(u-\sum_{n}^{} (u,u_n)u_m,u_m)=(u,u_m)-(u,u_m)(u_m,u_m)=0\]
+\end{enumerate}
+\divider
+\begin{tcolorbox}
+	\textbf{Definizione: }Sia $H$ di Hilbert e sia $(u_n)$ sistema ortonormale. 
+	Si dice che $(u_n)$ è \emph{sistema completo} se è massimale rispetto all'inclusione.
+	\\Ovvero: $\not\exists (v_n)$ sistema ortonormale che che contenga propriamente $(u_n)$
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Proposizione di caratterizzazione di sistemi ortonormali completi}
+	\\Sia $(u_n)$ ortonormale in un Hilbert.
+	\\Sono equivalenti:
+	\begin{enumerate}
+		\item $(u_n)$ è completo
+		\item $u\in H:(u,u_n=0\ \forall n\implies u=0$ 
+		\item Posto $M:=\overline{\left< u_n \right> }$, si ha $M\equiv H$
+		\item $\sum_{n}^{} (u,u_n)u_n=u\ \forall u\in H$
+		\item $\sum_{n}^{} (u,u_n)(v,u_n)=(u,v)\ \forall u,v\in H$ (identità di Parseval)
+		\item $\sum_{n}^{} (u,u_n)^2=\|u\|^2\ \forall u\in H$ (identtà di Bessel)
+	\end{enumerate}
+\end{tcolorbox}
+\textbf{Dimostrazione} 
+\\$(1)\iff (2)\implies (3)\implies (4)\implies (5)\implies (6)\implies (2)$
+\\\textbf{Dimostrazione 1}
+\\Se è falsa la 2 implica che è falsa la 1
+\[\exists u\in H:(u,u_n)=0\ \forall n\text{ MA }u\neq 0\]
+Allora $(u_n)$ non è massimale.
+Se è falsa la 1 implica che è falsa la 2
+\\se $(u_n)$ non è massimale, posso aggiungere almeno un elemento $\implies \exists u\in H$ per cui la 2 è falsa.
+\\\textbf{Dimostrazione 2 implica 3}
+\\Per mostrare $M\equiv H$, basta mostrare $M^\perp=\{0\} $, vero per la 2
+\[\text{ se }u\in M^\perp\text{ allora }u=0\]
+\textbf{Dimostrazione 3 implica 4} 
+\\Se $M$ coincide con $H$, allora $u'=P_M(u)=u$ 
+\\\textbf{Dimostrazione 4 implica 5}
+Per la quattro ogni elemento è la sua serie di Fourier, dunque
+\[(u,v)=(\sum(u,u_n)u_n,\sum(v,u_n)u_n)=\sum(u,u_n)(v,u_n)\]
+\\\textbf{Dimostrazione 5 implica 6}
+\\Prendere $u=v$ in Parseval
+\\\textbf{Dimostrazione 6 implica 2}
+\\Se $(u,u_n)=0\ \forall n, \sum0=0$
+\end{document}

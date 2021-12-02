@@ -1,0 +1,145 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Esempi di distribuzioni}
+\begin{enumerate}
+	\item $T=T_u$ con $u\in C^1(\Omega)\implies (T_u)'=T_{u'}$ 
+	\item $T=T_u$ con $u(x)=|x|$ su $\Omega=(-1,1)$ 
+		\[\left<(T_u)',\varphi \right> =- \left<T_u,\varphi' \right> =-\int_{-1}^{1} |x|\varphi'(x)dx\]
+		\[=\int_{0}^{1} \varphi(x)dx+x\varphi \bigg|_0^1-\int_{-1}^{0} \varphi(x)dx+x\varphi(x)\bigg|_{-1}^0=\int_{-1}^{1} \varphi(x)\cdot \text{sign}(x)dx\]
+		\[\implies (T_{|x|})'=T_{\text{sign}(x)}\text{ in }\mathcal D'(\Omega) \]
+		\textbf{Notazione:} $(|x|)'=\text{sign}(x)\text{ in }\mathcal D'(\Omega)$ 
+		\\Più in generale: se $u\in L^1_{\text{loc}}(\Omega),v\in L^1_{\text{loc}}(\Omega)$  $u'=v\text{ in }\mathcal D'(\Omega)$, significa $(T_u)'=T_v$ ovvero
+		\[ \ \forall \varphi\in \mathcal D(\Omega)\ \left<(T_u)',\varphi \right> = - \left<T_u,\varphi' \right> = \left<T_v,\varphi \right> \]
+			\[-\int_{\Omega}^{} u\varphi'=\int_{\Omega}^{} v\varphi\ \forall \varphi\in \mathcal D(\Omega)  \]
+		\item $u(x)=\text{sign}(x)$, $u'=?$ 
+			\[-\int_{\Omega}^{} \text{sign}(x)\varphi'(x)dx=-\int_{0}^{1} \varphi'+\int_{-1}^{0} \varphi'=-\varphi(1)+2\varphi(0)-\varphi(-1)=2\varphi(0)\]
+			\[=2 \left<\delta_0,\varphi \right>\]
+\item $T=\delta_0$ $T'=?$ 
+	\[\left<T',\varphi \right> = - \left<T,\varphi' \right> =- \left<\delta_0,\varphi' \right> =-\varphi'(0)\ \forall \varphi\in \mathcal D(\Omega)\]
+\end{enumerate}
+\subsection{Generalizzazione }
+\begin{itemize}
+	\item $n=1$ Data $T\in \mathcal D'(\Omega),\ \forall k\in \N\ T^{(k)}\in \mathcal D'(\Omega)$
+		\[\left<T^{(k)},\varphi \right>:= (-1)^k\left<T,\varphi^{k} \right>  \]
+\end{itemize}
+\textbf{Osservazione:} $T^{(k)}$ definisce una distribuzione, lineare e continua, infatti se $\varphi_h\to 0\text{ in }\mathcal D(\Omega)$, $\varphi_h^{(k)}\to 0\text{ in }\mathcal D(\Omega)\implies \left<T,\varphi_h^{(k)} \right> \to 0$.\\
+\textbf{Osservazione 2:} se $T=T_u$ con $u\in C^k(\Omega)\subseteq  L^1_{\text{loc}}(\Omega)\implies (T_u)^{\left( k \right) }=T_{u^{(k)}}$\\
+\textbf{Esempio: }$u(x)=|x|\implies u''=2\delta_0$
+\\\divider
+\begin{itemize}
+	\item $n\ge 1$ Data $T\in \mathcal D'(\Omega)\ \forall \alpha$ multiindice 
+		\[\left<D^\alpha T,\varphi \right> =(-1)^{|\alpha|}\left<T,D^{\alpha}\varphi \right> \ \forall \varphi\in \mathcal D(\Omega)\]
+
+\end{itemize}
+\textbf{Osservazione: }$D^\alpha T$ definiscono delle distribuzioni $\ \forall \alpha$ 
+\\\textbf{Osservazione: }Si possono calcolare le derivate di tutti gli ordini, di qualsiasi $T\in \mathcal D'(\Omega)$ 
+\\\textbf{Osservazione:} Il risultato non dipende dall'ordine di derivazione
+\subsubsection{Operatori differenziali}
+Data $T\in \mathcal D'(\Omega)$, si possono definire $\nabla T,\nabla^2 T,\text{rot}T,\ldots$ 
+\section{Spazi di Sobolev}
+Sono gli spazi dove si trovano le soluzioni di problemi al contorno per P.D.E.
+\\Esempio Equazione di Poisson
+\[\begin{cases}
+	-\nabla ^2u=f\text{ su }\Omega
+	\\u=0\text{ su }\partial\Omega
+\end{cases}\]
+\begin{tcolorbox}
+	\textbf{Definizione: }Fissato $\Omega$ aperto $\subseteq  \R^n,\ p\in [1,+\infty]$
+	\[W^{1,p}(\Omega):=\{u\in L^p(\Omega): \frac{\partial u}{\partial x_i} \in L^p(\Omega)\ \forall i=1,\ldots,n \} \]
+	Con $\frac{\partial }{\partial x_i }$ intesa nel senso delle distribuzioni
+\end{tcolorbox}
+\[\frac{\partial u}{\partial x_i} \in L^p(\Omega) \iff \exists v_i\in L^p(\Omega)\text{ tali che }\]
+\[\int_{\Omega}^{} \frac{\partial u}{\partial x_i} \cdot \varphi=\int_{\Omega}^{}v_i\varphi\ \forall \varphi\in \mathcal D(\Omega) \]
+\textbf{Esempi} ($n=1,\ \Omega=(-1,1)$)
+\begin{itemize}
+	\item $u\in C^1_0(\Omega)\implies u\in W^{1,p}(\Omega)$
+		\[(1) \ \ p<+ \infty\ \ \int_{\Omega}^{} |u|^p<+\infty\ ;\ \int_{\Omega}^{} |u'|^p<+\infty\]
+		\[(2)\ \ p=+\infty\ \ \underset{\Omega}{\text{ess-sup}}|u|<+\infty\ ;\ \underset{\Omega}{\text{ess-sup}|u'|}<+\infty\]
+	\item $u(x)=\text{sign}(x)$ $u\not\in W^{1,2}(\Omega)$ 
+		\[\int_{\Omega}^{} |u|^2=\int_{-1}^{1} |\text{sign}x|^2<+\infty\implies u\in L^2(\Omega)  \]
+		MA: $u'(x)=2\delta_0\not\in L^{2}(\Omega)$
+\end{itemize}
+\begin{tcolorbox}
+	\textbf{Definizione: }Fissato $\Omega$ aperto $\subseteq  \R^n$, $p\in [1,+\infty]$, $k\in \N$
+	\[W^{k,p}(\Omega):=\{u\in L^p(\Omega):D^\alpha u\in L^{p}(\Omega)\ \forall \alpha\text{ multiindice con }|\alpha|\le k\} \]
+	
+\end{tcolorbox}
+\textbf{Caso particolare} $p=2$ 
+\[W^{k,2}(\Omega)=H^k(\Omega)\]
+\\\textbf{Osservazione: }$W^{k,p}(\Omega)$ sono spazi vettoriali
+\begin{tcolorbox}
+	\textbf{Definizione:} Norma su $W^{1,p}(\Omega)$ sia $u\in W^{1,p}(\Omega)$ 
+	\[\|u\|_{1,p}:=\|u\|_p+\sum_{k=1}^{n} \bigg\|\frac{\partial u}{\partial x_i} \bigg\|_p\]
+
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione:} Norma su $W^{k,p}(\Omega)$ sia $u\in W^{k,p}(\Omega)$ 
+	\[\|u\|_{k,p}:=\|u\|_p+\sum_{|\alpha|\le k}^{}\|D^\alpha\|_p \]
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Teorema: }Per ogni $p\in [1,+\infty],$ $W^{1,p}(\Omega)$ sono spazi di Banach
+\end{tcolorbox}
+\textbf{Osservazione:} $u_h\to u$ in $W^{1,p}(\Omega)$ se
+\[\|u_h-u\|_{1,p}\to 0\]\[=\|u_h-u\|_p+\bigg\| \frac{\partial u_h}{\partial x_i} -\frac{\partial u}{\partial x_i} \bigg\|_p\]
+ovvero
+\[\begin{cases}
+	u_h\to u\text{ in }L^{p}(\Omega)\\
+\frac{\partial u_h}{\partial x_i} \to \frac{\partial u}{\partial x_i} \text{ in }L^{p}(\Omega)
+\end{cases}\]
+
+\begin{tcolorbox}
+\textbf{Definizione}
+\[W_0^{1,p}(\Omega):=\text{chiusura di }\mathcal D(\Omega)\text{ in }W^{1,p}(\Omega)\]
+ovvero
+\[=\{u\in W^{1,p}(\Omega):\exists \{\varphi_n\}\subseteq  \mathcal D(\Omega)\text{ tale che}\varphi_n\to u\text{ in }W^{1,p} \}\]
+\[=\{u\in W^{1,p}(\Omega):\exists \{\varphi_n\} \subseteq  \mathcal D(\Omega)\text{ tale che }\varphi_n\to u \text{ in }L^{p}\text{ e }\frac{\partial \varphi_n}{\partial x_i} \to u\text{ in }L^{p}\}\]
+\end{tcolorbox}
+\textbf{Osservazione} 
+Se $u\in W^{1,p}(\Omega)\cap C(\overline\Omega)$ allora 
+\[u\in W_o^{1,p}(\Omega) \iff u=0\text{ su }\Omega\]
+\subsubsection{Disuguaglianza di Poincaré}
+\begin{tcolorbox}
+\textbf{Teorema}
+Sia $\Omega$ aperto, limitato di $\R^n$. Allora esiste una costante $C_p=C_p(\Omega)$ tale che, per ogni $u\in W_0^{1,p}(\Omega)$ 
+\[\|u\|_{L^{p}(\Omega)}\le C_p(\Omega)\cdot \|\nabla u\|_{L^{p}(\Omega)}\]
+\end{tcolorbox}
+
+Dunque, su $W_0^{1,p}(\Omega)$
+\[\begin{cases}
+	\|u\|_{1,p}=\|u\|_p+\|\nabla u\|_p\text{  norma su }W^{1,p}(\Omega)
+\\\|\nabla u\|_p\text{  norma equivalente}
+\end{cases}\]
+\\\textbf{Falso }su $W_0^{1,p}(\Omega)$, verificabile prendendo $u=1$ 
+\\\divider\\
+\\\textbf{Osservazione} per $n=1$ 
+\[u(x)=u(0)+\int_{0}^{x} u'(t)dt\implies |u(x)|\le \int_{0}^{x} |u'|\le \int_{0}^{1} |u'|\le \bigg(\int_{0}^{1} |u'|^2\bigg)^{1 / 2}\]
+Integrando 
+\[\|u\|_{L^{1}(0,1)}\le \|u'\|_{L^{2}(0,1)}\]
+\[W_0^{1,p}(\Omega)\]
+\end{document}

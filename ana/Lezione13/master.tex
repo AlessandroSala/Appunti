@@ -70,16 +70,16 @@ Rispettivamente nella norma di $V$ e $W$.
 \\\textbf{Osservazione:} Considerando $T:(L^{p}(0,1),\|.\|_p)\to (\R,|.|)$ definito da $T(f)=\int_{0}^{1} f_0fdx $ questo è lineare continuo prendendo $f_0\in L^{p'}(0,1)$.
 \\\divider
 \begin{tcolorbox}
-	\textbf{Proposizione: }Sia $T:(V,\|.\|_V)\to (W,\|.\|_W$ lineare. Allora 
+	\textbf{Proposizione: }Sia $T:(V,\|.\|_V)\to (W,\|.\|_W)$ lineare. Allora
 	\[T\text{ continuo }\iff T \text{ limitato}\]
 \end{tcolorbox}
 \textbf{Dimostrazione} 
 \\($\impliedby$) Supposto $T$ limitato, basta mostrare che $T$ è continuo in $0$, ovvero: se $v_n\to 0$, allora $T(v_n)\to T(0)=0$ 
 \[\|T(v_n)\|_W\le M \|v_n\|_V\to 0\]
-($\implies$) Supposto $T$ \emph{non limitato} e mostraimo $T$ non continuo
+($\implies$) Supposto $T$ \emph{non limitato} mostriamo $T$ non continuo
 \[\sup_{v\in V\setminus \{0\} }\frac{\|T\|_W}{\|v\|_V}=+\infty\implies \exists \{v_n\} \subseteq  V\setminus \{0\} :\frac{\|T(v_n)\|_W}{\|v_n\|_V}\to +\infty\]
 ovvero, siccome $T$ è lineare:
-\[\|T\bigg(\frac{v_n}{\|v_n\|_V}\bigg)\|_W\to +\infty\]
+\[\bigg\|T\bigg(\frac{v_n}{\|v_n\|_V}\bigg)\bigg\|_W\to +\infty\]
 Quindi se considero $u_n:= \frac{v_n}{\|v_n\|_V}$, ha che 
 \[\begin{cases}
 	\|u_n\|_V=1\\
@@ -90,11 +90,11 @@ Ponendo $y_n= \frac{u_n}{\|T(u_n)\|_W}$
 \begin{itemize}
 	\item $y_n\to 0$ poiché 
 \end{itemize}
-\[\|y_n\|_V=\|\frac{u_n}{\|T(u_n)_W\|}\|_V\to 0\]
+\[\|y_n\|_V=\bigg\|\frac{u_n}{\|T(u_n)_W\|}\bigg\|_V\to 0\]
 \begin{itemize}
 	\item $T(y_n)=1$ perché
 \end{itemize}
-\[T(y_n)=T( \frac{u_n}{\|T(u_n)\|_W}= \frac{T(u_n)}{\|T(u_n)\|_W}\not\to 0\]
+\[T(y_n)=T\bigg( \frac{u_n}{\|T(u_n)\|_W} \bigg)= \frac{T(u_n)}{\|T(u_n)\|_W}\not\to 0\]
 \begin{tcolorbox}
 	\textbf{Definizione: }Dati $(V,\|.\|_V),(W,\|.\|_W)$ spazi normati
 	\[\mathcal L(V,W):=\{\text{op. lineari limitati da } V \text{ in }W\}\] 
@@ -109,7 +109,7 @@ In particolare
 	\textbf{Definizione: }Quando $W=(\R,|.|)$ 
 	\[\mathcal L (V,W)=V'\text{ spazio duale di }V\]
 \end{tcolorbox}
-\[\|T\|_{V'}:=\sup_{v\in V\setminus \{0\} } \frac{|T(v)|_{\R}}{a}\]
-Completare
+\[\|T\|_{V'}:=\sup_{v\in V\setminus \{0\} } \frac{|T(v)|_{\R}}{\|v\|_V}\]
+\textbf{Esempi: }Vedere i casi 1) e 3)
 
 \end{document}

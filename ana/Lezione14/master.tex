@@ -34,8 +34,8 @@
 \end{tcolorbox}
 Muniamo $C_0^\infty$ di una \textbf{convergenza} 
 \begin{tcolorbox}
-	\textbf{Definizione: }Sia $\{\varphi_k\} \subseteq  C_0^\infty(\Omega)$. Diciamo che 
-	\[\varphi_k\to 0\text{ in }C_0^\infty(\Omega)\text{ se }\]
+	\textbf{Definizione: }Sia $\{\varphi_h\} \subseteq  C_0^\infty(\Omega)$. Diciamo che 
+	\[\varphi_h\to 0\text{ in }C_0^\infty(\Omega)\text{ se }\]
 \begin{enumerate}
 	\item $\exists K$ compatto, indipendente da h, tale che $\text{supp}(\varphi_h)\subseteq  K\ \forall h> >\nu$
 	\item $\varphi_h\to 0$ uniformemente su $K$ con tutte le derivate $\forall \alpha$ multiindice $D^\alpha\varphi_h\to 0$ unif. su $K$
@@ -48,7 +48,7 @@ Muniamo $C_0^\infty$ di una \textbf{convergenza}
 	\textbf{Definizione: }Lo spazio delle distribuzioni su $\Omega $, che si indica con $\mathcal D'(\Omega)$ è lo spazio degli operatori $T:\mathcal D(\Omega)\to \R$ lineari e continui rispetto alla convergenza introdotta su $\mathcal D(\Omega)$.\\Ovvero, una distribuzione è un operatore $T:\mathcal D(\Omega)\to \R$ tale che 
 	\begin{itemize}
 		\item $T$ lineare
-		\item $T$ continuo ($\varphi_h\to 0$ in $\mathcal D(\Omega)\impliesT(\varphi_h)\to 0$ in $\R$)
+		\item $T$ continuo ($\varphi_h\to 0$ in $\mathcal D(\Omega)\implies T(\varphi_h)\to 0$ in $\R$)
 	\end{itemize}
 \end{tcolorbox}
 \textbf{Esempi} 
@@ -59,7 +59,117 @@ Muniamo $C_0^\infty$ di una \textbf{convergenza}
 È ben definito:
 \[\bigg| \int_{\Omega}^{} u\varphi\bigg|\le \int_{\Omega}^{} |u\varphi|\le \int_{K}^{} \max |\varphi | |u|\le \max_k|\varphi|\int_{K}^{} |u|  \]  
 È lineare:
-\[T_u(\alpha\varphi+\beta\psi)=\int_{\Omega}^{} u(\alpha\varphi+\beta\psi\]
-completare
+\[T_u(\alpha\varphi+\beta\psi)=\int_{\Omega}^{} u(\alpha\varphi+\beta\psi)=\alpha \int_{\Omega}^{} u\varphi +\beta \int_{\Omega}^{}u\psi =\alpha T_u(\varphi)+\beta T_u(\psi)   \]
+È continuo:
+\[\{\varphi_h\} \to 0\text{ in }\mathcal D(\Omega)\implies T_u(\varphi_h)\to 0\]
+Poiché, sia $\{\varphi_h\} \to 0\text{ in }\mathcal D(\Omega)$
+\[|T_u(\varphi_h)|=\bigg|\int_{\Omega}^{} u\varphi_h \bigg|\le \max_K|\varphi_h|\cdot \int_{K}^{} |u|\to 0\]  
+\\\textbf{Osservazioni sull'esempio} 
+\\L'associazione tra $u,\ T_u$ è iniettiva su $L^{1}(\Omega)$
+\\Se $u_1=u_2\text{ q.o. su }\Omega\implies T_{u_1}=T_{u_2}\text{ in }\mathcal D'(\Omega)$ poiché $T_{u_1}(\varphi)=T_{u_2}(\varphi)$
+\\Si può dimostrare che $T_{u_1}=T_{u_2}\text{ in }\mathcal D'(\Omega)\implies u_1=u_2 \text{ q.o. su }\Omega$ (*)
+\[\int_{\Omega}^{} u_1\varphi = \int_{\Omega}^{} u_2\varphi\ \forall \varphi\in \mathcal D(\Omega)\implies u_1=u_2\text{ q.o. su } \Omega\] 
+\[\int_{\Omega}^{} (u_1-u_2)\varphi =0 \forall \varphi\in \mathcal D(\Omega)\implies u_1=u_2\text{ q.o. su } \Omega\] 
+\divider
+\begin{tcolorbox}
+\textbf{Notazione:} Invece di $T_u(\varphi)$ si scrive spesso $<u,\varphi>_{(\mathcal D'(\Omega), \mathcal D(\Omega))}$
+\end{tcolorbox}
+Per definire $T_u$, basta una condizione più debole:
+\[u\in L^1_{\text{loc}}(\Omega):=\{u:\Omega\to \R: \int_{K}^{} |u|<+\infty\ \forall K\text{ compatto }\subseteq  \Omega \}\]
+\textbf{Esempio:} $\Omega=(0,1),\ u(x)=\frac{1}{x}\not\in L^1(\Omega)$ ma $u\in L^1_{\text{loc}}(\Omega)$
+\\In particolare, possiamo associare una distribuzione a qualsiasi $u\in L^{p}(\Omega)\text{ con } p \in [1,+\infty]$ 
+\\Infatti $L^{p}(\Omega)\not \subseteq  L^1(\Omega), $ ma 
+\[L^{p}(\Omega)\subseteq  L^p_{\text{loc}}(\Omega),\ \forall  p \in [1,+\infty]:\]
+\[u\in L^{p}(\Omega)\implies u\in L^{p}(K)\ \forall K \subset \subset \Omega\]
+Poiché $|K|<+\infty$.
+\[\implies u \in L^{1}(K)\ \forall K \subset  \subset \Omega \implies u\in L_{\text{loc}}^1(\Omega)\]
+Tutte le funzioni $u\in L^{p}(\Omega)$ possono essere viste come distribuzioni.
+\[u\in L^{p}(\Omega)\mapsto T_u\]
+\[\left<u,\varphi \right>_{\mathcal D'(\Omega), \mathcal D(\Omega)}:=\int_{\Omega}^{} u\varphi dx\]
+\divider\\
+\\Essendo $\mathcal D'$ vettoriale
+\[(T_1+T_2)(\varphi):=T_1(\varphi)+T_2(\varphi)\ \forall \varphi\in \mathcal D(\Omega)\]
+\[(\lambda T):=\lambda T(\varphi) \ \forall \varphi \in \mathcal D(\Omega)\]
+\subsection{Convergenza}
+\begin{tcolorbox}
+\textbf{Definizione: }
+\[\{T_h\} \subseteq  \mathcal D'(\Omega),\ T_h\to^{\text{in }\mathcal D'(\Omega)}0\text{ se }T_h(\varphi)\to 0\ \forall \varphi\in \mathcal D(\Omega)\] 
+\end{tcolorbox}
+\[T_h\to T\text{ se }T_h(\varphi)\to T(\varphi)	\ \forall \varphi\in \mathcal D(\Omega)\]
+\\\textbf{Esempio: }$T_h=T_{u_h}$, con $u_h\subseteq  L^{1}(\Omega)$ \\
+\[u_h\to 0\text{ in }L^{1}(\Omega)\implies T_{u_h}\to 0\text{ in }\mathcal D'(\Omega)\]
+Dato che
+\[|T_{u_h}(\varphi)|=\bigg|\int_{\Omega}^{} u_h\varphi \bigg|\le \int_{K=\text{supp}\varphi}^{} |u_h| |\varphi|\le \max_K|\varphi|\cdot \int_{K}^{}  |u_h|\to 0\]
+\subsection{Delta di Dirac}
+\[\{u_h\} \subseteq  L^{1}(\R)\]
+\begin{figure}[ht]
+    \centering
+    \incfig{dirac}
+    \caption{Delta di Dirac}
+    \label{fig:dirac}
+\end{figure}
+Questa successione non converge in $L^{1}(\R)$\\
+$u_h\to 0$ q.o. su $\R\implies $ se $\exists \lim_{h \to +\infty} u_h$ in $L^{1}(\R)$ allora $\lim_{h \to +\infty} u_h=0$.
+\\Ma $\lim_{h \to +\infty} u_h\neq 0$ in $L^{1}(\R)$ perché
+\[\|u_h\|_{L^{1}(\R)}=\int_{-\frac{1}{2h}}^{\frac{1}{2h}} h=1\]
+Converge però in $\mathcal D'(\R)$ 
+\[\left<u_h,\varphi \right> =T_{u_h}(\varphi)=\int_{\R}^{} u_h\varphi=h \int_{-\frac{1}{2h}}^{\frac{1}{2h}} \varphi\to \varphi(0)\]  
+\begin{tcolorbox}
+	\textbf{Definizione: }$\delta_0$ \emph{delta di Dirach} in 0
+	\[<\delta_0,\varphi>:=\varphi(0)\]
+\end{tcolorbox}
+\textbf{Osservazioni:} 
+\begin{itemize}
+	\item Se $u_h=h\cdot \chi_{[-\frac{1}{2h},\frac{1}{2h}]},$ allora $u_h\to \delta_0$ in $\mathcal D'(\R)$ 
+	\item Verifica che $\delta_0\in \mathcal D'(\R)$
+\end{itemize}
+(i) lineare: $\delta_0(\alpha\varphi+\beta\psi)=\alpha\delta_0(\varphi)+\beta\delta_0(\psi)$?
+\[(\alpha\varphi+\beta\psi)(0)=\alpha\varphi(0)+\beta\psi(0)\]
+(ii) continuo: $\varphi_h\to 0$ in $\mathcal D(\R)\implies\delta_0(\varphi_h)\to 0$
+\\vero per la definizione di convergenza in $\mathcal D(\R)$, $\text{supp}(\varphi_h)\subseteq  K$ compatto, $\varphi_h\to 0$ uniformemente.
+\subsubsection{Ovvie generalizzazioni}
+Punto generico $x_0$
+\[\delta_{x_0}(\varphi)=\varphi(x_0)\]
+Caso n-dimensionale, $x_0\in \R^n$
+\[\delta_{x_0}(\varphi):=\varphi(x_0),\ \delta_{x_0}\in \mathcal D'(\R^n)\]
+\subsubsection{idk}
+$\delta_0$ non è associata ad alcuna funzione di $u\in L^1_{\text{loc}}(\Omega)$
+\\\textbf{Dimostrazione} 
+\\Supponiamo per assurdo $\delta_0=T_u,$ con $u\in L^1loc(R)$
+\[\int_{\R}^{} u\varphi dx=\varphi(0)\ \forall \varphi \in \mathcal D(\R)\]
+In particolare, posso prendere $\varphi \in \mathcal D(\R \setminus \{0\} )$ 
+\[\int_{\R}^{} u\varphi=\varphi(0)=0\ \forall \varphi\in\mathcal D(\R\setminus \{ 0\} )\]
+Ricordando l'osservazione sull'esempio 
+\[0=\int_{\R}^{} 0\cdot \varphi\]
+Applicando tale proprietà si avrà
+\[u=0\text{ q.o. su }\R-\setminus \{ 0\} \implies u=0\text{ q.o. su }\R\]
+\[\implies \int_{\R}^{} u\varphi dx=0\ \forall \varphi \in \mathcal D(\R)\]
+Assurdo.
+\subsubsection{Derivazione di distribuzioni}
+\begin{tcolorbox}
+\textbf{Definizione: }$\Omega \subseteq  \R$
+\\Data $T\in \mathcal D'(\Omega)$, definisco $T' \in \mathcal D'(\Omega)$ come:
+\[<T', \varphi>:=- <T,\varphi'>\ \ \forall \varphi \in \mathcal D(\Omega)\]
+
+\end{tcolorbox}
+$T'$ è una distribuzione
+\\(i) è lineare:
+\[<T',\alpha\varphi +\beta\psi> = -<T,\alpha \varphi'+\beta\psi '>\] \[= -\alpha <T,\varphi'>-\beta<T,\psi'> = +\alpha <T',\varphi>+\beta<T',\psi>\]
+(ii) è continuo
+\[\varphi_h\to 0\text{ in }\mathcal D(\Omega)\implies \left<T',\varphi_h \right>\to 0\]
+Infatti $\varphi_h\to 0\text{ in }\mathcal D(\Omega)\implies\varphi_h'\to 0\text{ in }\mathcal D(\Omega)$.
+\\Questo perché $\exists K$ tale che $\text{supp}\varphi'_h\subset K\forall h$ e $\varphi'_h\to 0$ uniformemente su $K$ con tutte le derivate.
+\\Quindi $\left<T,\varphi'_h \right>\to 0$ perché $T\in \mathcal D'(\Omega)$
+\subsubsection{Motivo della definizione di derivata}
+Considerando il caso $T=T_u$ con $u\in C^1(\Omega)\subseteq  L^1_{\text{loc}}(\Omega)$
+\\Si avrà in $\mathcal D'(\Omega)$ che $(T_u)'=T_{u'}$ 
+\\\textbf{Dimostrazione} 
+\[\left<(T_u)', \varphi \right> = -\left<T_u,\varphi' \right> =-\int_{\Omega}^{} u\varphi'\]
+\[\left<T_{u'}, \varphi \right> = \int_{\Omega}^{} u'\varphi\]
+Integrando per parti si avrà
+\[\int_{\Omega}^{} u'\varphi = u\varphi - \int_{\Omega}^{} u\varphi'\]
+Essendo $\varphi \in \mathcal D(\Omega)\implies u\varphi|_a^b=0$ (dove $a,b$ estremi di $\Omega$)
+Si avrà:
+\[\int_{\Omega}^{} u'\varphi=-\int_{\Omega}^{} u\varphi'\]  
 
 \end{document}
