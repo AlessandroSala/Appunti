@@ -16,7 +16,9 @@ for d in os.listdir():
         parsed = re.split(r'\\begin\{document\}', cont)[1]
         parsed = re.split(r'\\end\{document\}', parsed)[0]
         print(parsed)
-        master.write(parsed)
+        parsed_master =open(d+'/parsed_master.tex', mode='w')
+        parsed_master.write(parsed)
+        parsed_master.close()
         s_master.close()
     except Exception as e:
         print(e)

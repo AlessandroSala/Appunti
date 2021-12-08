@@ -1,0 +1,145 @@
+
+\subsection{Supporto e Classe $C_0$}
+Ovvero:
+\[\forall f \in L^{p}(E)\ \exists \{ \varphi_n\}	\subseteq  C_0^\infty(E) \text{ tale che } \|\varphi_n -\varphi\|\to _{n\to +\infty}0\]
+\[\forall f\in L^{p}(E),\forall \varepsilon>0\ \exists \varphi\in C_0^\infty(E)\text{ tale che }\|f-\varphi\|_{L^{p}}<\varepsilon
+\] 
+Falso nel caso $p=\infty$
+\begin{tcolorbox}
+	\textbf{Definizione:} Data $\varphi\in C^\infty(E)$ il supporto di $\varphi$ è 
+	\[\overline{\{x\in E:\varphi(x)\neq 0\}} \]
+\end{tcolorbox}
+\begin{tcolorbox}
+	Un insieme $K\subseteq  \R^n$ è compatto se e solo se è limitato e chiuso
+\end{tcolorbox}
+\begin{tcolorbox}
+	$C_0^\infty(E):=\{\varphi :E\to \R$ derivabili infinite volte tali che supp$(\varphi)$ è un sottoinsieme compatto di $E\} $
+\end{tcolorbox}
+\subsection{Prodotto di convoluzione}
+\textbf{Osservazione: }$f,g\in L^{1}(E)\centernot\implies f\cdot g\in L^{1}(E)$
+\\Nel caso $E=\R$ si può definire un prodotto che rimanga interno a $L^{1}(\R)$ 
+\begin{tcolorbox}
+	\textbf{Proposizione 1} 
+	\\Siano $f,g(x)\in L^{1}(\R)$ Si definisce prodotto di convoluzione
+	\[ f*g:=\int_{\R_y}^{} f(x-y)g(y)dy\] 
+\end{tcolorbox}
+\begin{enumerate}
+	\item $f*g$ esiste finito per q.o. $x\in \R$, ovvero q.o. $x\in \R,\ y\mapsto f(x-y)g(y)$ è integrabile su $\R$
+	\item$f*g \in L^{1}(\R)$
+	\item$\|f*g\|_{L^1}\le \|f\|_{L^1}\|g\|_{L^1}$ 
+\end{enumerate}
+\textbf{Dimostrazione} 
+\\Consideriamo $H(x,y):=f(x-y)g(y)$, a priori non sappiamo se $H\in L^{1}(\R_x \times \R_x)$, dunque non è possibile applicare direttamente fubini.
+\\Quindi consideriamo $|H|\ge 0$ e applichiamo il teorema di Tonelli.
+\\Verificando le ipotesi:
+\begin{itemize}
+	\item Integro prima in dx
+\end{itemize}
+\[\int_{\R_x}^{} |H(x,y)|dx=|g(y)|\int_{\R_x}^{}|f(x,y)|dx\]   
+Con la sostituzione $z=x-y$ 
+\[=|g(y)|\int_{\R_z}^{} |f(z)|dz=|g(y)|\cdot \|f\|_1<+\infty\] 
+\begin{itemize}
+	\item Integro in dy
+\end{itemize}
+\[\int_{\R_y}^{} \bigg[\int_{\R_x}^{} |H_(x,y)|dx\bigg]dy=\|f\|_{L^1}\int_{\R_y}^{} |g(y)|dy=\|f\|_{L^1}\|g\|_{L^1}<+\infty\]
+Dunque per Tonelli $|H|\in L^{1}(\R_x \times \R_y)\implies H\in L^1(\R_x \times \R_y)$
+\\A questo punto posso applicare Fubini ad $H$ 
+\\Dunque per q.o. $x,\ y\mapsto H(x,y)=f(x,y)g(y)\in L^{1}(\R_y)$
+\\\textbf{Dimostrazione 3 (che implica 2)}
+\[\|f*g\|_{1}=\int_{\R_x}^{} |f*g(x)|dx=\int_{\R_x}^{} \bigg|\int_{\R_y}^{} f(x-y)g(y)dy\bigg|dx\le \]
+\[\le \int_{\R_x}^{} \int_{\R_y}{|f(x-y)| |g(y)|dydx}\le \int_{\R_y}^{} \int_{\R_x}{|f(x-y)| |g(y)|dydx}\]
+(Per Fubini)
+\[=\int_{\R_y}^{} |g(y)| \int_{\R_x}^{} |f(x-y)dxdy=\|f\|_1 \int_{\R_y}^{} |g(y)|dy=\|f\|_1\cdot \|g\|_1\]   
+\divider\\
+\textbf{Osservazione}
+\begin{itemize}
+	\item vale la proposizione 1 anche su $\R^n$ 
+	\item $f* g=g * f$ 
+	\item le funzioni devono essere deinite su tutto lo spazio
+\end{itemize}
+\textbf{Estensione:} $f\in L^{1}(\R),g\in L^{p}(\R)\implies$
+\begin{enumerate}
+	\item $f * g(x)$ esiste per q.o. $x$ 
+	\item $f*g\in L^{p}(\R)$ 
+	\item $\|f * g\|_p\le \|f\|_1 \|g\|_p$
+\end{enumerate}
+\[H(x,y)=|f(x-y)|^p|g(y)|^p\]
+\begin{tcolorbox}
+	\textbf{Proposizione 2} 
+	\\Siano $f\in C_0^\infty(\R)(\subseteq  L^{1}(\R)),\ g\in L^{1}(\R)$, allora:
+	\begin{enumerate}
+		\item $f*g\in C^\infty(\R)$ 
+		\item $(f*g)^{(k)}=f^{(k)}*g\ \forall k$
+	\end{enumerate}
+\end{tcolorbox}
+Idea della dimostrazione: 
+\[f * g(x)=\int_{\R_y}^{} f(x-y)g(y)dy\]
+\[(f *g)'(x)=\int_{\R_y}^{} f'(x-y)g(y)dy\]
+\textbf{Osservazione 1:} 
+Vale con $k$ al posto di $\infty$\\
+\textbf{Osservazione 2:} In generale nelle ip. della Prop.2 $f*g$ non è a supporto compatto. 
+\\\divider\\
+\\\textbf{Idea della dim. del teorema di approssimazione di funzioni $L ^p$ con funzini regolari}
+\\Prendiamo $p=1$, data $f\in L^{1}(\R)$, vogliamo costruire $\varphi_n\subseteq  C_0^\infty(\R)$ tale che $\varphi_n\to f$ in $L^{1}(\R)$. Prendiamo
+\[f_n:=f*\rho_n\]
+Dove $\rho_n$ successione di mollificatori
+\[\rho_n(x)=n\rho(nx) \text{ dove }\rho \text{ è un nucleo di convoluzione}\]
+\begin{itemize}
+	\item $\rho\in C_0^\infty(\R),\ \rho\ge 0,\ \text{supp}(\rho)\subseteq  [-1,1],\ \int_{\R}^{} \rho(x)dx=1$ 
+	\item $\rho_n\in C^\infty_0(\R),\ \rho_n\ge 0,\text{ supp}(\rho_n)\subseteq [-\frac{1}{n},\frac{1}{n}],\ \int_{\R}^{} \rho_n(x)dx=1 $
+\end{itemize}
+Si può dimostrare usando i teoremi di convergenza dominata che $\varphi_n\to f$ in $L^{1}(\R)$.
+\\\textbf{Osservazione:} Per guadagnare anche il supporto compatto, occorre prima "trovare" $f$, cioè considerare
+\[f_k=f\cdot \chi_{[-k,k]}=\begin{cases}
+	f\ \ \text{se }x\in [-k,k]
+	\\0\ \ \text{se }x\not\in [-k,k]
+\end{cases}\]
+Approssimo f per convoluzione:
+\[f_k*\rho_n\in C_o^\infty\to _{n\to +\infty}f_k\]
+\[\varphi_n=f_{k(n)}*\rho_n\]
+\subsection{Teorema fondamentale del calcolo}
+\begin{tcolorbox}
+\textbf{Teorema di differenziazione nella teoria di Lebesgue}
+\\Sia $f\in L^{1}([a,b])$, sia $F(x):=\int_{a}^{x} f(t)dt$, essa è derivabile q.o. su $[a,b]$ e
+\[F'(x)=f(x)\text{ per q.o. }x\in (a.b)\]
+\end{tcolorbox}
+Esempio: $f(x)=\text{sign}(x)$, $x\in [-1,1]$.
+\begin{tcolorbox}
+	\textbf{Definizione: }Diciamo che $F\in \text{A.C.}([a,b])$, ovvero lo spazio delle funzioni assolutamente continue su $[a,b]$ se $\exists f\in L^{1}([a,b])$ tale che
+	\[F(x)=\int_{a}^{x} f(t)dt+c\text{ con }c\in \R\]
+\end{tcolorbox}
+\textbf{Osservazione 1:} Tale spazio è vettoriale (per la linearità della derivata e dell'integrale).
+\\\textbf{Osservazione 2:} $F\in \text{AC}([a,b])\implies$ 
+\[F(b)-F(a)=\bigg[\int_{a}^{b} f(t)dt+c \bigg]-\bigg[\int_{a}^{a} f+c \bigg]=\int_{a}^{b} f(t)dt   \]
+\textbf{Osservazione 3:} $F\in \text{AC}([a,b]),\ F'=0$ q.o. su  $[a,b]\implies F=c$ $\forall x\in [a,b]$ \\
+Questa implicazione è falsa se togliamo l'ipotesi che $F\in \text{AC}([a,b])$ 
+\\Esistono funzioni (non in $\text{AC}([a,b])$ che sono derivabili q.o. con derivata prima nulla q.o. ma non costanti.
+\\\textbf{Esempio:} una funzione derivabile $f$ continua con  $f'=0$ q.o. su $(0,1)$ ma $f$ non costante (scala di Cantor).
+\begin{figure}[ht]
+    \centering
+    \incfig{scaladicantor}
+    \caption{Scala di Cantor}
+    \label{fig:scaladicantor}
+\end{figure}
+\\La successione $\{f_n\} \subseteq  C^0([0,1])$ risulta di Cauchy in $\|.\|_\infty$.
+\\Poiché ($C^0([0,1]),\|.\|_\infty$ ) è uno spazio di Banach:
+\[\exists f=\lim_{n \to +\infty} f_n\in C^0([0,1])\]
+$f(0)=0$, $f(1)=1$, con $f'=0$ q.o. su $(0,1)$ 
+\begin{tcolorbox}
+\textbf{Proposizione (caratterizzazione puntuale di AC)}
+\[F\in \text{AC}([a,b])\iff \forall \varepsilon>0\exists \ \delta>0\text{ tale che } \forall \text{ famiglia }\{(x_i,y_i)\} _{i=1,\ldots,N}\]
+di intervalli a 2 a 2 disgiunti $\subseteq  (a,b)$ con
+\[\sum_{k=1}^{N} |y_k-x_k|<\delta,\text{ si ha }\sum_{k=1}^{N} |F(x_k)-F(y_i)|<\varepsilon\]
+\end{tcolorbox}
+\textbf{Osservazione:} Per $N=1$ si ha continuità uniforme
+\\$\implies\text{AC}([a,b])\subseteq  \{\text{funzioni uniformemente continue su }[a,b]\} $ 
+\\\textbf{Conseguenze della proposizione}
+\begin{itemize}
+	\item $F,G\in \text{AC}([a,b])\implies F,G\in AC([a,b])$ 
+	\item $F,G\in \text{AC}([a,b])\implies$
+\end{itemize}
+\[F(b)G(b)=F(a)G(a)=\int_{a}^{b} (F\cdot G)'(t)dt=\int_{a}^{b} (F'G+FG') dt  \]
+Ovvero
+\[\int_{a}^{b} fG=-\int_{a}^{b} Fg+F\cdot G|_a^b \] 
+$\implies$ vale in AC la formula di integrazione per parti.
+
