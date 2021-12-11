@@ -1,0 +1,82 @@
+
+\section{Funzioni analitiche in campo complesso}
+\begin{tcolorbox}	
+\textbf{Definizione} 
+\\ $f:\Omega$ aperto $\subset \C\to \C$ si dice analitica su $\Omega$ se $\forall z_0\in\Omega,\ \exists\ u(z_0)$ tale che
+\[f(z)=\sum_{k\ge 0}^{} c_k(z-z_0)^k\ \ \forall z\in u(z_0)\]
+\end{tcolorbox}
+\subsection{Serie di potenze in $\C$}
+\[\sum_{k\ge 0}^{} c_k(z-z_0)^k\]
+\[S_N(z):=\sum_{k=0}^{N} c_k(z-z_0)^k\]
+\textbf{Tipi di convergenza}\\ 
+La serie conv. puntualmente in $z\in\C$ se \[\lim_{N \to + \infty} S_N(z)\in\C\]
+La serie conv. uniformemente in $\Omega$ a $S(z)$ se \[\exists\lim_{N \to +\infty} \text{sup}_{z\in\Omega}|S_N-S(z)|=0\]
+La serie conv. assolutamente in $z\in\C$ se converge \[\sum_{k\ge 0}^{} |c_k| |z-z_0|^k\]
+\textbf{Dominio di convergenza della serie} 
+\[\mathcal D:=\{z\in\C:\text{ la serie converge puntualmente in }z\}\] 
+\textbf{Proprietà} 
+\\1. $\text{int}(\mathcal D)=\{z\in\C: |z-z_0|<R\}$ dove $R:=$raggio di convergenza
+\\$\implies$La serie converge assolutamente in $\text{int}(\mathcal D)$
+\\$\implies$La serie converge uniformemente su $\{|z-z_0|\le \rho,\forall\rho<R\} $
+\\
+\\2. $R=\frac{1}{L}$ dove \[L=\lim_{k \to +\infty} (\text{sup})\sqrt{|c_k|} \]
+Con la convenzione $\frac{1}{0}=+\infty$, $\frac{1}{+\infty}=0$
+\\\\3. La serie delle derivate n-esime
+\[\sum_{k\ge 0}^{} D^n(c_k(z-z_0)^k)\]
+ha lo stesso raggio di convergenza della serie di partenza
+\\\divider
+\\\textbf{Calcolo dei coefficienti $c_k$} 
+\[f(z)=\sum_{k\ge 0}^{} c_k(z-z_0)^k=c_0+c_1(z-z_0)+c_2(z-z_0)^2+\ldots\]
+\[f'(z)=\sum_{k\ge 1}^{} kc_k(z-z_0)^{k-1}=c_1+2c_2(z-z_0)+\ldots\]
+\[f^{(n)}(z)=\sum_{k\ge n}^{} k(k-1)\ldots(k-n+1)c_k(z-z_0)^{k-n}\]
+Si ottiene infine
+\[f(z_0)=c_0,\ f'(z_0)=c_1,\ f''(z_0)=2c_2\]
+\[f^{(n)}(z_0)=n!c_n\]
+\[\implies c_n=\frac{f^{(n)}(z_0)}{n!}
+\]
+\subsection{Un altro modo di calcolare i coefficienti $c_k$} 
+Sia $f$ analitica in $\Omega$, sia $z_0\in\Omega$, $R:=$ raggio di conv.
+\\Fissato $r\in(0,R)$, e fissato $k\ge 0$, calcoliamo 
+\[I_k:=\int_{C_r(z_0)}^{} \frac{f(z)}{(z-z_0)^{k+1}}dz
+\]
+Dove $C_r(z_0)$ è una circonferenza centrata in $z_0$ di raggio $r$ percorso una volta in senso antiorario parametrizzato $r(t)=z_0+re^{i t}\ \ t\in[0,2\pi]$, scrivibile anche come $(x_0+r\cos t)+i(y_0+r\sin t)$
+\[I_k=\int_{C_r(z_0)}^{} \frac{\sum_{n\ge 0}^{} c_n(z-z_0)^n}{(z-z_0)^{k+1}}dz=\sum_{n\ge 0}^{} c_n\int_{C_r(z_0)}^{} (z-z_0)^{n-k-1}dz\]
+È permesso per la convergenza uniforme della serie.
+\[\int_{C_r(z_0)}^{} (z-z_0)^ndz=\begin{cases}
+	0\ \ m\neq -1\\2\pi i\ \ m=-1 
+\end{cases}  \]
+Dunque tutti gli integrali nella somma si annullano tranne per $n-k-1=-1\implies n=k$ 
+\[=c_k\cdot 2\pi i\implies c_k= \frac{I_k}{2\pi i}= \frac{1}{2\pi i}\int_{C_r(z_0)}^{} \frac{f(z)}{(z-z_0)^{k+1}}dz\]
+\begin{tcolorbox}
+	\textbf{Formula di Cauchy per la derivata k-esima:} 
+	\[f^{(k)}(z)=\frac{k!}{2\pi i}\int_{C_r(z_0)}^{} \frac{f(z)}{(z-z_0)^{k+1}}dz\]
+\end{tcolorbox}
+In particolare con $k=0$
+\[f(z_0)=\frac{1}{2\pi i}\int_{C_r(z_0)}^{} \frac{f(z)}{z-z_0}dz\]
+Dove $r$ è un qualsiasi raggio appartenente all'intervallo $(0,R)$
+\\\divider
+\\\textbf{Osservazione: } \[z\mapsto   \frac{f(z)}{(z-z_0)^{k+1}}\text{ è olomorfa su }D\setminus \{z_0\} \]
+\[\implies \int_{C_r(z_0)}^{}  \frac{f(z)}{(z-z_0)^{k+1}}dz \text{ è indipendente dalla scelta di }r\in(0,R)\]
+Per $k=0$ vale in realtà una proprietà più forte
+\begin{tcolorbox}
+	\textbf{Formula di Cauchy} \\
+	$f$ olomorfa su $\Omega$ contenente $\overline{B_r(z_0)}$, allora $\forall z\in B_r(z_0)$
+	\[f(z)=\frac{1}{2\pi i}\int_{C_r(z_0)}^{}  \frac{f(\xi)}{\xi-z}d\xi\]
+\end{tcolorbox}
+\textbf{Precisazione: }$B_r(z_0):=\{z\in\C: |z-z_0|<r\}$ 
+\\Questa formula è estremamente forte e generica poiché vale per tutte le funzioni olomorfe, non è necessaria l'ipotesi di funzione analitica.
+\\\textbf{Osservazione: }\[z\mapsto \frac{f_(\xi)}{\xi-z}\] è somma della serie di potenze generica 
+\[\frac{1}{1-z}=\sum_{k}^{} z^k\]
+È dunque una funzione analitica.
+\subsection{Analiticità e olomorfia}
+\begin{tcolorbox}
+	\textbf{Teorema di analiticità delle funzioni olomorfe}\\ 
+	Sia $f$ olomorfa su $\Omega\implies f$ analitica su $\Omega$
+\end{tcolorbox}
+\textbf{Osservazioni}
+\begin{itemize}
+	\item $\impliedby $ (implicazione inversa) è ovvia
+	\item Differenza rispetto al caso reale
+\end{itemize}
+Valgono gli sviluppi già noti dall'analisi reale.
+\\

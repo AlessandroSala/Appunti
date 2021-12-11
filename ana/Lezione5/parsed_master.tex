@@ -1,0 +1,88 @@
+
+\section{Riconoscere le singolarità}
+\begin{itemize}
+	\item $z_0$ eliminabile $\iff$ parte singolare dello sviluppo $=0$
+	\item $z_0$ polo 
+	\item $z_0$ sing. essenziale 
+\end{itemize}
+Idea: $z_0$ è un polo per $f\iff z_0 $ è zero per la funzione $1/f$
+\[\lim_{z \to z_0} \frac{1}{f}=0\]
+\subsubsection{Principio di identità}
+Sia $f:\Omega \subseteq  \C\to \C$ olomorfa e supposto $\Omega$ connesso
+\\Sia $Z(f)=\{z\in\Omega : f(z)=0\} $, sono equivalenti i seguenti fatti
+\begin{enumerate}
+	
+	\item $z_0\in \text{acc}(Z(f))$
+	\item $f^{(n)}(z_0)=0\ \forall n\in\N$
+	\item $Z(f)$ contiene un intorno di $z_0$
+	\item $Z(f)\equiv\Omega$
+\end{enumerate}
+\\In conclusione: $Z(f)$
+\begin{itemize}
+	\item È fatto da punti isolati, oppure 
+	\item Coincide con tutto $\Omega$ 
+\end{itemize}
+\subsubsection{Ordine di zeri}
+Sia $f$ olomorfa su $\Omega$ connesso, $f\neq 0$ su $\Omega$, sia $z_0\in Z(f)$, Per il principio di identità, $z_0$ è uno zero isolato.
+\\La (2) è quindi falsa $\implies \{n\in\N: f^{(n)}(z_0)\neq 0\} \neq 0$. Per il principio di buon ordinamento $\nu := \text{min}\{n\in\N: f^{(n)}(z_0)\neq 0\} $: \textbf{Ordine dello zero}.\\
+\\\textbf{Osservazione}: $\nu$ è anche caratterizzato da:
+\[f(z)=\sum_{n\ge \nu}^{} c_n(z-z_0)^n=c_\nu(z-z_0)^\nu+o(z-z_0)^\nu\]
+Inoltre
+\[\exists \lim_{z \to z_0} \frac{f(z)}{(z-z_0)^\nu}\in\C\setminus \{0\} \]
+\subsection{Ordine dei poli}
+$z_0$ polo per $f\iff z_0$ zero per $1 / f$
+\begin{tcolorbox}	
+\textbf{Definizione:} Sia $z_0$ polo per $f$. Chiamiamo ordine del polo $z_0$ l'ordine di $z_0$ come $z_0$ per $1 / f$
+\end{tcolorbox}
+\textbf{Definizione: }In particolare si dice polo semplice un polo di ordine 1.
+\textbf{Osservazione:} L'ordine di un polo è caratterizzato anche:
+\begin{itemize}
+	\item $z_0$ polo di ordine $\nu$ per $f \iff z_0$ zero di ordine $\nu$ per $1 / f\iff$
+\end{itemize}
+		\[\exists \lim_{z \to z_0} \frac{1}{f(z)}\cdot \frac{1}{(z-z_0)^\nu}\in\C\setminus \{0\}\]
+		\[\implies \exists \lim_{z \to z_0} (z-z_0)^\nu f(z)\in\C\setminus \{0\} \ \text{ (*)}\]
+
+\begin{itemize}
+	\item $z_0$ polo di ordine $\nu$ per $f \iff$
+\end{itemize}
+\[f(z)=\sum_{n=-\nu}^{+\infty} c_n(z-z_0)^n,\text{ con }c_{-\nu}\neq 0\]
+Infatti 
+\[f(z)=\sum_{n=-\infty}^{+\infty} c_n(z-z_0)^n\implies(z-z_0)^\nu f(z)=\sum_{n=-\infty}^{+\infty} c_n(z-z_0)^{n+\nu}\]
+(*)$\iff$ tutti i coefficienti $c_n$ con $n+\nu<0$ e il coefficiente $c_{-\nu}\neq 0$.
+\\Dunque, lo sviluppo di Laurent di una funzione che ha un polo ha parte singolare composta da un numero finito di termini.
+\\È quindi possibile classificare le singolarità guardando lo sviluppo in serie di Laurent, guardando la parte singolare
+\begin{itemize}
+	\item p. singolare nulla: ELIMINABILE
+	\item p. singolare con numero finito di termini: POLO
+	\item p. singolare con infiniti termini: ESSENZIALE
+\end{itemize}
+\textbf{Osservazioni su zeri e poli} 
+\begin{enumerate}
+	\item Se $f,g$ hanno entrambe uno zero in $z_0$ o entrambe un polo, allora
+\end{enumerate}
+\[\exists  \lim_{z \to z_0} \frac{f}{g}=\lim_{z \to z_0} \frac{f'}{g'}\]
+Cenno di dim (Primo caso):
+\[f(z)=c_\nu(z-z_0)^\nu+o(z-z_0)^\nu, g(z)=c_\eta(z-z_0)^\eta+o(x-x_0)^\eta\]
+Sono possibili solo tre casi: $\eta=\nu\implies$ limite finito, $\nu>\eta$ limite 0, $\nu < \eta$ limite infinito.
+\begin{enumerate}
+	\setcounter{enumi}{1}
+	\item $z_0$ zero di ordine $\nu$ per $f \iff \lim_{z \to z_0} \frac{(z-z_0)}{f(z)}=\nu$
+		\\
+\end{enumerate}
+Questa è una modalità per calcolare l'ordine.
+Dim: $f(z)=c_\nu(z-z_0)^\nu+\ldots$, $f'(z)=\nu c_\nu(z-z_0)^{(\nu-1)}+\ldots$
+\[\implies \frac{(z-z_0)f'(z)}{f(z)}=\frac{\nu c_nu(z-z_0)^\nu+o(z-z_0)^\nu}{c_\nu(z-z_0)^\nu+o(z-z_0)^\nu}\to_{z-z_0}\nu\]
+\begin{enumerate}
+	\setcounter{enumi}{2}
+	\item $z_0$ zero di ordine $\nu$ per $f$, con $\nu \ge 1\implies z_0$ zero di ordine $\nu-1$ per $f'$.
+$z_0$ polo di ordine $\nu$ per $f$, con $\nu \ge -1\implies z_0$ polo di ordine $\nu+1\text{ per }f$.
+Controllare su libro.
+\end{enumerate} 
+\subsubsection{Unicità del prolungamento analitico}
+\begin{tcolorbox}
+	Sia $\Omega \subseteq  \C$ connesso, sia $S \subseteq  \Omega$ tale che $\text{acc}(S)\cap \Omega \neq 0$.
+	\\Data $f:S\to \C$, esiste al più una $\tilde f:\Omega\to \C$ olomorfa tale che $\tilde f|_S=f$
+\end{tcolorbox}
+\textbf{Dimostrazione: }Supponiamo $\tilde f_1,\tilde f_2:\Omega\to \C$ siano prolungamenti di $f$. Tesi: $\tilde f_1\equiv \tilde f_2$
+\\Considerando $g:=\tilde f_1-\tilde f_2$. Tesi: $g\equiv 0$.
+\\$g$ è olomorfa, $S \subseteq  Z(g)\implies Z(g)$ ha punti di accumulazione in $\Omega$, quindi $Z(g)\equiv \Omega$ 

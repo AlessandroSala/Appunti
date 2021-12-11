@@ -1,0 +1,85 @@
+
+\section{Funzioni olomorfe}
+\begin{tcolorbox}
+	\textbf{Definizione} \\
+	$f$ si dice olomorfa su $\Omega$ se è derivabile in $z_0\forall z_0\in\Omega$
+\end{tcolorbox}
+\subsection{Invertibilità locale}
+\begin{tcolorbox}
+\textbf{Teorema}
+\\Sia $f:\Omega \subseteq\C\to \C$ olomorfa in $\Omega$, e sia $z_0\in\Omega$ tale che $f'(z_0)\ne0$ allora f è "localmente invertibile in $z_0$"\\
+($\exists u(z_0)$ tale che $f|_{u(z_0)}$ invertibile)
+\\E la funzione inversa $f^{-1}$ è derivabile in senso complesso in $f(z_0)$ e 
+\[(f^{-1})'|_{z_0}=\frac{1}{f'(z_0)}\]	
+\end{tcolorbox}
+\textbf{Dimostrazione}\\
+$\Phi(u,v)$ definito su $\Omega \subseteq \R^2\to \R^2, (x_0,y_0)\in\Omega$, se $detJ\Phi(x_0,y_0)\ne 0\implies\Phi$ "localmente invertibile" e 
+\[J\Phi^{-1}(\Phi(x_0,y_0))=(J\Phi(x_0,y_0))^{-1}\]
+Dunque se $f=u+iv$ si riformula il teorema con $\Phi=(u,v)$
+\[J\Phi(x_0,y_0)=\begin{pmatrix}
+	u_x&u_y\\v_x & v_y
+\end{pmatrix}
+=\begin{pmatrix}
+	\alpha & -\beta \\ \beta & \alpha
+\end{pmatrix}
+\implies detJ\Phi(x_0,y_0)=\alpha^2+\beta^2=|f'(z_0)|^{2}
+\]
+Poiché $f'=\alpha +i\beta$ e l'ipotesi del teorema è che $|f'(z_0)|^2\ne 0$
+\[J\Phi^{-1}(\Phi(x_0,y_0))=\frac{1}{\alpha^2+\beta^2}\begin{pmatrix}
+	\alpha&\beta\\-\beta &\alpha
+\end{pmatrix}
+\]
+\[\implies(f^{-1})'(f(z_0))=\frac{\alpha}{\alpha^2+\beta^2}-i\frac{\beta}{\alpha^2+\beta^2}= \frac{\overline{f'(z_0)}}{|f'(z_0)|^2}=\frac{1}{f'(z_0)}\]
+\\
+\subsection{Ricerca delle primitive - antiderivazione}
+\textbf{Problema: }Data $f:\Omega \subseteq \C\to \C$ esiste? unica? $F:\Omega\subseteq\C$ olomorfa in $\Omega$ tale che \[F'(z)=f(z)\]
+Una tale $F$ si dice \textbf{primitiva} di $f$.\\
+\\\textbf{Richiamo - Teorema fondamentale del calcolo: }Data $f:(a,b)\in\R\to \R$ continua, allora una primitiva di $f$ è data da \[F(x)=\int_{a}^{x} f\]
+E tutte le altre primitive si ottengono aggiungendo una costante reale
+
+\noindent\rule{\textwidth}{0.5pt}
+\textbf{Unicità: }una primitiva, se esiste, è univocamente determinata a meno di costante additiva.
+\begin{itemize}
+	\item $F$ primitiva di $f$, $\lambda\in\C\implies F+\lambda \text{ primitiva di }f$ poiché $(F+\lambda)'=F'+\lambda'=f$
+	\item $F_1,F_2$ primitive di f $\implies\exists \lambda\in\C:F_1-F_2=\lambda$
+\end{itemize}
+$G:=F_1-F_2$, Tesi: $G$ è costante, Dim: \[G'=(F_1-F_2)'=f-f=0\]
+$G=u+iv$ $G'=u_x-iu_y=v_y+iv_x$ $G'=0\implies \nabla u(x_0,y_0)=\nabla v(x_0,y_0)=\underline 0$
+\\$\implies u \text{ costante},\ v \text{ costante}$
+\\N.B vale se $\Omega$ è connesso 
+
+\noindent\rule{\textwidth}{0.5pt}
+\textbf{Esistenza}
+\\$f=u+iv$, $F=U+iV$ ( $f$ data, $F$ incognita )
+\\$F'=U_x-iU_y=V_y+iV_x=f=u+iv$
+\[
+	\implies \begin{cases}
+	U_x=u\\U_y=-v
+\end{cases}
+	\begin{cases}
+	V_x=v\\V_y=u
+\end{cases}
+\]
+ovvero $U$ potenziale per $w_1:=udx-vdy$
+\\e $V$ potenziale per $w_2:=vdx+udy$
+\\Concludiamo che dire $f$ ammette primitive $\iff\omega_1,\omega_2$ esatte $\implies\omega_1,\omega_2$ chiuse
+\\Ovvero se la funzione $f$ soddisfa le condizioni di Cauchy-Riemann dunque se $f$ olomorfa
+\[f\text{ ammette primitive }\iff\omega_i \text{ esatte }\implies f \text{ olomorfa }\iff w_i\text{ chiuse }\]
+L'implicazione inversa è vera se $\Omega$ è semplicemente connesso
+\\Dunque $F=U+iV$ dove $U$ potenziale per $\omega_1$, $V$ potenziale per $\omega_2$
+\\\textbf{Nota: } $\omega$ chiusa $\implies \oint_\gamma \omega$ non cambia se sostituisco $\gamma$ con un circuito omotopo. 
+\begin{tcolorbox}
+	\textbf{Definizione} 
+	\\Data $f:\Omega\subseteq\C\to \C$, dato $\gamma$ cammino in $\Omega$ parametrizzata da una funzione $r:[a,b]\to \Omega$, $r(t)=r_1(t)+ir_2(t)$
+	\[\int_{\gamma}^{} f(z)dz:=\int_{a}^{b} f(r(t))r'(t)dt\]
+
+\end{tcolorbox}
+	\[=\int_{a}^{b} (u+iv)(r_1'+ir_2')dt=\int_{a}^{b} (ur_1'-vr_2')+i \int_{a}^{b} vr_1'+ur_2')\]
+	\[=\int_{\gamma}^{} \omega_1+i \int_{\gamma}^{}\omega_2\]
+Riformulazione del calcolo di $F$
+\[F(z)=\int_{\gamma:z_0\to z}^{} f \]
+Questo implica che \[\oint_\gamma f=0\]
+\textbf{Teorema di Morera}
+\\ $\oint_\gamma f=0 \ \forall \gamma $ circuito $\subseteq \Omega \implies f$ olomorfa
+\\\\\textbf{Teorema di Cauchy}
+\\$f$ olomorfa su $\Omega\implies\oint f$ non cambia se sostituisco un circuito $\gamma \subseteq\Omega$ con uno ad omotopo (In particolare, se $\gamma$ omotopa ad un punto $\oint_\gamma f=0$)

@@ -1,0 +1,273 @@
+
+\section{Spazi di Hilbert}
+\begin{tcolorbox}
+\textbf{Definizione: }Sia $H$ uno spazio vettoriale su $\R$ 
+\\Un prodotto scalare su $H$ è un'applicazione $(\ ,):H\times H\to \R$ tale che
+\begin{enumerate}
+	\item $(x,x)\ge 0\ \forall x\in H$ con $(x,x)=0\iff x=0$ \emph{positività} 
+	\item $(x,y)=(y,x)\ \forall x,y\in H$ \emph{simmetria}
+	\item $(\alpha_1x_1+\alpha_2x_2,y)=\alpha_1(x_1,y)+\alpha_2(x_2,y)$ \emph{bilinearità}
+\end{enumerate}
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione: }$\|x\|:=\sqrt{(x,x)} $ è detta \emph{norma associata} (o indotta) dal prodotto scalare
+
+\end{tcolorbox}
+\textbf{Esempi} 
+\begin{itemize}
+	\item $H=\R^n$ ;   $(x,y)=\sum_{k=1}^{n} x_ky_k$ ;   $\sqrt{ (x,x)}=\sqrt{\sum_{k=1}^{n} x_k^2}=\|x\|_2 $ ; ovvero la norma euclidea
+	\item $H=L^{2}(\Omega)$   $(f,g)=\int_{\Omega}^{} fg $ ; $\sqrt{(f,f)} =(\int_{\Omega}^{} f^2)^{1 / 2}=\|f\|_2 $ 
+	\item $H=W^{1,2}(\Omega)$ ; $(f,g):=\int_{\Omega}^{} fg+\sum_{k=1}^{n} \frac{\partial f}{\partial x_i} \frac{\partial g}{\partial x_i} =\int_{\Omega}^{}fg+\nabla f\cdot \nabla g   $       
+		\[\sqrt{(f,f)}=\bigg(\int_{\Omega}^{} f^2+|\nabla f|^2\bigg)^{1 / 2}\simeq\|f\|_{H^1} \]
+\end{itemize}
+norma equivalente alla norma di $H^1$ 
+\subsection{Disuguaglianza di Cauchy Schwartz}
+Se $(\ ,)$ è un prodotto scalare su $H$, allora
+\[|(x,y)|\le \|x\|\cdot \|y\|\ \forall x,y\in H\]
+Inoltre vale $=\iff x=\lambda y$ con $\lambda \in \R$
+\\\textbf{Dimostrazione} 
+\\$\ \forall t\in \R$ $0\le (x-ty,x-ty)=(x,x)-2t(x,y)+t^2(y,y)$
+\\Dunque
+\[0\le \|x\|^2-2t(x,y)+t^2\|y\|^2\implies \Delta\le 0\]
+\[\Delta = 4(x,y)^2-4\|x\|^2\|y\|^2\le 0\]
+\[\implies |(x,y)|\le \|x\|\|y\|\]
+Se vale $=$, $\Delta = 0\implies \exists \lambda\in \R:(x-\lambda y,x-\lambda y)=0\implies x-\lambda y=0$
+(Viceversa se $x=\lambda y$ )
+\begin{tcolorbox}
+	\textbf{Proposizione:} Se $(,):H\times H\to \R$ è un prodotto scalare,
+	\[\|x\|:=\sqrt{(x,x)} \text{ è una norma}\]
+
+\end{tcolorbox}
+\textbf{Dimostrazione} 
+\begin{itemize}
+	\item $\|x\|\ge 0$ con $=\iff x=0$ vera per la prop. (1)
+	\item $\|\lambda x\|=\sqrt{(\lambda x,\lambda x} =|\lambda|\sqrt{(x,x)} =\lambda \|x\|$
+	\item $\|x+y\|=\sqrt{(x+y,x+y)} =\sqrt{\|x\|^2+2(x,y)+\|y\|^2} $
+\end{itemize}
+\[\le \sqrt{\|x\|^2+2\|x\| \|y\|+\|y\|^2} =\|x\|+\|y\|\]
+\subsubsection{Legge del parallelogramma}
+\begin{tcolorbox}
+	\textbf{Teorema: }Sia $H$ uno spazione vettoriale con prodotto scalare $(,)$ e sia $\|.\|$ la norma indotta da esso. Allora 
+	\[\|x+y\|^2+\|x-y\|^2=2\|x\|^2+2\|y\|^2\ \forall x,y\in H\]
+
+\end{tcolorbox}
+\begin{figure}[ht]
+    \centering
+    \incfig{parallelogramma}
+    \caption{Legge del parallelogramma in $\R^2$}
+    \label{fig:parallelogramma}
+\end{figure}
+\textbf{Dimostrazione}
+\[\|x+y\|^2+\|x-y\|^2=(x+y,x+y)+(x-y,x-y)=\|x\|^2+2(x-y)+\|y\|^2+\|x\|^2-2(x,y)+\|y\|^2=2\|x\|^2+2\|y\|^2\]
+\textbf{Osservazione: }Può servire a verificare se una norma proviene o meno da un prodotto scalare.
+\\Le norme di $\R^n,L^{p}(\Omega), W^{1,p}(\Omega)$ con $p\neq 2$ non provengono da un prodotto scalare.
+\\\textbf{Esempio: }$\Omega=(0,1)$ in $L^{p}(0,1)$ con  $p\neq 2$, la norma non proviene da un prodotto scalare
+\\Fisso $t\in (0,1)$, considero le funzioni
+ \begin{itemize}
+	 \item $f=\chi_{(0,t)}$ 
+	 \item $g=\chi_{(t,1)} $
+\end{itemize}
+\[\|f\|_p=\bigg(\int_{0}^{1} |f|^p\bigg)^{\frac{1}{p}}=\bigg(\int_{0}^{t} 1\bigg)^{\frac{1}{p}}=t ^{\frac{1}{p}}\]
+\[\|g\|_p=\bigg(\int_{0}^{1} |g|^p\bigg)^{\frac{1}{p}}=\bigg(\int_{t}^{1} 1\bigg)^{\frac{1}{p}}=(1-t) ^{\frac{1}{p}}\]
+\[\|f+g\|_p=1\]
+\[\|f-g\|_p=1\]
+L'identità del parallelogramma diventa:
+\[2=2t ^{\frac{2}{p}}+2(1-t)^{\frac{2}{p}}\]
+\[1=t ^{\frac{2}{p}}+(1-t)^{\frac{2}{p}}\]
+Valida $\iff p=2$
+\begin{tcolorbox}
+	\textbf{Definizione: }Uno \emph{spazio di Hilbert} è uno spazio di Banach in cui la norma proviene da un prodotto scalare.  \end{tcolorbox} \textbf{Esempi:} sono spazi di Hilbert
+\begin{itemize}
+	\item $(\R^n,\|.\|_2)$ 
+	\item $L^{2}(\Omega)$ 
+	\item $H^1(\Omega)$
+\end{itemize}
+Non sono di Hilbert
+\begin{itemize}
+	\item $(\R^n,\|.\|_p$ con $p\neq 2$ 
+	\item $L^{p}(\Omega)$ con $p\neq 2$ 
+	\item $W^{1,p}(\Omega)$ con $p\neq 2$ 
+	\item $C^0([a,b]),\ \|f\|_2=(\int_{a}^{b} |f|^2)^{1 / 2} $ la norma viene da un prodotto scalare MA non è uno spazio di Banach, dunque non è uno spazio di Hilbert
+\end{itemize}
+\subsubsection{Teorema di proiezione su un convesso chiuso}
+Un insieme $K$ si dice \emph{convesso} se $\ \forall x,y\in K,\ \forall \lambda\in (0,1)\implies \lambda x +(1-\lambda)y\in K$
+\\Un insieme $K$ si dice \emph{chiuso} se $\ \forall \{x_n\} \subseteq  K:x_n\to x\in H\implies x\in K$
+\begin{tcolorbox}
+\textbf{Teorema: }Sia $H$ uno spazio di Hilbert, e sia $K\subseteq  H$ un convesso chiuso
+\\Allora $\ \forall f\in H$ esiste unico $u\in K$ tale che
+\[\|f-u\|=\min_{v\in K}\|f-v\|\]
+Inoltre: $u=P_kf\iff (f-u,v-u)\le 0 \ \forall v\in K$
+\end{tcolorbox}
+\begin{figure}[ht]
+    \centering
+    \incfig{convesso}
+    \caption{Rappresentazione grafica della proiezione su convesso}
+    \label{fig:convesso}
+\end{figure}
+\begin{tcolorbox}
+\textbf{Corollario, Teorema di proiezione su un sottospazio chiuso}
+\\Sia $H$ uno spazio di Hilbert e $M$ un sottospazio vettoriale chiuso.
+\\($M$ è convesso, non è necessariamente chiuso senza ipotesi)
+\\Allora: $\ \forall f\in H\exists \text{ unico }u=P_Mf$ tale che
+\[\|f-u\|=\min_{v\in M}\|f-v\|\]
+Inoltre 
+\[u=P_Mf  \iff (f-u,v)=0\ \forall v\in M\]
+\end{tcolorbox}
+\begin{figure}[ht]
+    \centering
+    \incfig{sottchiuso}
+    \caption{Rappresentazione grafica della proiezione su un sottospazio chiuso}
+    \label{fig:sottchiuso}
+\end{figure}
+\begin{tcolorbox}
+	\textbf{Definizione: }Se $(,)$ è un prodotto scalare su $H$ 
+	\begin{itemize}
+		\item $x\perp y \iff (x,y)=0$ (definizione)
+		\item $M^{\perp}:=\{x\in H:(x,y)=0 \ \forall y\in M\} $
+	\end{itemize}
+\end{tcolorbox}
+\textbf{Osservazione: }$f\perp g$ in $L^{2}(0,1)$ se $\int_{0}^{1} fg=0 $ 
+\\\textbf{Esempio:} $M=\{\text{funzioni costanti in }L^{2}(0,1)\} $
+\[M^{\perp}=\{f\in L^{2}(0,1): \int_{0}^{1} fc=0\ \forall c\in \R \} \]
+\[=\{f\in L^{2}(0,1): \int_{0}^{1} f=0 \} \]
+\textbf{Osservazione:} 
+\[x\perp y\implies \|x+y\|^2=\|x\|^2+\|y\|^2\]
+\textbf{Dimostrazione}
+\[\|x+y\|^2=(x+y,x+y)=\|x\|^2+2(x,y)+\|y\|^2=\|x\|^2+\|y\|^2\]
+\textbf{Osservazione: }$M\cap M^\perp=\{0\} $. Infatti $x\in M\cap M^\perp\implies (x,x)=0$ valido $\iff x=0$
+\begin{tcolorbox}
+\textbf{Teorema delle proiezioni}
+\\Sia $H$ insieme di Hilbert e $M$ un sottospazio chiuso.
+\\Allora $\ \forall x\in H\ \exists $ un'unica rappresentazione di $x$ come:
+\[x=y+z\text{ con }y\in M\text{ e }z\in M^\perp\]
+Inoltre, le applicazioni $x\mapsto y=P_M(x)$, $x\mapsto z=P_{M^\perp}(x)$, sono operatori lineari, limitati, di norma $1$.
+\end{tcolorbox}
+\textbf{Dimostrazione} 
+\\Basta prendere come $y=P_M(x)$ (che esiste dal teorema precedente): sappiamo che $(x-P_M(x),v)=0\ \forall v\in M\implies x-P_M(x)\in M^\perp$, ovvero $z:=x-y\in M^\perp$
+\\L'unicità è data da $x=y_1+z_1=y_2+z_2\implies y_1-y_2 \in M, \ z_2-z_1\in M^\perp$ ma $y_1-y_2=z_2-z_1$, dunque per queste ultime due condizioni si avrà $y_1-y_2=z_2-z_1=0$
+\\\textbf{Dimostrazione Linearità} 
+\\$x_1=y_1+z_1$ 
+\\$x_2=y_2+z_2$
+\\Dunque $x_1+x_2=y_1+y_2+z_1+z_2$, con $y_k\in M,\ z_k\in M^\perp$, per l'unicità $y_1+y_2=P_M(x_1+x_2),\ z_1+z_2=P_{M^\perp}(x_1+x_2)$
+\\\textbf{Limitatezza}\\
+$P_m$ limitato: $x=y+y=P_M(x)+P_{M^\perp}(x)$
+\[\|x\|^2=\|P_M(x)\|^2+\|P_{M^\perp}(x)\|^2\]\[\implies \|P_m(x)\|\le \|x\|^2\implies P_M\text{ limitato con norma }\le 1\]
+$\|P_M\|=1$ : basta prendere $x\in M\implies x=P_M(x)\implies $ vale l'uguaglianza $\|P_M(x)\|=\|x\|$
+\subsection{Teoremi di Rappresenzatione}
+\subsubsection{Teorema di Reisz}
+\textbf{Problema:} Dato $H$ di Hilbert, caratterizzare $H'$ (duale di $H$ ).
+\[H'=\{\varphi:H\to \R\text{ lineari e continui}\} =\mathcal L(H,\R)\]
+\textbf{Osservazione:} Fissato $u\in H$ possiamo associare ad $u$ un elemento $\varphi_u\in H'$ 
+\[\varphi_u(v):H\to \R,\ \varphi_u(v)=(u,v)\ \forall v\in H\]
+Verifica che $\varphi_u\in H'$ :
+\begin{itemize}
+	\item lineare: $\varphi_u(\alpha v_1+\alpha_2v_2)=(u,\alpha_1v_1+\alpha_2v_2=\alpha_1\varphi_u(v_1)+\alpha_2\varphi_u(v_2)$
+	\item continuo (limitato): $|\varphi_u(v)|\le M \|v\|$ valida con $M=\|u\|$ per la disuguaglianza di Cauchy Scwhartz
+
+\end{itemize}
+Inoltre:
+\[\|\varphi_u\|_{H'}=\|u\|_H\]
+cioé $M=\|u\|$ è la costante migliore possibile $(v=u)$
+\\In conclusione, $H\subseteq  H'$ (immersione isometrica), ovvero la norma si conserva.
+\\\textbf{Esempi:} 
+\begin{itemize}
+	\item $H=\R^n$  $(u,v)=\sum_{k=1}^{n} u_kv_k$  $\varphi_u(v)=\sum_{k=1}^{n} u_kv_k$ 
+	\item $H=L^{2}(\Omega)$,  $(u,v)=\int_{\Omega}^{} uv $, $\varphi_u(v)=\int_{\Omega}^{} uv \ \forall v\in L^{2}(\Omega)$
+	\item $H=H^1(\Omega)$, $(u,v)=\int_{\Omega}^{} uv+\nabla u\cdot \nabla v $
+		\[\varphi_u(v)=\int_{\Omega}^{} uv+\nabla u\cdot \nabla v \ \forall v\in H^1(\Omega)\] 
+\end{itemize} 
+
+\begin{tcolorbox}
+\textbf{Teorema di Riesz }
+\\Sia $H$ spazio di Hilbert e sia $\varphi\in H'$.
+\\Allora, esiste unico  $u\in H$ tale che $\varphi=\varphi_u$ ovvero
+\[\varphi(v)=(u,v)\ \forall v\in H\]
+Inoltre
+\[\|\varphi\|_{H'}=\|u\|_H\]
+Dunque $H"="H'$.
+\end{tcolorbox}
+\subsubsection{Forme bilineari}
+\begin{tcolorbox}
+\textbf{Definizione: }Sia $H$ di Hilbert. Una \emph{forma bilineare} su $H$ è per definizione un'applicazione 
+\[a:H\times H\to \R\]
+tale che:
+\begin{itemize}
+	\item $a(\alpha_1u_1+\alpha_2u_2,v)=\alpha_1a(u_1,v)+\alpha_2a(u_2,v)$
+\end{itemize}
+\end{tcolorbox}
+\textbf{Esempi:} 
+\begin{itemize}
+	\item In $H$ Hilbert qualsiasi $a(u,v)=(u,v)$ 
+	\item $H=H^1(\Omega)$, $a(u,v)=\int_{\Omega}^{} uv+\nabla u\cdot \nabla v $, $a(u,v)=\int_{\Omega}^{} uv $, $a(u,v)=\int_{\Omega}^{}  \nabla u\cdot \nabla v$
+
+\end{itemize}
+\begin{tcolorbox}
+\textbf{Definizione: }Sia $a:H\times H\to \R$ una forma bilineare
+\begin{itemize}
+	\item a \emph{simmetrica} se
+\end{itemize}
+\[a(u,v)=a(v,u)\ \forall u,v\in H\]
+\begin{itemize}
+	\item $a$ \emph{continua} se
+\end{itemize}
+\[\exists C>0 \text{ tale che }|a(u,v)|\le C\|u\|\|v\|\ \forall u,v\in H\]
+\begin{itemize}
+\item $a$ \emph{coerciva} se 
+	\[\exists \alpha>0\text{ tale che }a(u,v)\ge \alpha \|u\|^2\ \forall u\in H\]
+\end{itemize}
+
+\end{tcolorbox}
+\textbf{Esempi:} 
+\\1) In $H$ di Hilbert qualsiasi, $a(u,v)=(u,v)$ è
+\begin{itemize}
+	\item simmetrica (per definizione di prodotto scalare
+	\item continua (limitata per Cauchy Schwartz)
+	\item coerciva ($(u,u)=1\cdot \|u\|^2$)
+\end{itemize}
+2) In $H=H_0^1(\Omega)$, $a(u,v)=\int_{\Omega}^{} \nabla u\cdot \nabla v $.
+\begin{itemize}
+	\item simmetrica
+	\item continua: (tramite Holder)
+		\[|a(u,v)|=\bigg|\int_{\Omega}^{} \nabla u\cdot \nabla v\bigg|\le \int_{\Omega}^{} |\nabla u\cdot \nabla v|\le \|\nabla v\|_2\|\nabla v\|_2\]
+		\[\le \|u\|_{H^1}\|v\|_{H^1}\ \forall u,v\in H^1(\Omega)\]
+	\item coerciva: (per Poincaré)
+		\[a(u,u)=\int_{\Omega}^{} |\nabla u|^2\ge \alpha \|u\|^2_{H^1}\] 
+\end{itemize}
+\textbf{Osservazione:} $a(u,v)$ non sarebbe coerciva su $H^1(\Omega)$ poiché non vale la disuguaglianza di Poicaré (verificabile con $u=\text{cost}> 0$ 
+\subsubsection{Teorema di Lax Milgram}
+\begin{tcolorbox}
+\textbf{Teorema di Lax-Milgram}
+\\Sia $H$ Hilbert, e sia $\varphi'\in H'$ 
+\\Sia $a:H\times H\to \R $ forma bilineare simmetrica, continua e coerciva.
+Allora esiste unico $u\in H$ tale che
+\[\varphi(v)=a(u,v)\ \forall v\in H\]
+Inoltre $u$ è caratterizzata dalla seguente proprietà: 
+\[E(v):=\frac{1}{2}a(v,v)=\varphi(v)\ \forall v\in H\]
+si ha 
+\[\min_{v\in H}E(v)=E(u)\]
+\end{tcolorbox}
+\textbf{Esempio} ($\Omega$ limitato)
+\\$H=H_0^1(\Omega)$, $a(u,v)=\int_{\Omega}^{} \nabla u\cdot \nabla v $, $\varphi(v)=\int_{\Omega}^{} fv $ dove $f\in L^{2}(\Omega)$ 
+\[\varphi\in H':\bigg|\int_{\Omega}^{} fv\bigg|\le \int_{\Omega}^{} |fv|\le \|f\|_{L^{2}(\Omega)}\|v\|_{L^{2}(\Omega)}\le \|f\|_{L^{2}(\Omega)}\|v\|_{H^1}\]
+Per Lax-Milgram: $\exists u$ unico $u\in H^1_0(\Omega)$ tale che $\varphi(v)=a(u,v)\ \forall v\in H_0^1(\Omega)$ 
+\[\int_{\Omega}^{} fvdx=\int_{\Omega}^{} \nabla u\cdot \nabla vdx\ \forall v\in H_0^1(\Omega)\]
+Quest'ultima è una formulazione debole del seguente problema:
+\[\begin{cases}
+	-\nabla u=f&\text{ in }\Omega
+	\\u=0&\text{ su }\partial\Omega
+\end{cases}\]
+Inoltre il teorema dice che $u$ risolve 
+\[\min_{v\in H_0^1(\Omega)}E(v)=\frac{1}{2} \int_{\Omega}^{} |\nabla v|^2-\int_{\Omega}^{} fv\]
+\subsubsection{Commenti sulla proprietà variazionale di $u$ }
+$E(u+\varepsilon v)=\frac{1}{2}a(u+\varepsilon v,u+\varepsilon v)-\varphi(u+\varepsilon v)$
+\[=\frac{1}{2}[a(u,u)+2\varepsilon a(u,v)+\varepsilon^2a(v,v)]-\varphi(u)-\varepsilon\varphi(v)\]
+\[=[\frac{1}{2}a(u,u)-\varphi(u)]+\varepsilon[a(u,v)-\varphi(v)]+ \frac{\varepsilon^2}{2}a(u,v)\]
+\[\implies E(u+\varepsilon v)-E(u)=\varepsilon [a(u,v)-\varphi(v)]+o(\varepsilon)\]
+\[\implies \lim_{\varepsilon \to 0} \frac{E(u+\varepsilon v)-E(u)}{\varepsilon}=a(u,v)-\varphi(v)=0\]
+Se $a(u,v)=\varphi(v)\ \forall v\in H$, 
+\[E(u+\varepsilon v)-E(u)= \frac{\varepsilon^2}{2}a(v,v)\ge 0\]
+Quindi $u$ minimizza $E$.
+\\Viceversa, se $u $ minimizza $E$ :
+\[E(u+\varepsilon v)\ge E(u)\ \forall v\in H\ \forall \varepsilon\in \R\]
+\[\implies a(u,v)-\varphi(v)=0\ \forall v\in H\]
+

@@ -1,0 +1,139 @@
+
+\section{Spazi di Lebesgue}
+\begin{tcolorbox}
+	\textbf{Definizione: }Sia  $E$  misurabile  $\subseteq\R^n$ 
+	  \[L^1(E):= \{f:E\to  \R    \text{L-integrabili} \} /_{\sim}\]  
+\end{tcolorbox}
+Tale insieme è uno spazio vettoriale per la linearità dell'integrale.
+\begin{tcolorbox}
+	\textbf{Definizione: }Data  $f \in  L ^1(E)$ 
+  \[\|f\|_1:=\int_{E}^{} |f|\]  
+\end{tcolorbox}
+Tale norma rispetta le tre proprietà necessarie.
+\\C'è un problema,  $\int_{E}^{} |f|=0\centernot\implies f=0$  su $E$,  $\implies f=0$  q.o. su  $E$.
+\begin{tcolorbox}
+	\textbf{Definizione: }Date  $f,g\in  L ^1(E)$  diciamo che  $f$  è equivalente a  $g$  se  $f=g$  q.o. su  $E$.
+\end{tcolorbox}
+Proprietà di una relazione di equivalenza:
+\begin{itemize}
+	\item $f\sim f$ 
+	\item $f\sim g \iff g\sim f$ 
+	\item $ f\sim g$ e $g\sim h\implies f\sim h$ 
+\end{itemize}
+Dunque identifichiamo le funzioni equivalenti secondo l'ultima definizione.
+\begin{tcolorbox}
+	\textbf{Teorema: }$(L^1(E),\|.\|)$  è uno spazio di Banach
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione: }\\$\{f_n\} \subseteq L^1(E),f_n\to f$ in $L^1(E) \iff \lim_{n \to +\infty} \|f_n-f\|=0$ 
+\end{tcolorbox}
+ovvero
+\[\lim_{n\to +\infty} \int_{E}^{} |f_n-f|dx=0\] 
+Consideriamo per semplicità  $f=0$ 
+\\Q: $f_n\to  0$  puntualmente q.o. su  E , allora  $\int_{E}^{} f_n=0$ ? 
+\\Controesempio 1
+\[\exists f_n\subseteq  L^1(\R): \begin{cases}
+	f_n\to 0\text{ q.o. su } \R\\
+	f_n \not\to \text{ in }L^1(\R)
+\end{cases}
+\]
+\[f_n=\chi_{n, n+1}=\begin{cases}
+	1\ \ x\in(n,n+1)
+	\\0\ \ x \not\in (n,n+1)
+\end{cases}\ \ n\in \N
+\]
+Fissato $x_0\in\R,\ f_(x_0)=0$ definitivamente (per $n\gg 1$)
+\[\int_{\R}^{} \|f_n\|_{L^1(\R)}=\int_{\R}^{} \chi_{(n,n+1)}=1 \forall n\in\N\]
+Controesempio 2
+\[\exists f_n \subseteq L^1(0,1): \begin{cases}
+	f_n\to 0 \text{ in }L^1(0,1)\\
+	f_n \not\to 0\text{ q.o. su }(0,1)
+\end{cases} 
+\]
+\begin{figure}[ht]
+    \centering
+    \incfig{disegno}
+    \caption{Successione}
+    \label{fig:disegno}
+\end{figure}
+$f_n\to 0$ in $L^1(0,1), \ \|f_n\|_{L^1(0,1)}=\int_{0}^{1} |f_n|\to 0 $
+\\$f_n\not\to 0\forall x_0\in(0,1)$
+\\Fissato $x_0\in(0,1), \exists\  K(n):f_{K(n)}(x_0)=1$ 
+\begin{tcolorbox}
+	\textbf{Proposizione:} Se $f_n\to 0$ in $L^1(E)$, allora $\exists f_{K(n)}\to 0$ q.o. su $E$.
+\end{tcolorbox}
+\textbf{Osservazioni:} 
+\begin{itemize}
+	\item Si può mettere $f$ al posto di 0.
+	\item Nell'esempio è vero
+	\item Conseguenza: Se una successione $f_n$ ammette limite in $L^1(E)$ allora questo limite deve coincidere col limtie puntuale q.o. 
+\end{itemize}
+Infatti, $f_n\to f$ q.o. su $E$  finire
+\\Quindi se $f_n\to g$ q.o. su $E$. ($\implies f_{K(n)}\to g$ q.o. su $E$, per l'unicità del limite puntuale quasi ovunque, $f=g$ q.o. su $E$)
+\begin{tcolorbox}
+	\textbf{Teorema di convergenza dominata (di Lebesgue)}
+	\\Sia $\{f_n\} \subseteq  L^1(E)$ e sia $f_n\to f$ q.o. su $E$\\
+	Supponiamo che $\exists g\in L^1(E)$ indipendente da $n$ tale che
+	\[(*)\ |f_n(x)|\le g(x)\text{ q.o. }x\in E, \forall n \in \N\text{ (definitivamente)}\]
+	Allora $f_n\to f$ in $L^1(E)$
+\end{tcolorbox}
+\textbf{Osservazioni}
+\begin{itemize}
+	\item La (*) è un'ipotesi molto più debole della convergenza uniforme
+	\item In particolare per $f_n(x)=x^n$ su $(0,1)$ la (*) è verificata, prendendo $g\equiv 1$
+	\item Invece nel controesempio 1, se $|f_n(x)|\le g$ q.o. su $\R,g \not\in L^1(\R)$
+	\item È un teorema di passaggio al limite sotto integrale.
+\end{itemize}
+\[|f_n-f|\to 0\text{ su }E\implies \int_{E}^{} |f_n-f|\to 0\]
+$\implies$ il limite degli integrali $\equiv$ l'integrale del limite.
+\begin{tcolorbox}
+	\textbf{Teorema di convergenza monotona (di Beppo Levi)}
+	\\Sia $\{f_n\} \subseteq L^1(E)$, supponiamo che:
+	\[(* *)\ f_n\ge 0\text{ q.o. su }E,\ f_{n+1}\ge f_n\text{q.o. su }E\]
+	Allora
+	\[\int_{E}^{} \lim_{n \to +\infty} f_ndx=\lim_{n \to +\infty} \int_{E}^{} f_n\]  
+\end{tcolorbox}
+\textbf{Osservazioni} 
+\begin{itemize}
+	\item Il teorema si applica anche se $f_n\le 0$ decrescente, basta considerare $g_n=-f_n\ge 0$
+\end{itemize}
+\[\text{B.L. a }g_n\implies \int_{E}^{} \lim g_n=\lim\int_{E}^{}g_n=\int_{E}^{} \lim(-f_n)=\lim \int_{E}^{} (-f_n)\]
+\begin{itemize}
+	\item Può valere come uguaglianza $+\infty=+\infty$
+\end{itemize}
+\subsubsection{Integrali multipli}
+\begin{tcolorbox}
+	\textbf{Teorema di Fubini} 
+	\\Sia $f$ integrabile secondo Lebesgue, su $I=I_1\times I_2\ (I_1\subseteq  \R^m, I_2\subseteq\R^n)$
+	Allora:
+	\begin{enumerate}
+		\item Per q.o. $x_1\in I_1,\ x_2\mapsto f(x_1,x_2)$ è L-integrabile su $I_2$
+		\item $x_1\mapsto \int_{I_2}^{} f(x_1,x_2)dx_2$ L-integrabile su $I_1$
+		\item $\int_{I}^{} f(x_1,x_2)dx_1dx_2=\int_{I_1}^{} ( \int_{I_2}^{} f(x_1,x_2)dx_2)dx_1$  
+	\end{enumerate}
+\end{tcolorbox}
+\textbf{Osservazione:} Si può scambiare il ruolo delle variabili.
+\[\int_{I}^{} f(x_1,x_2)dx_1dx_2=\int_{I_1}^{} \bigg(\int_{I_2}^{} f(x_1,x_2)dx_2\bigg)dx_1=\int_{I_2}^{} \bigg(\int_{I_1}^{} f(x_1,x_2)dx_1\bigg)dx_2\]
+\begin{tcolorbox}
+	\textbf{Teorema di Tonelli} 
+	\\Sia $f\ge 0$ misurabile sul precedente $I=I_1\times I_2$.
+	\\Supponiamo che:
+	\begin{itemize}	
+		\item Per q.o. $x_1\in I_1,\ x_2\mapsto f(x_1,x_2)$ è L-integrabile su $I_2$
+		\item $x_1\mapsto \int_{I_2}^{} f(x_1,x_2)dx_2$ L-integrabile su $I_1$
+	\end{itemize}
+	Allora: $f$ L-integrabile su $I_1\times I_2$ (e quindi per Fubini $\int_{I}^{} f=\int_{I_1}^{} \int_{I_2}^{} f$)   
+\end{tcolorbox}
+\textbf{Osservazione:} Se ho una $f$ che cambia segno, posso provare ad applicare Tonelli a $|f|$: se $|f|$ soddisfa 1) 2), Tonelli $\implies |f|$ L-integrabile $\implies$ $f$ L-integrabile $\implies$ posso applicare Fubini. 
+\subsubsection{Spazi di Lebesgue (o spazi $L^p$)}
+\begin{tcolorbox}
+	\textbf{Definizione:} $p\in[1,+\infty)$, $L^p(E)=\{f:E\to \R:|f|^p\text{ L-integrabile}\}/_{\sim}$, anch'esso risulta essere uno spazio vettoriale normato (di Banach)
+	\[\|f\|_p:=\bigg(\int_{E}^{} |f(x)|^pdx\bigg)^{\frac{1}{p}}\] 
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Teorema:} $(L^p,\|.\|_p)$ è uno spazio di Banach.
+\end{tcolorbox}
+\begin{itemize}
+	\item Caso particolarmente importante: $p=2$
+	\item Caso limite: $p=+\infty$
+\end{itemize}

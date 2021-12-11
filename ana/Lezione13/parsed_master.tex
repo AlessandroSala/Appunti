@@ -1,0 +1,87 @@
+
+\section{Operatori lineari tra spazi vettoriali normati}
+\begin{tcolorbox}
+\textbf{Definizione: }Siano $(V,\|.\|_V)$ e $(W,\|.\|_W)$ due spazi vettoriali normati.
+\\Un operatore lineare da $V$ in $W$ è una funzione  $T:V\to W$ tale che
+\[T(\lambda_1v_1+\lambda_2v_2)=\lambda_1T(v_1)+\lambda_2T(v_2) \ \forall v_1,v_2\in V,\  \forall \lambda_1,\lambda_2\in \R\]
+\end{tcolorbox}
+\textbf{Esempi} 
+\\1) $V=W=\R^n$, $T:\R^n\to \R^n$ 
+\[T(v)=A\cdot v,\text{ con }A\in \mathcal M (n\times n,\R)\]
+2) $V=C^0([a,b])$, fisso $x_0\in (a,b),$ $W=R$
+\[T:V\to W\text{ definita da }T(f)=f(x_0)\]
+3) $V=C^1([a,b])$, $W=C^0([a,b])$
+\[T:V \to W\text{ definita da }T(f)=f'\]
+\textbf{Osservazione:} $T$ operatore lineare $\implies T(0)=0$
+\begin{tcolorbox}
+\textbf{Definizione: } $T:V\to W$ op. lineare, si dice \emph{continuo} se, $\forall v\in V$, $T$ è continuo in $v$, ovvero:
+\[v_n \to v\implies T(v_n)\to T(v)\]
+Rispettivamente nella norma di $V$ e $W$.
+\end{tcolorbox}
+\textbf{Osservazione: }Sia $T:V\to W$ op. lineare, allora $T$ è continuo su $V\iff T$ è continuo in $v=0$.
+\\\textbf{Dimostrazione} 
+\\$(\implies)$ è immediata 
+\\($\impliedby$) Verifichiamo che se la proprietà vale per $v=0$, vale per $v$ qualsiasi.
+\\Sia $v$ qualsiasi, e sia $v_n\to v$; considero $v_n-v\to 0$, quindi, per ipotesi $T(v_n-v)\to T(0)$
+\\Ovvero $T(v_n)- T(v)\to 0$, cioè $T(v_n)\to T(v)$.
+\\\divider
+\begin{tcolorbox}
+	\textbf{Definizione: } Sia $T$ op. lineare$:(V,\|.\|_V)\to (W,\|.\|_W)$.
+	\\Si dice che T è limitato se:
+	\[\exists  M>0\text{ tale che }\|T(v)\|_W\le M\|v\|_V\ \forall v\in V\]
+	ovvero
+	\[\exists  M>0 \text{ tale che } \frac{\|T(v)\|_W}{\|v\|_V}\le M\ \forall v\in V\setminus\{0\}.\]
+	\[\exists  M>0 \text{ tale che } \sup_{v\in V\setminus \{0\} }\frac{\|T(v)\|_W}{\|v\|_V}\le M\]
+\end{tcolorbox}
+\textbf{Esempi:} 
+\\1) $T:(\R^2,\|.\|_2)\to (\R,|.|)$ definito da $T(v)=v_0\cdot v$ operatore lineare.
+\\$T$ è limitato, $M=\|v_0\|$ 
+\\2) $T:(C^1([a,b]),\|.\|_{C^1})\to (C^0([a,b]),\|.\|_{C^0})$, $T(f)=f'$ op. lineare.
+\\$T$ è limitato con la scelta $M=1$
+\\3) $T:(L^{2}(0,1),\|.\|_2)\to (\R,|.|)$, $T(f)=\int_{0}^{1} f_0\cdot fdx $ dove $f_0\in L^{2}(0,1)$ 
+\\$T$ è limitato con la scelta $M=\|f_0\|_2$ (Tramite disuguaglianza di Holder)
+\\\textbf{Osservazione:} Considerando $T:(L^{p}(0,1),\|.\|_p)\to (\R,|.|)$ definito da $T(f)=\int_{0}^{1} f_0fdx $ questo è lineare continuo prendendo $f_0\in L^{p'}(0,1)$.
+\\\divider
+\begin{tcolorbox}
+	\textbf{Proposizione: }Sia $T:(V,\|.\|_V)\to (W,\|.\|_W)$ lineare. Allora
+	\[T\text{ continuo }\iff T \text{ limitato}\]
+\end{tcolorbox}
+\textbf{Dimostrazione} 
+\\($\impliedby$) Supposto $T$ limitato, basta mostrare che $T$ è continuo in $0$, ovvero: se $v_n\to 0$, allora $T(v_n)\to T(0)=0$ 
+\[\|T(v_n)\|_W\le M \|v_n\|_V\to 0\]
+($\implies$) Supposto $T$ \emph{non limitato} mostriamo $T$ non continuo
+\[\sup_{v\in V\setminus \{0\} }\frac{\|T\|_W}{\|v\|_V}=+\infty\implies \exists \{v_n\} \subseteq  V\setminus \{0\} :\frac{\|T(v_n)\|_W}{\|v_n\|_V}\to +\infty\]
+ovvero, siccome $T$ è lineare:
+\[\bigg\|T\bigg(\frac{v_n}{\|v_n\|_V}\bigg)\bigg\|_W\to +\infty\]
+Quindi se considero $u_n:= \frac{v_n}{\|v_n\|_V}$, ha che 
+\[\begin{cases}
+	\|u_n\|_V=1\\
+	\|T(u_n)\|_W\to +\infty
+\end{cases}\]
+Posso costruire una successione $y_n$ tale che $y_n\to 0$ ma $T(y_n)\not \to 0$
+Ponendo $y_n= \frac{u_n}{\|T(u_n)\|_W}$
+\begin{itemize}
+	\item $y_n\to 0$ poiché 
+\end{itemize}
+\[\|y_n\|_V=\bigg\|\frac{u_n}{\|T(u_n)_W\|}\bigg\|_V\to 0\]
+\begin{itemize}
+	\item $T(y_n)=1$ perché
+\end{itemize}
+\[T(y_n)=T\bigg( \frac{u_n}{\|T(u_n)\|_W} \bigg)= \frac{T(u_n)}{\|T(u_n)\|_W}\not\to 0\]
+\begin{tcolorbox}
+	\textbf{Definizione: }Dati $(V,\|.\|_V),(W,\|.\|_W)$ spazi normati
+	\[\mathcal L(V,W):=\{\text{op. lineari limitati da } V \text{ in }W\}\] 
+	È uno spazio vettoriale munito delle operazioni naturali
+\end{tcolorbox}
+È possibile introdurre su questo spazio una norma, ponendo 
+\[\|T\|_{\mathcal L(V,W)}:=\sup_{v\in V\setminus \{0\} }\frac{\|T(v)\|_W}{\|v\|_V}\]
+ovvero, per definizione, la più piccola costante $M$ tale che $\|T(v)\|_W\le M \|v\|_V\ \forall v\in V$.
+\\\textbf{Osservazione:} Si può verificare che quella definita sopra è effettivamente una norma.\\
+In particolare
+\begin{tcolorbox}
+	\textbf{Definizione: }Quando $W=(\R,|.|)$ 
+	\[\mathcal L (V,W)=V'\text{ spazio duale di }V\]
+\end{tcolorbox}
+\[\|T\|_{V'}:=\sup_{v\in V\setminus \{0\} } \frac{|T(v)|_{\R}}{\|v\|_V}\]
+\textbf{Esempi: }Vedere i casi 1) e 3)
+
