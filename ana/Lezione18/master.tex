@@ -1,0 +1,119 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Serie di Fourier in $L^2$}
+Si considera $L^{2}(I)$ dove $I=(-\frac{T}{2},\frac{T}{2}$, e il prodotto scalare è definito come
+\[(f,g)=\int_{I}^{} f(x)g(x)dx\]
+\textbf{Sistema ortonormale dei polinomi trigonometrici}
+\[p_0=\frac{1}{\sqrt{T} },\ p_k=\cos\frac{\xi_kx}{\sqrt{\frac{T}{2}} },\ q_k= \frac{\sin(\xi_kx}{\sqrt{\frac{T}{2}} },\ k\ge 1\]
+dove 
+\[\xi_x=\bigg(\frac{2\pi}{T}\bigg)^k\ \ (\text{se }T=2\pi,\ \xi_k=k)\]
+formano un sistema ortonormale
+\\Dunque, data $f\in L^{2}(I)$ la sua serie di Fourier rispetto a questo sistema è la serie
+\[(f,p_0)p_0+\sum_{k\ge 1}^{} (f,p_k)p_k+(f,q_k)q_k\ \ (*)\]
+\subsubsection{Modi equivalenti di scrivere (*)}
+\[\frac{a_0}{2}+\sum_{k\ge 1}^{} a_k\cos(\xi_kx)+b_k\sin(\xi_kx)\ \ (* *)\]
+\[a_k=\frac{2}{T}\int_{I}^{} f(x)\cos(\xi_kx)dx\ \ k\ge 0\]
+\[b_k=\frac{2}{T}\int_{I}^{} f(x)\sin(\xi_kx)dx\ \ k\ge 1\]
+Oppure 
+\[\sum_{k=-\infty}^{+\infty} \hat{f_k}e^{i\xi_kx}\ \ (* * *)\]
+\[\hat{f_k}=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(x)e^{-i\xi_kx}dx\ \ z\in \Z\]
+\[\hat{f_k}= \frac{a_k-ib_k}{2}\ \ k\in \N\]
+\[\hat{f_k}= \]
+completare
+\begin{tcolorbox}
+	\textbf{Teorema: }Il sistema $(p_0,p_k,q_k)$ è ortonormale completo in $L^{2}(I)$
+\end{tcolorbox}
+\textbf{Dimostrazione} usando la (3) delle equivalenze
+\\$\overline{\left< p_0,p_k,q_k \right> }\equiv L^{2}(I)$ 
+\\$\subseteq  $ sempre vero $(\overline{M}\subseteq  H)$ 
+\\contains compmeltare
+\\\textbf{Passo 1} Mostriamo che quanto sopra è vero se $f=\varphi\in C_0^\infty(I)$.
+\\Infatti ,, posso estendere $\varphi$ a $\tilde\varphi\in C_{\text{per}}^\infty(\R)$.
+\\Sappiamo (Analisi 2) che la serie di Fourier di $\tilde\varphi$ converge uniformemente su $[-\frac{T}{2},\frac{T}{2}]\implies $converge uniformemente in $L^{2}(-\frac{T}{2},\frac{T}{2})$.
+\\$\implies $ La successione delle somme parziali della serie di Fourier di $\tilde\varphi$ fornisce una successione in $\left< p_0,p_k,q_k \right> $, che converge a $\tilde\varphi$ in $L^{2}(-\frac{T}{2},\frac{T}{2})$
+\\\textbf{Passo 2} Data $f\in L^{2}(I)$ posso approssimarla con una successione $\varphi_k \subset C_0^\infty(I)$.
+\[\varphi_k\rightarrow^{L^{2}(I)}f\]
+Concludo prendendo una successione diagonale.
+\[\|f-S\|\le \|f-\varphi\|+\|\varphi-S\|<\varepsilon\]
+$S$ somma parziale della serie di Fourier di $\varphi$ 
+\\\textbf{Osservazioni}
+\begin{itemize}
+	\item Data $f\in L^{2}(I)$, per il teorema sopra:
+		\[f=(f,p_0)p_0+\sum_{k\ge 1}^{} (f,p_k)p_k+(f,q_k)q_k\]
+	\item Data $f\in L^{2}(I)$, vale l'id. di Bessel:
+		\[\|f\|_{L^{2}(I)}^2=(f,p_0)^2+\sum_{k\ge 1}^{} (f,p_k)^2+(f,q_k)^2\]
+		Dunque $f\in L^{2}(I) \iff $ i suoi coefficienti di Fourier $\in \ell^2$ 
+	\item Possiamo sostituire $L^{2}(-\frac{T}{2},\frac{T}{2})$ con 
+		\[ L^{2}_T(\R)=\{f\in L_{\text{loc}}^2(\R):\text{T-periodiche}\} \]
+		è uno spazio di Hilbert, con $(f,g)=\int_{-T / 2}^{T / 2} fg $ 
+	\item I coefficienti di Fourier hanno senso anche per $f\in L^{1}(-\frac{T}{2},\frac{T}{2})$ 
+		\[|a_k|=\frac{2}{T}\bigg|\int_{-\frac{T}{2}}^{\frac{T}{2}}f(x)\cos(\xi_kx)dx\bigg|\le \frac{2}{T } \int_{-\frac{T}{2}}^{\frac{T}{2}} |f(x)|<+\infty\]
+		lo stesso per i $b_k$ 
+	\item Se $f\in \text{A.C.}([-\frac{T}{2},\frac{T}{2}])$ e $f(-\frac{T}{2}=f(\frac{T}{2})$ posso estenderla a una funzione continua periodica su $\R$. (l'estensione $f$ appartiene a $L_T^2(\R)$)
+		\\Ha senso calcolare i coefficienti di Fourier sia di $f$ che di $f'$.
+		completare
+\[a_k'=\frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f'(x)\cos(\xi_kx)dx=0+\frac{2}{T}\xi_k \int_{-\frac{T}{2}}^{\frac{T}{2}} f(x)\sin(\xi_kx)dx\]
+\[=\xi_kb_k\]
+Analogamente
+\[b_k'=-\xi_ka_k\]
+Dunque
+\[\hat{f_k'}=i\xi_k \hat{f_k}\ \forall k\in \Z\]
+
+\end{itemize}
+\section{Applicazioni delle serie di Fourier alle equazioni differenziali}
+Ricerca di soluzioni periodiche di ODE lineari (tramite serie di Fourier)
+\\Consideriamo un'ODE su $\R$ della forma
+\[\sum_{j=0}^{n} a_ju^{(j)}=f\in L^{2}_T(\R)\ \ x\in \R\]
+\textbf{Problema:} esistono soluzioni T-periodiche (in $L^{2}_T(\R)$)?
+\\La seguente equazione differenziale equivale a chiedere:
+\[\sum_{j=0}^{n} a_j\hat{u^{(j)}}_k=\hat{f}_k\ \forall k\in \Z\]
+\[\sum_{j=0}^{n} a_j(i\xi_k)^{(j)}\hat{u_k}=\hat{f}_k\ \forall k\in \Z\]
+Sistema di infinite eq. algebriche.
+\[P(i\xi_k)\hat{u_k}=\hat{f_k}\]
+(forma equivalente)
+\\Ciascuna eq. è un'equazione lineare di 1° grado in $\hat{u_k}$!!!
+\begin{itemize}
+	\item Caso 1: $P(i\xi_k)\neq 0\ \forall k\in \Z$ 
+		\[\implies \hat{u_k}=\frac{\hat{f_k}}{P(i\xi_k)}\]
+	\item Caso 2: $P(i\xi_k)=0$ per $k=k_1*,\ldots,k_p*$, allora
+		\\$\hat{f_k}=0$ per $k=k_1^*,\ldots,k_p^*\implies $infinite soluzioni, ovvero
+		\[\hat{u_k}=\begin{cases}
+		\frac{\hat{f_k}}{P(i\xi_k)} k\neq K_1^*,\ldots,k_p^*
+	\\\text{arbitrario}\ \ k=k_1^*,\ldots,k_p^*
+
+\end{cases}\]
+Se però $\hat{f}_k\neq 0$ per qualche $k\in \{k_1^*,\ldots,k^*_p\} \implies $ no soluzioni
+\end{itemize}
+\textbf{Osservazione:} Ci sono altri sistemi ortonormali completi in $L^{2}(I)$.
+\[1,x,x^2,xì3,\ldots\]
+$\to $ polinomi di Legendre\\
+\textbf{Esempio} in $L^2(-1,1)$ 
+\[\frac{1}{\sqrt{2} },, \sqrt{\frac{3}{2}} x, \sqrt{\frac{5}{2}} \bigg(-\frac{1}{3}+x^2\bigg)\]
+Data $f\in L^{2}(I)$, per minimizzare la distanza in $L^{2}(I)$ da un polinomio di grado $\le 3$, dovrò considerare la somma delle serie di Fourier di  $f$ fatta rispetto ai polinomio di Legendre
+\end{document}

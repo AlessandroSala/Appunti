@@ -28,7 +28,7 @@
 \begin{document}
 \section{Equazioni alle derivate parziali}
 \subsection{Formulazione variazionali di problemi ellittici}
-\[-a\nabla ^2u+cu=f\text{ in }\Omega\subseteq  \R^n aperto limitato regolare,\ u=u(x_1,\ldots,x_n)\]
+\[-a\Delta u+cu=f\text{ in }\Omega\subseteq  \R^n\text{ aperto, limitato e regolare},\ u=u(x_1,\ldots,x_n)\]
 \textbf{Ipotesi}
 \begin{itemize}
 	\item $a>0$ 
@@ -54,7 +54,7 @@ $(D)_c$ Trovare $u\in C^2(\overline\Omega)$ tale che:
 	\\u=0&\text{ su }\partial \Omega
 \end{cases}\]
 $(D)_v$ Trovare $u\in H_0^1(\Omega)$ tale che:
-\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} \ \forall v\in H_0^1(\Omega)\]
+\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{}fv \ \forall v\in H_0^1(\Omega)\]
 \begin{tcolorbox}
 	\textbf{Proposizione (D):} Nelle ipotesi sopra:
 	\begin{enumerate}
@@ -70,7 +70,7 @@ $(N)_c$ Trovare $u\in C^2(\overline\Omega)$ tale che:
 	\\\frac{\partial u}{\partial \nu} =0&\text{ su }\partial \Omega
 \end{cases}\]
 $(N)_v$ Trovare $u\in H^1(\Omega)$ tale che:
-\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} \ \forall v\in H^1(\Omega)\]
+\[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} fv\ \forall v\in H^1(\Omega)\]
 \begin{tcolorbox}
 	\textbf{Proposizione (N):} Nelle ipotesi sopra:
 	\begin{enumerate}
@@ -116,13 +116,13 @@ Si avrà dunque $M=C_p(\Omega)\|f\|_2$ e $\|\nabla v\|_2=\|v\|_2$
 \[|b(u,v)|=\bigg|\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv\bigg|\le \int_{\Omega}^{} |a\nabla u\cdot \nabla v+cuv|\le \int_{\Omega}^{} a|\nabla u\cdot \nabla v|+c|uv| \]
 \[\le \int_{\Omega}^{} a|\nabla u\cdot \nabla v|+\|c\|_{\infty}\int_{\Omega}^{} |uv|   \le a \|\nabla u\|_2 \|\nabla u\|_2+\|c\|_\infty\|u\|_2\|v\|_2\]
 \[\le a \|\nabla u\|_2\|\nabla v\|_2+\|c\|_\infty C_p^2(\Omega)\|\nabla u\|_2\|\nabla v\|_2\]
-\[=(a+\|c\|_\infty C_p(\Omega))\|\nabla u\|_2\]
-finire\\
+\[=(a+\|c\|_\infty C^2_p(\Omega))\|\nabla u\|_2\|\nabla v\|_2=(a+\|c\|_\infty C^2_p(\Omega))\|u\|_H\|v\|_H\]
+
 \begin{itemize}
 	\item $b(u,v)$ coerciva
 
 \end{itemize}
-$b(u,v)=\int_{\Omega}^{} a|\nabla u|^2+cu^2\ge \int_{\Omega}^{} a|\nabla u|^2=a\|\nabla u\|  $ finire
+\[b(u,v)=\int_{\Omega}^{} a|\nabla u|^2+cu^2\ge \int_{\Omega}^{} a|\nabla u|^2=a\|\nabla u\|_2^2=\alpha \|u\|^2_H  \]
 
 \subsubsection{Esistenza delle soluzioni per Neumann}
 \begin{tcolorbox}
@@ -137,13 +137,12 @@ $b(u,v)=\int_{\Omega}^{} a|\nabla u|^2+cu^2\ge \int_{\Omega}^{} a|\nabla u|^2=a\
 \\Tranne che per la coercività di $b$:
 \[b(u,u)=\int_{\Omega}^{} a|\nabla u|^2+cu^2\ge \alpha\|u\|_{H^1}^2?\]
 \[\ge \int_{\Omega}^{} a|\nabla u|^2+c_0u^2\ge \min \{a,c_0\} \int_{\Omega}^{} |\nabla u|^2+|u|^2\]
-\subsubsection{}
+\subsubsection{Richiamo di Analisi Vettoriale}
 \[\int_{\Omega}^{} \text{div}X=\int_{\partial \Omega}^{} X\cdot \nu \ \forall X\in C^1(\Omega)\]
 $X=v\nabla u$, $v\in C^1$, $u\in C^2$
-\[\text{div}(v\nabla u)=\]
-completare
+\[\text{div}(v\nabla u)=\sum_{k=1}^{n} \frac{\partial }{\partial x_k} \bigg(v \frac{\partial u}{\partial x_k} \bigg)\]\[=\sum_{k=1}^{n} \frac{\partial v}{\partial x_k} \frac{\partial u}{\partial x_k} +v \frac{\partial ^2u}{\partial x_k^2} =\nabla u\cdot \nabla v+v\Delta u\]
+\textbf{Formula di Gauss-Green}
 \[\int_{\Omega}^{} \nabla u\cdot \nabla v+v\nabla u=\int_{\partial \Omega}^{} v \frac{\partial u}{\partial \nu} \ v\in C^1,u\in C^2\]
-(Formula di Gauss-Green)
 
 \begin{tcolorbox}
 \textbf{Lemma di DuBois-Raymond}
@@ -156,22 +155,23 @@ Per dimostrarlo si procede per assurdo
 	\item Sia $u$ sol. di $(D)_c$
 
 \end{enumerate}
-Allora $u\in H_0^1(\Omega)$ $(u,v\nabla u\in C\overline{\Omega})\subseteq  L^{2}(\Omega),u=0\text{ su }\partial\Omega)$
-Moltiplico l'equazione per $v\in C_0^\infty(\Omega)$ 
+Allora $u\in H_0^1(\Omega)$ $(u,v\nabla u\in C(\overline{\Omega})\subseteq  L^{2}(\Omega),u=0\text{ su }\partial\Omega)$
+\\Moltiplico l'equazione per $v\in C_0^\infty(\Omega)$ 
 \[-a\Delta u\cdot v+cuv=fv\text{ in }\Omega\]
 Integrando
 \[\int_{\Omega}^{} -a\Delta u\cdot v+cuv=\int_{\Omega}^{} fv\]
 Per Gauss Green
 \[\int_{\Omega}^{} av \frac{\partial u}{\partial \nu}=0\]
 \[\int_{\Omega}^{} a\nabla u\cdot \nabla v_n+cuv_n=\int_{\Omega}^{} fv_n\ \forall v\in C_0^\infty(\Omega) \]
-Data $v\in H_0^1(\Omega),\exists \{v_n\} \subseteq  C_0^\infty(\Omega):v_n\to ^{H^1}v$ (per definizione di $H^1_0(\Omega)$ 
+Data $v\in H_0^1(\Omega),\exists \{v_n\} \subseteq  C_0^\infty(\Omega):v_n\xrightarrow{H^1}v$ (per definizione di $H^1_0(\Omega)$ 
 \\Passando al limite
 \[\int_{\Omega}^{} a\nabla u\cdot \nabla v+cuv=\int_{\Omega}^{} fv\ \forall v\in H_0^1(\Omega) \]
 Tale limite si dimostra
 \[\bigg|\int_{\Omega}^{} fv_n-fv\bigg|\le \int_{\Omega}^{} |f(v_n-v)|\le_H \|f\|_2 \|v_n-v\|_2\to 0\]
 In modo analogo si verificano le altre convergenze
 \begin{enumerate}
-	\item 2) Sia $u\in H_0^1(\Omega)$ sol. variazionale, supponendo $u\in C^2(\overline{\Omega})$, ($c,f$ continue)
+	\setcounter{enumi}{1}
+	\item Sia $u\in H_0^1(\Omega)$ sol. variazionale, supponendo $u\in C^2(\overline{\Omega})$, ($c,f$ continue)
 \end{enumerate}
 $u=0$ su $\partial\Omega$ 
 \\Sappiamo che
@@ -248,7 +248,7 @@ ovvero: (supposto $N>M$)
 \[\|S_n(u)-S_M(u)\|^2=(S_N(u)-S_M(u),S_N(u)-S_M(u))=\]
 \[\bigg(\sum_{n=M+1}^{N} (u,u_n)u_n,\sum_{n=M+1}^{N} (u,u_n)u_n\bigg)\]
 \[=\sum_{n=M+1}^{N} (u,u_n)^2=|T_N(u)-T_M(u)|\]
-dove $t_N=\ldots$ 
+dove $T_N=\sum_{n\le N}^{} (u,u_n)^2$\\ 
 Bessel $\implies \{T_N(u)\} $ è di Cauchy
 \\Essendo in un Hilbert $S_N(u)$ converge
 \\Sia ora $u':=\sum_{n}^{} (u,u_n)u_n$ 
@@ -260,7 +260,8 @@ Bessel $\implies \{T_N(u)\} $ è di Cauchy
 Per l'unicità nel teorema delle proiezioni, $u'=P_M(u),\ u-u'=P_{M^\perp}(u)$
 \\Infatti
 \begin{enumerate}
-	\item $u'\in M$ vale per costruzione: completare
+	\item $u'\in M$ vale per costruzione:
+		\[u'=\lim_{N \to +\infty} S_N(u)\in \overline{\left< u_n \right> },\ u'\text{ è limite di comb. lineari degli }u_n \] \[ S_N(u)=\sum_{n\le N}^{} (u,u_n)u_n \in \left< u_n \right> \text{ sono comb. lineari degli }u_n_\]
 	\item Per mostrare che $u-u'\in M^\perp$ basta far vedere che $(u-u',u_n)=0\ \forall n$, questo assicura che $u-u'$ sarà ortogonale a tutti i limiti delle combinazioni lineari degli $u_n$, ovvero a tutti gli elementi di $M$.\[(u-u',u_m)=(u-\sum_{n}^{} (u,u_n)u_m,u_m)=(u,u_m)-(u,u_m)(u_m,u_m)=0\]
 \end{enumerate}
 \divider
@@ -275,7 +276,7 @@ Per l'unicità nel teorema delle proiezioni, $u'=P_M(u),\ u-u'=P_{M^\perp}(u)$
 	\\Sono equivalenti:
 	\begin{enumerate}
 		\item $(u_n)$ è completo
-		\item $u\in H:(u,u_n=0\ \forall n\implies u=0$ 
+		\item $u\in H:(u,u_n)=0\ \forall n\implies u=0$ 
 		\item Posto $M:=\overline{\left< u_n \right> }$, si ha $M\equiv H$
 		\item $\sum_{n}^{} (u,u_n)u_n=u\ \forall u\in H$
 		\item $\sum_{n}^{} (u,u_n)(v,u_n)=(u,v)\ \forall u,v\in H$ (identità di Parseval)
@@ -284,7 +285,7 @@ Per l'unicità nel teorema delle proiezioni, $u'=P_M(u),\ u-u'=P_{M^\perp}(u)$
 \end{tcolorbox}
 \textbf{Dimostrazione} 
 \\$(1)\iff (2)\implies (3)\implies (4)\implies (5)\implies (6)\implies (2)$
-\\\textbf{Dimostrazione 1}
+\\\textbf{Dimostrazione 1 se e solo se 2}
 \\Se è falsa la 2 implica che è falsa la 1
 \[\exists u\in H:(u,u_n)=0\ \forall n\text{ MA }u\neq 0\]
 Allora $(u_n)$ non è massimale.
