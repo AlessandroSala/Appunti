@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.7)  11 DEC 2021 12:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.7)  12 DEC 2021 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Master/master.tex
-(./Master/master.tex
+**master.tex
+(./master.tex
 LaTeX2e <2020-10-01> patch level 4
 L3 programming layer <2021-01-09> xparse <2020-03-03>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -474,9 +474,7 @@ File: l3backend-pdftex.def 2020-01-29 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count290
 \l__pdf_internal_box=\box66
 )
-(./master.aux
-No file ../Lezione1/master.aux.
-)
+(./master.aux)
 \openout1 = `master.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -493,7 +491,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
- (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count291
 \scratchdimen=\dimen196
@@ -526,34 +525,102 @@ Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
+(../Lezione16/parsed_master.tex
 
-! LaTeX Error: File `../Lezione1/master.tex' not found.
+! LaTeX Error: Can be used only in preamble.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{document}
+                    
+? 
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+
+! LaTeX Error: File `./figures/parallelogramma.pdf_tex' not found.
 
 Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: tex)
+or enter new name. (Default extension: pdf_tex)
 
 Enter file name: 
-! Interruption.
-<to be read again> 
-                   }
-l.29 \input{../Lezione1/master}
-                               ^^M
-? 
-(/usr/share/texlive/texmf-dist/tex/latex/tools/.tex File ignored) (./master.aux
-) ) 
-Here is how much of TeX's memory you used:
- 14197 strings out of 479304
- 269373 string characters out of 5869780
- 548516 words of memory out of 5000000
- 31139 multiletter control sequences out of 15000+600000
- 404193 words of font info for 28 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 112i,1n,116p,453b,69s stack positions out of 5000i,500n,10000p,200000b,80000s
+(/usr/share/texlive/texmf-dist/tex/latex/tools/.tex File ignored)
+Overfull \hbox (112.74602pt too wide) detected at line 62
+\OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y\OMS/c
+msy/m/n/10 k[] \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 x \OMS/cmsy
+/m/n/10 ^^@ \OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 = (\OML/cmm/
+m/it/10 x \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 y; x \OT1/cmr/m/n/10 + \OML/cmm/m/
+it/10 y\OT1/cmr/m/n/10 ) + (\OML/cmm/m/it/10 x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/
+it/10 y; x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 y\OT1/cmr/m/n/10 ) = \OMS/cmsy
+/m/n/10 k\OML/cmm/m/it/10 x\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 + 2(\OML/cmm/m/
+it/10 x \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 y\OT1/cmr/m/n/10 ) + \OMS/cmsy/m/
+n/10 k\OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10
+ k\OML/cmm/m/it/10 x\OMS/cmsy/m/n/10 k[] ^^@ \OT1/cmr/m/n/10 2(\OML/cmm/m/it/10
+ x; y\OT1/cmr/m/n/10 ) + \OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 k
+[] \OT1/cmr/m/n/10 = 2\OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 x\OMS/cmsy/m/n/10 k[] 
+\OT1/cmr/m/n/10 + 2\OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 k[]
+ []
 
-No pages of output.
+[2]
+
+! LaTeX Error: File `./figures/convesso.pdf_tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: pdf_tex)
+
+Enter file name: 
+(/usr/share/texlive/texmf-dist/tex/latex/tools/.tex File ignored)
+
+! LaTeX Error: File `./figures/sottchiuso.pdf_tex' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: pdf_tex)
+
+Enter file name: 
+(/usr/share/texlive/texmf-dist/tex/latex/tools/.tex File ignored) [3] [4]
+[5] [6] [7] [8] (./master.aux) ) )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 1 (\begingroup)
+### bottom level 
+Here is how much of TeX's memory you used:
+ 14322 strings out of 479304
+ 271820 string characters out of 5869780
+ 562514 words of memory out of 5000000
+ 31230 multiletter control sequences out of 15000+600000
+ 412306 words of font info for 45 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 112i,9n,116p,446b,528s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/us
+r/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on master.pdf (8 pages, 211529 bytes).
 PDF statistics:
- 3 PDF objects out of 1000 (max. 8388607)
- 3 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

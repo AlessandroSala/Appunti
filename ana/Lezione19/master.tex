@@ -1,0 +1,161 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Trasformata di Fourier}
+\begin{tcolorbox}
+	\textbf{Definizione: }Sia $u\in L^{1}(\R)$. La sua \emph{Trasformata di Fourier} è la funzione definita per $\xi \in \R$ da:
+	\[\hat{u}(\xi):=\int_{\R}^{} u(x)e^{-i\xi x}dx\ \ \xi \in \R\]
+
+\end{tcolorbox}
+\textbf{Osservazioni} 
+\begin{itemize}
+	\item La dipendenza da $\xi$ appare in $e^{-i\xi x}\implies \hat{u}(\xi)$ è un integrale dipendenta dal parametro
+	\item Formalmente c'è analogia con i coefficienti di Fourier
+		\[\hat{u}_k=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} u(x)e^{-i\xi_k x}dx\ \ k\in \Z\]
+	\item La definizione di $\hat{u}(\xi)$ è "ben posta" grazie all'ipotesi $u\in L^{1}(\R)$ 
+		\[|\hat{u}(\xi)\le \int_{\R}^{} |u(x) | |e^{-i\xi x}|dx\le \int_{\R}^{} |u(x)|dx<+\infty\]
+	\item $e^{-i\xi x}=\cos(\xi x)-i\sin(\xi x)\implies \hat{u}(\xi)$ è a valori in $\C$ 
+		\[\hat{u}(\xi)=\int_{\R}^{} u(x)\cos(\xi x)-i \int_{\R}^{} u(x) \sin(\xi x)dx\]  
+	\item Generalizzazioni: si può partire da $u:\R\to \C$
+	\item Da $u:\R^n\to \R$ ($u\in L^{1}(\R^n)$ )
+		\[\hat{u}(\xi):=\int_{\R}^{} u(x)e^{-i\xi\cdot x}dx\ \ \xi \in \R^n\]
+	\item $u:\R^n\to \C$ 
+	\item \emph{Non si trasformano mai} funzioni definite su sottoinsiemi propri di $\R$ o $\R^n$
+\end{itemize}
+\subsection{Varianti in letteratura}
+$e^{-i\xi x}$ rimpiazzato da $e^{i\xi x}$, oppure $e^{i 2\pi\xi x}$
+\subsection{Operatore Trasformata}
+La trasformata $\mathcal F$ di Fourier è l'operatore che manda $u$ in $\hat{ u}$ 
+\[\mathcal F:u\to \hat{u}\]
+\textbf{Osservazioni} 
+\begin{itemize}
+	\item $\mathcal F$ è lineare:
+		\[\mathcal F(\alpha u+\beta v)=\alpha\mathcal F(u)+\beta\mathcal F(v)\]
+\end{itemize}
+\subsection{Trasformate notevoli}
+\begin{enumerate}
+	\item $u(x)=\chi_{(a,b)}(x)$ 
+		\[\hat{u}(\xi)= \frac{\sin(\xi b)-\sin(\xi a)}{\xi}+i \frac{\cos(\xi b)-\cos(\xi a)}{\xi}\]
+	\item $u(x)=e^{-|x|}$ 
+		\[\hat{u}(\xi)= \frac{2}{1+\xi^2}\]
+		Diversamente dal caso precedente, la trasformata è sempre reale, e $\hat{u}$ è di nuovo $L^{1}(\R)$.
+	\item $u(x)=\frac{1}{1+x^2}$ 
+		\[\hat{u}(\xi)= \pi e^{-|\xi|}\]
+		Partendo da $u(x)=e^{-|x|}$ trasformando due volte si ottiene $\hat{\hat{u}}(x)=2\pi e^{-|x|}=2\pi u(x)$
+\end{enumerate}
+\subsection{Teorema di Riemann-Lebesgue}
+\begin{tcolorbox}
+\textbf{Teorema: }Sia $u\in L^{1}(\R)$. Allora $\hat{u}$ ha le seguenti proprietà:
+\begin{enumerate}
+	\item $\hat{u}\in L^{\infty}(\R)$
+	\item $\hat{u}$ è continua
+	\item $\hat{ u}$ è infinitesima all'infinito
+		\[\lim_{\xi \to \pm \infty} \hat{u}(\xi)=0\]
+\end{enumerate}
+
+\end{tcolorbox}
+\textbf{Dimostrazione} 
+\begin{enumerate}
+	\item $|\hat{u}(x)|\le \|u\|_1$, passo all'ess-sup al variare di $\xi$ 
+		\[\|\hat{u}\|_{L^{\infty}(\R)}\le \|u\|_{L^{1}(\R)}\]
+		\[\|\mathcal F(u)\|_{L^{\infty}(\R)}\le \|u\|_{L^{1}(\R)}\]
+		Ne consegue che (con $M=1$, da dimostrare)
+		\[\mathcal F:L^{1}(\R)\to L^{\infty}(\R)\text{ lineare continuo}\]
+	\item Facciamo vedere che $\hat{ u}(\xi)$ è continua in $\xi$ fissato in $\R$, ovvero
+		\[\xi_n\to \xi\implies \hat{u}(\xi_n)\to \hat{ u}(\xi)\]
+		\[\hat{u}(\xi_n)= \int_{\R}^{} u(x) e^{-i\xi_n x}dx\] 
+		\[d^{c}etare \hat{u}(\xi_n)= \int_{\R}^{} u(x) e^{-i\xi_n x}dx\] 
+		\[f_n(x)=u(x)e^{-i\xi_n x}\to u(x)e ^{-i\xi x}=f(x)\]
+		Si può passare sotto il segno di integrale per conv. dominata, perché
+		\[|f_n(x)=|u(x)| |e^{-i\xi_n x}|=|u(x)|\in L^{1}(\R)\]
+	\item Vero se $u=\chi_{(a,b)}$ (vedere esempio sopra)
+		\\Vero se $u$ è "a scalino", $u=\sum_{k}^{N} c_k\chi_{I_i}$ poiché l'operatore trasf. è lineare
+		\[\hat{ u}=\sum_{k=1}^{N} c_k \hat{\chi}_{I_k}\]
+		Vero $\ \forall u\in L^{1}(\R)$ : $\exists \varphi_n$ "a scalino"$\xrightarrow{L^{1}(\R)} u$
+		\\Sappiamo che $\mathcal F:L^1\to L^\infty$ op.continuo: $\varphi_n\xrightarrow{L^{1}(\R)}u\implies \hat{\varphi_n}\xrightarrow{L^{\infty}(\R)}\hat{u}$
+So che $\hat{\varphi}_n$ sono "infinitesime all'infinito", dunque anche $\hat{u}$ ha la stessa proprietà.
+
+\end{enumerate}
+\subsection{Proprietà algebriche}
+Sia $u\in L^{1}(\R)$ 
+\begin{itemize}
+	\item $v(x)=u(x-a), \ a\in \R\implies \hat{v}(x)=e^{-i\xi a}\hat{u}(\xi)$
+	\item $v(x)=e^{iax}u(x)\implies \hat{\xi}=\hat{u}(\xi-a)$
+\\		Esempio: è possibile calcolare $u(x)\cos(ax)$ (Definizione complessa del coseno)
+\item $v(x)=u(x / a)\ a\in \R- \{0\} \implies \hat{v}(\xi)=|a|\hat{u}(a\xi)$
+	In particolare, con $a=-1$, si ha
+	\[\begin{cases}
+		u\text{ pari }\implies \hat{u} \text{ pari (reale)}\\
+		u\text{ dispari }\implies \hat{u}\text{ dipari (puramente immaginaria)}
+	\end{cases}\]
+
+\end{itemize}
+Queste proprietà sono dimostrabili tramite cambi di variabili negli integrali
+\subsection{Proprietà differenziali}
+\begin{tcolorbox}
+	\textbf{Proposizione 1:} Sia $u\in L^{1}(\R)\cap \text{A.C.}(\R)$ (con tali ipotesi $u$ derivabile q.o. su $\R$, con $u'\in L^{1}(\R)$). Allora
+	\[\widehat{u'}(\xi)=i\xi \hat{u}(\xi) \ \forall \xi \in \R\]
+\end{tcolorbox}
+	In particolare, nelle ipotesi della proposizione
+	\[u'\in L^{1}(\R)\implies \lim_{\xi \to \pm \infty} \widehat{u'}(\xi)=0\]
+	ovvero 
+	\[\lim_{\xi \to \pm \infty} \xi \hat{u}(\xi)=0\]
+	ovvero
+	\[\hat{u}(\xi)=o \bigg(\frac{1}{x}\bigg)\]
+	Iterando:\[u\in L^{1}(\R)\cap \text{AC}(\R), \ u'\in \text{AC}(\R)\]
+	\[\widehat{u''}(\xi)=(i\xi)^2\hat{u}(\xi)=-\xi^2\hat{u}(\xi)\]
+	\[\text{e }\hat{u}(\xi)=o\bigg(\frac{1}{\xi^2}\bigg)\]
+\textbf{Morale:} maggior regolarità di $u$ implica maggior rapidità di convergenza a 0 all'infinito di $\hat{u}$ 
+\\\textbf{Dimostrazione} 
+\[\hat{u'}(\xi)=\int_{\R}^{} u'e^{-i\xi x}dx=\lim_{L \to +\infty} \int_{-L}^{L} u'(x)e^{-i\xi x}dx\]
+\[=\lim_{L \to +\infty} u(x)e^{-i\xi x}\biggr\rvert_{-L}^L+i\xi\int_{-L}^{L} u(x)e^{-i\xi x}dx\] 
+\[=i\xi \hat{u}(\xi)\]
+\[u(\pm L)e^{i\xi \pm L}\text{ per }L\to +\infty\]
+Infatti, per $u\in L^{1}(\R)\cap \text{A.C.}(\R),\ u(L)\xrightarrow{L\to +\infty}0$
+\begin{equation*}\begin{align*}u(L)&=u(0)+\int_{0}^{L} u'(t)dt
+\\&=u(0)+\int_{0}^{+\infty} u'(t)\chi_{(0,L)}(t)dt
+\\&=u(0)+\int_{0}^{+\infty} u'(t)dt 
+\end{align*}\end{equation*}
+Poiché $f_L(t)=u'(t)\chi_{(0,L)}(t)$.
+\begin{tcolorbox}
+\textbf{Proposizione 2: }Sia $u\in L^{1}(\R)$ tale che $xu\in L^{1}(\R)$ 
+\\Allora:
+\[(\hat{u})'(\xi)=-i \widehat{xu}(\xi)\ \forall \xi \in \R\]
+\end{tcolorbox}
+In particolare, siccome la trasformata di $xu$ è continua (per RL), allora $(\hat{u})'$ continua, cioè $\hat{u}\in C^1(\R)$ 
+\\Iterando: $u\in L^{1}(\R):xu\in L^{1}(\R), x^2u\in L^{1}(\R)\implies \hat{u}\in C^2(\R)$ 
+\[u\sim \frac{M}{x^\alpha}\text{ per }x\to \pm \infty\text{ con }\alpha>k\implies x^{k-1}u(x)\sim \frac{M}{x^{\alpha-k+1}}\ (\alpha -k+1>1)\implies \]
+\[x^{k-1}u\in L^{1}(\R)\implies \hat{u}\in C^{k-1}(\R)\]
+\textbf{Morale:} maggior rapidità di decrescenza a 0 per $u$ implica maggior regolarità di $\hat{u}$ 
+\\\textbf{Dimostrazione (cenno)}
+\[\hat{u}(\xi)=\int_{\R}^{} u(x)e^{-i\xi x}dx\]
+Posso derivare sotto $\int$:
+\[(\hat{u}(\xi))'=\int_{\R}^{} (u(x)e^{-i\xi x})'dx =-i \int_{\R}^{} xu(x)e ^{-i\xi x}dx=-i \widehat{xu(x)}(\xi)\] 
+
+\end{document}
+

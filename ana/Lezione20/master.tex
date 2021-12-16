@@ -1,0 +1,146 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{mathabx}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\section{Applicazione della trasformata di Fourier alle equazioni differenziali}
+Data un'equazione differenziale in $u=u(x)$, applicando la trasformata si ottiene un'equazione algebrica in $\hat{u}$. Risolvendo per $\hat{u}$, si trova quindi $u$.
+\subsection{Esempio} 
+\[u'(x)-u(x)=e^{-x}H(x)\ \ H(x):=\begin{cases}
+	1\ \ \ge 0\\
+	0\ \ x<0
+\end{cases}\]
+Da risolvere per q.o. $x\in \R$.
+\\Cerco soluzioni $u\in L^{1}(\R)\cap\text{AC}(\R)$ 
+\[\hat{u'}-\hat{u}= \widehat{e^{-x}H(x)}\]
+completare
+\[\hat{u}(\xi)=-\frac{1}{1+\xi^2}\implies u(x)=-\frac{1}{2}e^{-|x|}\]
+\subsection{Formule di inversione per la trasformata di Fourier in $L^1$ }
+Sia $u\in L^{1}(\R^n)$ tale che $\hat{u}\in L^{1}(\R^n)$. Allora:
+\[u(-x)=\frac{1}{(2\pi)^n}\hat{\hat{u}}(x)\ \ x\in \R^n\]
+\[\check{u}(x):=u(-x)\]
+\textbf{Problema:} Esiste uno spazio $X$ tale che 
+\[\mathcal F:X\to X\]
+e valga in $X$ la formula di inversione?
+\\\textbf{Risposta:} Sì, $X=L^{2}(\R^n)$.
+\\Sia $u\in L^{2}(\R^n)$ 
+\[u(-x)=\frac{1}{(2\pi)^n}\hat{\hat{u}}(x)\ \ x\in \R^n\]
+Ma chi è $u\in L^{2}(\R^n)\setminus L^{1}(\R^n)$?
+\[|\hat{u}(\xi)|<+\infty\text{ se }u\in L^{1}(\R)\]
+\subsection{Trasformata di Fourier in $L^2$ }
+\begin{tcolorbox}
+\textbf{Spazio delle funzioni a decrescenza rapida}
+\\$\mathcal S(\R^n):= \{u\in C^\infty(\R^n)\} $ tali che 
+\[ \forall \alpha, \beta\text{ multiindici }\sup_{x\in \R^n}|x^\alpha D^\beta u(x)|<+\infty\]
+\end{tcolorbox}
+\textbf{Osservazioni} 
+\begin{itemize}
+	\item $C^\infty_0(\R^n)\subset \mathcal S(\R^n)\subseteq  C^\infty(\R^n)$ 
+	\item $u\in \mathcal S(\R^n)\implies x^\gamma u, D^\gamma u\in S(\R^n)$ 
+	\item $\mathcal S(\R^n) \subseteq  L^{1}(\R^n)$
+	\item Valgono in $S(\R^n)$ le seguenti formule:
+\end{itemize}
+\begin{enumerate}
+	\item $\widehat{D^\alpha u}=i^{|\alpha|}\xi^\alpha \hat{u}$ 
+	\item $D^\alpha \hat{u}=(-i)^{|\alpha|}\widehat{x^\alpha u}$
+\end{enumerate}
+\begin{itemize}
+	\item Formula di inversione in $\mathcal S(\R^n)$ 
+		\\Sia $u\in \mathcal S(\R^N)$. Allora $\hat{u}\in \mathcal S(\R^n)$ 
+		\[\check u=\frac{1}{(2\pi)^n}\hat{\hat{u}}\]
+\end{itemize}
+\textbf{Dimostrazione: }Se dimostro che $\hat{u}\in \mathcal S(\R^n)$, allora vale la formula di inversione. (come conseguenza di quelle in $L^{1}(\R^n)$, perché $u,\hat{u}\in \mathcal S(\R^n)\subseteq  L^{1}(\R^n)$ ).
+\begin{itemize}
+	\item $\hat{u}\in C^\infty(\R^n) $ perché $\ \forall \alpha,\ x^\alpha u \in L^{1}(\R^n)$
+		\\completare
+		\\Dunque per la prop. 2 $u$ ha derivate di ogni ordine
+	\item $\sup_{x\in \R^n}|\xi^\alpha D^\beta \hat{u}(\xi)|<+\infty\ \forall \alpha,\beta$
+		\\Perché $\xi^\alpha D^\beta \hat{u}$ è la trasformata di una funzione di $L^{1}(\R^n)$ 
+		\[\xi^\alpha D^\beta \hat{u}\sim \xi^\alpha \widehat{x^\beta u}\sim \widehat{D^\alpha (x^\beta u)}\]
+	E $D^\alpha(x^\beta u)$ appartiene a $L^{1}(\R^n)$ perché appartiene a $\mathcal S(\R^n)$ 
+	\\Quindi per Riemann-Lebesgue completare
+
+\end{itemize}
+\subsubsection{Altre proprietà di $\mathcal F$ in $\mathcal S$}
+\[ \int_{\R^n}^{} \hat{u}v=\int_{\R^n}^{} \hat{v}u\]
+\textbf{Identità di Plancherel} 
+\[\int_{\R^n}^{} |u|^2=\frac{1}{(2\pi)^n}\int_{\R^n}^{} |\hat{u}|^2\]
+\textbf{Prodotto di convoluzione} 
+\[\widehat{u * v}=\hat{u}\cdot \hat{v}\]
+\[\widehat{uv}=(2\pi)^{-n}\hat{u}* \hat{v}\]
+\divider
+\begin{tcolorbox}
+	\textbf{Definizione: }Sia $u\in L^{2}(\R^n),$ e sia $\{u_h\} \subseteq  \mathcal S(\R^n)$ tale che $u_h\to u$ in $L^{2}(\R^n)$.\\
+	Considero $\hat{u_h}\subseteq  \mathcal S(\R^n)$ e definisco 
+	\[\hat{u}:=\lim_{h \to +\infty} \hat{u}_h\]
+
+\end{tcolorbox}
+(*) Esiste una tale $u_h$ perché $C_0^\infty(\R^n)$ è denso in $L^{2}(\R^n)$.\\
+\textbf{Idea} 
+\[\mathcal S\ni u_h\to u\in L^{2}\]
+Applico Fourier 
+\[\mathcal S \ni  \hat{u}_h\to \hat{ u}\in L^{2}\]
+\textbf{Osservazioni} 
+\begin{itemize}
+	\item $\exists \lim_{h \to +\infty} \hat{u}_h$ (in $L^{2}(\R^n)$ ) perché $\hat{u}_h$ è di Cauchy: infatti
+		\[\|\hat{u}_h-\hat{u}_k\|_2=\frac{1}{(2\pi)^n}\|u_h-u_k\|_2\text{ (identità di Plancherel)}\]
+		e la successione è di Cauchy
+	\item $\lim_{h \to +\infty} \hat{u}_h$ è indipendente dalla scelta di $u_h $: $u_h\xrightarrow{L^2}u$,  $v_h\xrightarrow{L^2}v$ completare
+	\item Se $u\in L^{2}(\R^n)\cap L^{1}(\R^n)$, allora le trasformate coincidono
+		\\Infatti, prendendo $u_h \subseteq  \mathcal S(\R^n)$ tale che (possibile tramite mollificatori)
+		\[\begin{cases}
+			u_h\xrightarrow{L^1}u\\
+		u_h\xrightarrow{L^2}u
+	\end{cases}\]
+	si ha:
+	\[\begin{cases}
+		\hat{u}_h\xrightarrow{L^\infty}\hat{u} perché f\ldots\\
+		\\ \hat{u}_h\xrightarrow{L^2}\hat{u} per definizione di f in l_2 
+	\end{cases}\]
+\item Vale l'id. di Plancherel in $L^{2}(\R^n)$ 
+	\[\|u\|_2^2=(2\pi)^{-n}\|\hat{u}\|^2_2\ \forall u\in L^{2}(\R^n)\]
+	Infatti, presa $u_h \subseteq  \mathcal S(\R^n):u_h\xrightarrow{L^2}u$:
+	\[\|u_h\|^2_{L^2}=(2\pi)^{-n}\|\hat{u}_h\|^2_{L^2}\ \forall h\]
+	Passando al limite si ottiene l'identità.
+\end{itemize}
+\subsubsection{Calcolo nella pratica}
+Basta osservare che la successione
+\[u_h=u\cdot \chi_{(-h,h)}\]
+\[u_h\xrightarrow {}u\text{ in }L^{2}(\R)\]
+\[\implies \hat{u}_h\to \hat{u}\text{ in }L^{2}(\R)\]
+Per Plancherel.\\
+Qunidi,
+\[\hat{u}(\xi)=\lim_{h \to +\infty} \hat{u}_h(\xi)\]
+\[=\lim_{h \to +\infty} \int_{\R}^{} u_h(x)e^{-i\xi x}dx\]
+\\La formula di inversione vale in $L^{2}$, basta prendere $u_h \subseteq  \mathcal S(\R^n),u_h\xrightarrow{L^2}u$ \\
+Sappiamo:
+\[\check u_h=(2\pi)^{-n}\hat{\hat{u}}_h\ \forall h\]
+Basta passare al limite per $h\to +\infty$ 
+\[\check u=(2\pi)^{-n}\hat{\hat{u}}\]
+
+
+\end{document}
