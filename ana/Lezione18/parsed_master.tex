@@ -1,12 +1,11 @@
-\begin{document}
 
 \section{Serie di Fourier in $L^2$}
-Si considera $L^{2}(I)$ dove $I=(-\frac{T}{2},\frac{T}{2}$, e il prodotto scalare è definito come
+Si considera $L^{2}(I)$ dove $I=(-\frac{T}{2},\frac{T}{2})$, e il prodotto scalare è definito come
 \[(f,g)=\int_{I}^{} f(x)g(x)dx\]
 \textbf{Sistema ortonormale dei polinomi trigonometrici}
 \[p_0=\frac{1}{\sqrt{T} },\ p_k=\cos\frac{\xi_kx}{\sqrt{\frac{T}{2}} },\ q_k= \frac{\sin(\xi_kx}{\sqrt{\frac{T}{2}} },\ k\ge 1\]
 dove 
-\[\xi_x=\bigg(\frac{2\pi}{T}\bigg)^k\ \ (\text{se }T=2\pi,\ \xi_k=k)\]
+\[\xi_k=\bigg(\frac{2\pi}{T}\bigg)^k\ \ (\text{se }T=2\pi,\ \xi_k=k)\]
 formano un sistema ortonormale
 \\Dunque, data $f\in L^{2}(I)$ la sua serie di Fourier rispetto a questo sistema è la serie
 \[(f,p_0)p_0+\sum_{k\ge 1}^{} (f,p_k)p_k+(f,q_k)q_k\ \ (*)\]
@@ -18,22 +17,22 @@ Oppure
 \[\sum_{k=-\infty}^{+\infty} \hat{f_k}e^{i\xi_kx}\ \ (* * *)\]
 \[\hat{f_k}=\frac{1}{T}\int_{-\frac{T}{2}}^{\frac{T}{2}} f(x)e^{-i\xi_kx}dx\ \ z\in \Z\]
 \[\hat{f_k}= \frac{a_k-ib_k}{2}\ \ k\in \N\]
-\[\hat{f_k}= \]
-completare
+\[\hat{f_{-k}}=\frac{a_k+ibk}{2} \]
 \begin{tcolorbox}
 	\textbf{Teorema: }Il sistema $(p_0,p_k,q_k)$ è ortonormale completo in $L^{2}(I)$
 \end{tcolorbox}
 \textbf{Dimostrazione} usando la (3) delle equivalenze
 \\$\overline{\left< p_0,p_k,q_k \right> }\equiv L^{2}(I)$ 
 \\$\subseteq  $ sempre vero $(\overline{M}\subseteq  H)$ 
-\\contains compmeltare
+\\$\supseteq \ \forall f\in L^{2}(I),\ f$ può essere approssimata con elementi di $\left< p_0,p_k,q_k \right> $
 \\\textbf{Passo 1} Mostriamo che quanto sopra è vero se $f=\varphi\in C_0^\infty(I)$.
-\\Infatti ,, posso estendere $\varphi$ a $\tilde\varphi\in C_{\text{per}}^\infty(\R)$.
+\\Infatti, posso estendere $\varphi$ a $\tilde\varphi\in C_{\text{per}}^\infty(\R)$.
 \\Sappiamo (Analisi 2) che la serie di Fourier di $\tilde\varphi$ converge uniformemente su $[-\frac{T}{2},\frac{T}{2}]\implies $converge uniformemente in $L^{2}(-\frac{T}{2},\frac{T}{2})$.
-\\$\implies $ La successione delle somme parziali della serie di Fourier di $\tilde\varphi$ fornisce una successione in $\left< p_0,p_k,q_k \right> $, che converge a $\tilde\varphi$ in $L^{2}(-\frac{T}{2},\frac{T}{2})$
+\\$\implies $ La successione delle somme parziali della serie di Fourier di $\tilde\varphi$ fornisce una successione in $\left< p_0,p_k,q_k \right> $, che converge a $\tilde\varphi=\varphi$ in $L^{2}(-\frac{T}{2},\frac{T}{2})$
 \\\textbf{Passo 2} Data $f\in L^{2}(I)$ posso approssimarla con una successione $\varphi_k \subset C_0^\infty(I)$.
-\[\varphi_k\rightarrow^{L^{2}(I)}f\]
+\[\varphi_k\xrightarrow{L^{2}(I)}f\]
 Concludo prendendo una successione diagonale.
+\\Oppure:
 \[\|f-S\|\le \|f-\varphi\|+\|\varphi-S\|<\varepsilon\]
 $S$ somma parziale della serie di Fourier di $\varphi$ 
 \\\textbf{Osservazioni}
@@ -49,9 +48,10 @@ $S$ somma parziale della serie di Fourier di $\varphi$
 	\item I coefficienti di Fourier hanno senso anche per $f\in L^{1}(-\frac{T}{2},\frac{T}{2})$ 
 		\[|a_k|=\frac{2}{T}\bigg|\int_{-\frac{T}{2}}^{\frac{T}{2}}f(x)\cos(\xi_kx)dx\bigg|\le \frac{2}{T } \int_{-\frac{T}{2}}^{\frac{T}{2}} |f(x)|<+\infty\]
 		lo stesso per i $b_k$ 
-	\item Se $f\in \text{A.C.}([-\frac{T}{2},\frac{T}{2}])$ e $f(-\frac{T}{2}=f(\frac{T}{2})$ posso estenderla a una funzione continua periodica su $\R$. (l'estensione $f$ appartiene a $L_T^2(\R)$)
+	\item Se $f\in \text{A.C.}([-\frac{T}{2},\frac{T}{2}])$ e $f(-\frac{T}{2})=f(\frac{T}{2})$ posso estenderla a una funzione continua periodica su $\R$. (l'estensione $f$ appartiene a $L_T^2(\R)$)
 		\\Ha senso calcolare i coefficienti di Fourier sia di $f$ che di $f'$.
-		completare
+		\[a_k,b_k\text{ siano i coefficienti di Fourier di }f\]
+		\[a_k',b_k'\text{ siano i coefficienti di Fourier di }f'\]
 \[a_k'=\frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f'(x)\cos(\xi_kx)dx=0+\frac{2}{T}\xi_k \int_{-\frac{T}{2}}^{\frac{T}{2}} f(x)\sin(\xi_kx)dx\]
 \[=\xi_kb_k\]
 Analogamente
@@ -66,7 +66,7 @@ Ricerca di soluzioni periodiche di ODE lineari (tramite serie di Fourier)
 \[\sum_{j=0}^{n} a_ju^{(j)}=f\in L^{2}_T(\R)\ \ x\in \R\]
 \textbf{Problema:} esistono soluzioni T-periodiche (in $L^{2}_T(\R)$)?
 \\La seguente equazione differenziale equivale a chiedere:
-\[\sum_{j=0}^{n} a_j\hat{u^{(j)}}_k=\hat{f}_k\ \forall k\in \Z\]
+\[\sum_{j=0}^{n} a_j\widehat{u^{(j)}}_k=\hat{f}_k\ \forall k\in \Z\]
 \[\sum_{j=0}^{n} a_j(i\xi_k)^{(j)}\hat{u_k}=\hat{f}_k\ \forall k\in \Z\]
 Sistema di infinite eq. algebriche.
 \[P(i\xi_k)\hat{u_k}=\hat{f_k}\]
@@ -75,10 +75,10 @@ Sistema di infinite eq. algebriche.
 \begin{itemize}
 	\item Caso 1: $P(i\xi_k)\neq 0\ \forall k\in \Z$ 
 		\[\implies \hat{u_k}=\frac{\hat{f_k}}{P(i\xi_k)}\]
-	\item Caso 2: $P(i\xi_k)=0$ per $k=k_1*,\ldots,k_p*$, allora
+	\item Caso 2: $P(i\xi_k)=0$ per $k=k_1^*,\ldots,k_p^*$, allora
 		\\$\hat{f_k}=0$ per $k=k_1^*,\ldots,k_p^*\implies $infinite soluzioni, ovvero
 		\[\hat{u_k}=\begin{cases}
-		\frac{\hat{f_k}}{P(i\xi_k)} k\neq K_1^*,\ldots,k_p^*
+		\frac{\hat{f_k}}{P(i\xi_k)} k\neq k_1^*,\ldots,k_p^*
 	\\\text{arbitrario}\ \ k=k_1^*,\ldots,k_p^*
 
 \end{cases}\]
@@ -90,4 +90,3 @@ $\to $ polinomi di Legendre\\
 \textbf{Esempio} in $L^2(-1,1)$ 
 \[\frac{1}{\sqrt{2} },, \sqrt{\frac{3}{2}} x, \sqrt{\frac{5}{2}} \bigg(-\frac{1}{3}+x^2\bigg)\]
 Data $f\in L^{2}(I)$, per minimizzare la distanza in $L^{2}(I)$ da un polinomio di grado $\le 3$, dovrò considerare la somma delle serie di Fourier di  $f$ fatta rispetto ai polinomio di Legendre
-\end{document}

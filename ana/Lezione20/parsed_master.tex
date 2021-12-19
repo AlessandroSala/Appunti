@@ -1,32 +1,4 @@
-\documentclass[a4paper]{article}
 
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp}
-\usepackage{amsmath, amssymb}
-\usepackage{tcolorbox}
-\usepackage[italian]{babel} 
-
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\pdfminorversion=7
-\usepackage{pdfpages}
-\usepackage{transparent}
-\usepackage{mathabx}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./figures/}{#1.pdf_tex}
-}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
-
-\pdfsuppresswarningpagegroup=1
-
-\begin{document}
 \section{Applicazione della trasformata di Fourier alle equazioni differenziali}
 Data un'equazione differenziale in $u=u(x)$, applicando la trasformata si ottiene un'equazione algebrica in $\hat{u}$. Risolvendo per $\hat{u}$, si trova quindi $u$.
 \subsection{Esempio} 
@@ -143,4 +115,3 @@ Basta passare al limite per $h\to +\infty$
 \[\check u=(2\pi)^{-n}\hat{\hat{u}}\]
 
 
-\end{document}

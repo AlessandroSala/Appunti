@@ -1,0 +1,51 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb}
+\usepackage{tcolorbox}
+\usepackage{centernot}
+\usepackage[italian]{babel} 
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{import}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\divider}{\noindent\rule{\textwidth}{0.5pt}}
+
+\pdfsuppresswarningpagegroup=1
+
+\begin{document}
+\import{Lezione1/}{parsed_master.tex}	
+\import{Lezione2/}{parsed_master.tex}	
+\import{Lezione3/}{parsed_master.tex}	
+\import{Lezione4/}{parsed_master.tex}	
+\import{Lezione5/}{parsed_master.tex}	
+\import{Lezione6/}{parsed_master.tex}	
+\import{Lezione7/}{parsed_master.tex}	
+\import{Lezione8/}{parsed_master.tex}	
+\import{Lezione9/}{parsed_master.tex}	
+\import{Lezione10/}{parsed_master.tex}	
+\import{Lezione11/}{parsed_master.tex}	
+\import{Lezione12/}{parsed_master.tex}	
+\import{Lezione13/}{parsed_master.tex}	
+\import{Lezione14/}{parsed_master.tex}	
+\import{Lezione15/}{parsed_master.tex}	
+\import{Lezione16/}{parsed_master.tex}	
+\import{Lezione17/}{parsed_master.tex}	
+\import{Lezione18/}{parsed_master.tex}	
+\import{Lezione19/}{parsed_master.tex}	
+\end{document}
