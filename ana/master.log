@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.7)  19 DEC 2021 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.7)  27 DEC 2021 19:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -936,25 +936,25 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 (hyperref)                than one, level fixed on input line 21.
 
 [23] [24]
-Underfull \hbox (badness 10000) in paragraph at lines 65--71
+Underfull \hbox (badness 10000) in paragraph at lines 66--72
 
  []
 
 
-Underfull \hbox (badness 1715) in paragraph at lines 93--94
+Underfull \hbox (badness 1715) in paragraph at lines 95--96
 []\T1/cmr/bx/n/10 Definizione: \T1/cmr/m/n/10 Sia $\OT1/cmr/m/n/10 (\OML/cmm/m/
 it/10 V; \OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 :\OMS/cmsy/m/n/10 k\OT1/cmr/m/n/10 
 )$ \T1/cmr/m/n/10 uno spa-zio vet-to-ria-le nor-ma-to. Una
  []
 
 [25]) (./Lezione9/parsed_master.tex (./Lezione9/./figures/lebesgue.pdf_tex
-<Lezione9/./figures//lebesgue.pdf, id=710, page=1, 682.86612pt x 341.43306pt>
+<Lezione9/./figures//lebesgue.pdf, id=713, page=1, 682.86612pt x 341.43306pt>
 File: Lezione9/./figures//lebesgue.pdf Graphic file (type pdf)
 <use Lezione9/./figures//lebesgue.pdf, page 1>
 Package pdftex.def Info: Lezione9/./figures//lebesgue.pdf , page1 used on input
  line 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione9/./figures//lebesgue.pdf, id=711, page=2, 682.86612pt x 341.43306pt>
+<Lezione9/./figures//lebesgue.pdf, id=714, page=2, 682.86612pt x 341.43306pt>
 File: Lezione9/./figures//lebesgue.pdf Graphic file (type pdf)
 <use Lezione9/./figures//lebesgue.pdf, page 2>
 Package pdftex.def Info: Lezione9/./figures//lebesgue.pdf , page2 used on input
@@ -967,7 +967,7 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 
 [26] [27 <./Lezione9/./figures//lebesgue.pdf> <./Lezione9/./figures//lebesgue.p
 df>] [28] (./Lezione9/./figures/funzioni-di-segno-qualsiasi.pdf_tex
-<Lezione9/./figures//funzioni-di-segno-qualsiasi.pdf, id=763, page=1, 682.86612
+<Lezione9/./figures//funzioni-di-segno-qualsiasi.pdf, id=766, page=1, 682.86612
 pt x 341.43306pt>
 File: Lezione9/./figures//funzioni-di-segno-qualsiasi.pdf Graphic file (type pd
 f)
@@ -978,43 +978,43 @@ page1 used on input line 56.
 ) [29]
 [30 <./Lezione9/./figures//funzioni-di-segno-qualsiasi.pdf>] [31])
 (./Lezione10/parsed_master.tex [32] (./Lezione10/./figures/disegno.pdf_tex
-<Lezione10/./figures//disegno.pdf, id=785, page=1, 682.86612pt x 341.43306pt>
+<Lezione10/./figures//disegno.pdf, id=788, page=1, 682.86612pt x 341.43306pt>
 File: Lezione10/./figures//disegno.pdf Graphic file (type pdf)
 <use Lezione10/./figures//disegno.pdf, page 1>
 Package pdftex.def Info: Lezione10/./figures//disegno.pdf , page1 used on input
  line 57.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione10/./figures//disegno.pdf, id=786, page=2, 682.86612pt x 341.43306pt>
+<Lezione10/./figures//disegno.pdf, id=789, page=2, 682.86612pt x 341.43306pt>
 File: Lezione10/./figures//disegno.pdf Graphic file (type pdf)
 <use Lezione10/./figures//disegno.pdf, page 2>
 Package pdftex.def Info: Lezione10/./figures//disegno.pdf , page2 used on input
  line 60.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione10/./figures//disegno.pdf, id=787, page=3, 682.86612pt x 341.43306pt>
+<Lezione10/./figures//disegno.pdf, id=790, page=3, 682.86612pt x 341.43306pt>
 File: Lezione10/./figures//disegno.pdf Graphic file (type pdf)
 <use Lezione10/./figures//disegno.pdf, page 3>
 Package pdftex.def Info: Lezione10/./figures//disegno.pdf , page3 used on input
  line 63.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione10/./figures//disegno.pdf, id=788, page=4, 682.86612pt x 341.43306pt>
+<Lezione10/./figures//disegno.pdf, id=791, page=4, 682.86612pt x 341.43306pt>
 File: Lezione10/./figures//disegno.pdf Graphic file (type pdf)
 <use Lezione10/./figures//disegno.pdf, page 4>
 Package pdftex.def Info: Lezione10/./figures//disegno.pdf , page4 used on input
  line 66.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione10/./figures//disegno.pdf, id=789, page=5, 682.86612pt x 341.43306pt>
+<Lezione10/./figures//disegno.pdf, id=792, page=5, 682.86612pt x 341.43306pt>
 File: Lezione10/./figures//disegno.pdf Graphic file (type pdf)
 <use Lezione10/./figures//disegno.pdf, page 5>
 Package pdftex.def Info: Lezione10/./figures//disegno.pdf , page5 used on input
  line 69.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione10/./figures//disegno.pdf, id=790, page=6, 682.86612pt x 341.43306pt>
+<Lezione10/./figures//disegno.pdf, id=793, page=6, 682.86612pt x 341.43306pt>
 File: Lezione10/./figures//disegno.pdf Graphic file (type pdf)
 <use Lezione10/./figures//disegno.pdf, page 6>
 Package pdftex.def Info: Lezione10/./figures//disegno.pdf , page6 used on input
  line 72.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione10/./figures//disegno.pdf, id=791, page=7, 682.86612pt x 341.43306pt>
+<Lezione10/./figures//disegno.pdf, id=794, page=7, 682.86612pt x 341.43306pt>
 File: Lezione10/./figures//disegno.pdf Graphic file (type pdf)
 <use Lezione10/./figures//disegno.pdf, page 7>
 Package pdftex.def Info: Lezione10/./figures//disegno.pdf , page7 used on input
@@ -1027,30 +1027,30 @@ ione10/./figures//disegno.pdf> <./Lezione10/./figures//disegno.pdf> <./Lezione1
 0/./figures//disegno.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 104.
+(hyperref)                than one, level fixed on input line 105.
 
 [34]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 128.
+(hyperref)                removing `math shift' on input line 129.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 128.
+(hyperref)                removing `superscript' on input line 129.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 128.
+(hyperref)                removing `math shift' on input line 129.
 
 ) (./Lezione11/parsed_master.tex [35] [36]
 (./Lezione11/./figures/esempio2.pdf_tex
-<Lezione11/./figures//esempio2.pdf, id=814, page=1, 682.86612pt x 341.43306pt>
+<Lezione11/./figures//esempio2.pdf, id=817, page=1, 682.86612pt x 341.43306pt>
 File: Lezione11/./figures//esempio2.pdf Graphic file (type pdf)
 <use Lezione11/./figures//esempio2.pdf, page 1>
 Package pdftex.def Info: Lezione11/./figures//esempio2.pdf , page1 used on inpu
 t line 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione11/./figures//esempio2.pdf, id=815, page=2, 682.86612pt x 341.43306pt>
+<Lezione11/./figures//esempio2.pdf, id=818, page=2, 682.86612pt x 341.43306pt>
 File: Lezione11/./figures//esempio2.pdf Graphic file (type pdf)
 <use Lezione11/./figures//esempio2.pdf, page 2>
 Package pdftex.def Info: Lezione11/./figures//esempio2.pdf , page2 used on inpu
@@ -1058,14 +1058,14 @@ t line 58.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
 )
 (./Lezione11/./figures/controesempio3.pdf_tex
-<Lezione11/./figures//controesempio3.pdf, id=816, page=1, 682.86612pt x 341.433
+<Lezione11/./figures//controesempio3.pdf, id=819, page=1, 682.86612pt x 341.433
 06pt>
 File: Lezione11/./figures//controesempio3.pdf Graphic file (type pdf)
 <use Lezione11/./figures//controesempio3.pdf, page 1>
 Package pdftex.def Info: Lezione11/./figures//controesempio3.pdf , page1 used o
 n input line 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione11/./figures//controesempio3.pdf, id=817, page=2, 682.86612pt x 341.433
+<Lezione11/./figures//controesempio3.pdf, id=820, page=2, 682.86612pt x 341.433
 06pt>
 File: Lezione11/./figures//controesempio3.pdf Graphic file (type pdf)
 <use Lezione11/./figures//controesempio3.pdf, page 2>
@@ -1094,14 +1094,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--84
  []
 
 [41] (./Lezione12/./figures/scaladicantor.pdf_tex
-<Lezione12/./figures//scaladicantor.pdf, id=854, page=1, 682.86612pt x 341.4330
+<Lezione12/./figures//scaladicantor.pdf, id=857, page=1, 682.86612pt x 341.4330
 6pt>
 File: Lezione12/./figures//scaladicantor.pdf Graphic file (type pdf)
 <use Lezione12/./figures//scaladicantor.pdf, page 1>
 Package pdftex.def Info: Lezione12/./figures//scaladicantor.pdf , page1 used on
  input line 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione12/./figures//scaladicantor.pdf, id=855, page=2, 682.86612pt x 341.4330
+<Lezione12/./figures//scaladicantor.pdf, id=858, page=2, 682.86612pt x 341.4330
 6pt>
 File: Lezione12/./figures//scaladicantor.pdf Graphic file (type pdf)
 <use Lezione12/./figures//scaladicantor.pdf, page 2>
@@ -1138,7 +1138,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 71--73
  []
 
 [48] (./Lezione14/./figures/dirac.pdf_tex
-<Lezione14/./figures//dirac.pdf, id=892, page=1, 682.86612pt x 341.43306pt>
+<Lezione14/./figures//dirac.pdf, id=895, page=1, 682.86612pt x 341.43306pt>
 File: Lezione14/./figures//dirac.pdf Graphic file (type pdf)
 <use Lezione14/./figures//dirac.pdf, page 1>
 Package pdftex.def Info: Lezione14/./figures//dirac.pdf , page1 used on input l
@@ -1167,14 +1167,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 110--114
 
 ) (./Lezione16/parsed_master.tex [54] [55]
 (./Lezione16/./figures/parallelogramma.pdf_tex
-<Lezione16/./figures//parallelogramma.pdf, id=933, page=1, 682.86612pt x 341.43
+<Lezione16/./figures//parallelogramma.pdf, id=936, page=1, 682.86612pt x 341.43
 306pt>
 File: Lezione16/./figures//parallelogramma.pdf Graphic file (type pdf)
 <use Lezione16/./figures//parallelogramma.pdf, page 1>
 Package pdftex.def Info: Lezione16/./figures//parallelogramma.pdf , page1 used 
 on input line 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione16/./figures//parallelogramma.pdf, id=934, page=2, 682.86612pt x 341.43
+<Lezione16/./figures//parallelogramma.pdf, id=937, page=2, 682.86612pt x 341.43
 306pt>
 File: Lezione16/./figures//parallelogramma.pdf Graphic file (type pdf)
 <use Lezione16/./figures//parallelogramma.pdf, page 2>
@@ -1200,31 +1200,31 @@ n/10 k\OML/cmm/m/it/10 y\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 + \OMS/cmsy/m/n/10
 
 [56 <./Lezione16/./figures//parallelogramma.pdf> <./Lezione16/./figures//parall
 elogramma.pdf>] (./Lezione16/./figures/convesso.pdf_tex
-<Lezione16/./figures//convesso.pdf, id=942, page=1, 682.86612pt x 341.43306pt>
+<Lezione16/./figures//convesso.pdf, id=945, page=1, 682.86612pt x 341.43306pt>
 File: Lezione16/./figures//convesso.pdf Graphic file (type pdf)
 <use Lezione16/./figures//convesso.pdf, page 1>
 Package pdftex.def Info: Lezione16/./figures//convesso.pdf , page1 used on inpu
 t line 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione16/./figures//convesso.pdf, id=943, page=2, 682.86612pt x 341.43306pt>
+<Lezione16/./figures//convesso.pdf, id=946, page=2, 682.86612pt x 341.43306pt>
 File: Lezione16/./figures//convesso.pdf Graphic file (type pdf)
 <use Lezione16/./figures//convesso.pdf, page 2>
 Package pdftex.def Info: Lezione16/./figures//convesso.pdf , page2 used on inpu
 t line 59.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione16/./figures//convesso.pdf, id=944, page=3, 682.86612pt x 341.43306pt>
+<Lezione16/./figures//convesso.pdf, id=947, page=3, 682.86612pt x 341.43306pt>
 File: Lezione16/./figures//convesso.pdf Graphic file (type pdf)
 <use Lezione16/./figures//convesso.pdf, page 3>
 Package pdftex.def Info: Lezione16/./figures//convesso.pdf , page3 used on inpu
 t line 61.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione16/./figures//convesso.pdf, id=945, page=4, 682.86612pt x 341.43306pt>
+<Lezione16/./figures//convesso.pdf, id=948, page=4, 682.86612pt x 341.43306pt>
 File: Lezione16/./figures//convesso.pdf Graphic file (type pdf)
 <use Lezione16/./figures//convesso.pdf, page 4>
 Package pdftex.def Info: Lezione16/./figures//convesso.pdf , page4 used on inpu
 t line 63.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione16/./figures//convesso.pdf, id=946, page=5, 682.86612pt x 341.43306pt>
+<Lezione16/./figures//convesso.pdf, id=949, page=5, 682.86612pt x 341.43306pt>
 File: Lezione16/./figures//convesso.pdf Graphic file (type pdf)
 <use Lezione16/./figures//convesso.pdf, page 5>
 Package pdftex.def Info: Lezione16/./figures//convesso.pdf , page5 used on inpu
@@ -1232,21 +1232,21 @@ t line 65.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
 )
 (./Lezione16/./figures/sottchiuso.pdf_tex
-<Lezione16/./figures//sottchiuso.pdf, id=947, page=1, 682.86612pt x 341.43306pt
+<Lezione16/./figures//sottchiuso.pdf, id=950, page=1, 682.86612pt x 341.43306pt
 >
 File: Lezione16/./figures//sottchiuso.pdf Graphic file (type pdf)
 <use Lezione16/./figures//sottchiuso.pdf, page 1>
 Package pdftex.def Info: Lezione16/./figures//sottchiuso.pdf , page1 used on in
 put line 56.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione16/./figures//sottchiuso.pdf, id=948, page=2, 682.86612pt x 341.43306pt
+<Lezione16/./figures//sottchiuso.pdf, id=951, page=2, 682.86612pt x 341.43306pt
 >
 File: Lezione16/./figures//sottchiuso.pdf Graphic file (type pdf)
 <use Lezione16/./figures//sottchiuso.pdf, page 2>
 Package pdftex.def Info: Lezione16/./figures//sottchiuso.pdf , page2 used on in
 put line 58.
 (pdftex.def)             Requested size: 345.0pt x 172.50307pt.
-<Lezione16/./figures//sottchiuso.pdf, id=949, page=3, 682.86612pt x 341.43306pt
+<Lezione16/./figures//sottchiuso.pdf, id=952, page=3, 682.86612pt x 341.43306pt
 >
 File: Lezione16/./figures//sottchiuso.pdf Graphic file (type pdf)
 <use Lezione16/./figures//sottchiuso.pdf, page 3>
@@ -1301,18 +1301,80 @@ vol-te si ot-tie-ne $[]\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT
 1/cmr/m/n/10 ) = 2\OML/cmm/m/it/10 ^^Ye[] \OT1/cmr/m/n/10 =
  []
 
-[75] [76] [77]) [78] (./master.aux)
+[75] [76] [77]) (./Lezione20/parsed_master.tex [78]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 14.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 14.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 14.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 26.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 26.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 26.
+
+[79]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 60.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 60.
+
+[80]) (./Lezione21/parsed_master.tex [81] [82] [83])
+(./Lezione22/parsed_master.tex [84] [85]
+Overfull \hbox (12.86002pt too wide) detected at line 65
+\OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 u\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x; t\OT1/
+cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 u[]\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 x\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 = (2\OML/cmm/m/
+it/10 ^^Y\OT1/cmr/m/n/10 )[]\OMS/cmsy/m/n/10 k[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/
+10 ^^X; t\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 ^^X\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 = (2\OML/cmm/m/it
+/10 ^^Y\OT1/cmr/m/n/10 )[] [][] \OMS/cmsy/m/n/10 j[]\OT1/cmr/m/n/10 (\OML/cmm/m
+/it/10 ^^X; t\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ []\OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 ^^X\OT1/cmr/m/n/10 )\OMS/cmsy/m/n/10 j[]\OML/cmm/m/it/10 d^^X
+ []
+
+[86]) [87] (./master.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 66E0917B3A2799D1FE620E1765A8C642;8441.
+
+Package rerunfilecheck Warning: File `master.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `master.out':
+(rerunfilecheck)             Before: 66E0917B3A2799D1FE620E1765A8C642;8441
+(rerunfilecheck)             After:  0CD13449FBE74074AFF94124ED695646;9606.
  ) 
 Here is how much of TeX's memory you used:
- 19374 strings out of 479304
- 355726 string characters out of 5869780
+ 19443 strings out of 479304
+ 356622 string characters out of 5869780
  666258 words of memory out of 5000000
- 35761 multiletter control sequences out of 15000+600000
+ 35772 multiletter control sequences out of 15000+600000
  418496 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  112i,18n,116p,441b,491s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1337,10 +1399,10 @@ texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/pu
 blic/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm07
 00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
 exmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on master.pdf (78 pages, 592611 bytes).
+Output written on master.pdf (87 pages, 624461 bytes).
 PDF statistics:
- 1227 PDF objects out of 1440 (max. 8388607)
- 1065 compressed objects within 11 object streams
- 273 named destinations out of 1000 (max. 500000)
+ 1312 PDF objects out of 1440 (max. 8388607)
+ 1140 compressed objects within 12 object streams
+ 319 named destinations out of 1000 (max. 500000)
  1011 words of extra memory for PDF output out of 10000 (max. 10000000)
 

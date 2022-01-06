@@ -1,0 +1,127 @@
+
+\section{Problemi di Cauchy per l'equazione del calore e delle onde}
+Si tratta di problemi di evoluzione, ovvero l'incognita è $u=u(x_1,\ldots,x_{n},t)$ 
+\[u_t-\Delta u = f \text{ equazione del calore (parabolica)}\]
+\[u_{t t}-\Delta u = f \text{ equazione delle onde (iperbolica)}\]
+Ad entrambe è associata l'equazione di Poisson $-\Delta u = f $ (ellittica)
+\\In dimensione $n=2$, le equazioni omogenee diventano
+\[u_t-u_{x x}=0\]
+\[u_{t t}-u_{x x}=0\]
+\[u_{x_1x_1}+u_{x_2x_2}=0\]
+\begin{align*}
+&A=\begin{pmatrix} 0&0\\0&-1 \end{pmatrix} \begin{pmatrix} u_{t t}&u_{tx}\\u_{x t}&u_{x x} \end{pmatrix} &\text{ det}A = 0\\
+&A= \begin{pmatrix} 1&0\\0&-1 \end{pmatrix} &\text{ det}A<0\\
+&A= \begin{pmatrix} 1 & 0\\0 & 1 \end{pmatrix} &\text{ det}A>0
+\end{align*}
+Si ha una terminologia simile alla classificazione delle coniche
+\subsection{Problema di Cauchy per l'equazione del calore}
+\[\begin{cases}
+	u_t-u_{x x}=0\ \ x\in \R,\ t>0\\
+	u(x,0)=u_0(x)\ \ x\in \R
+\end{cases}
+ \]
+\textbf{Ipotesi:} $u_0\in L^{2}(\R)$ 
+\\\textbf{Strategia:} Applicare $\mathcal F_{(x\to \xi)}$ (Fourier rispetto a $x$)
+\[\hat{u}(\xi, t)=\mathcal F_{x\to \xi}(u(x,t))= \int_{\R}^{} u(x,t) e^{-i\xi x}dx\]
+\begin{enumerate}
+	\item Trasformare il problema
+		\[\widehat{u_t}- \widehat{u_{x x}}=0\]
+		\[\hat{u_t}=(\hat{u})_t\text{ purché }u\text{ sia sufficientemente regolare}\]
+		\[\frac{\partial }{\partial t} \bigg( \int_{\R}^{} u(x,t)e^{-i\xi x}dx\bigg)= \int_{\R}^{} \frac{\partial }{\partial t} u(x,t)e^{-i\xi x}dx\]
+		\[\widehat{u _{x x}}=(i\xi )^2 \hat{u}=-\xi^2 \hat{u}\]
+		L'equazione soddisfatta da $\hat{u}$ è
+		\[(\hat{u})_t + \xi^2 \hat{u}=0\]
+		Il dato iniziale trasformato è 
+		\[\hat{u}(\xi,0)=\int_{\R}^{} u_0 e^{-i\xi x}dx\]
+Il problema risolto da $\hat{u}$ è
+\[\begin{cases}
+	(\hat{u})_t+\xi^2 \hat{u}=0\\
+\hat{u}(\xi,0)=\hat{u}_0(\xi)
+
+\end{cases}
+\]
+Ovvero una ODE, lineare, omogenea, del I ordine.
+\item Determinare $\hat{u}$ 
+	\\Se poniamo $\varphi(t):=\hat{u}(\xi, t)$ (per $\xi$ fissato), il problema risolto da $\varphi $ :
+	\[\begin{cases}
+		\varphi'(t)=-\xi^2 \varphi(t)\\
+		\varphi(0)=\hat{u}_0(\xi)
+	\end{cases}\implies \varphi(t)=C e^{-\xi^2 t}\]
+	\[\varphi(0)=C=\hat{u}_0(\xi)\implies \varphi(t)=\hat{u}_0(\xi)e^{-\xi^2t}\]
+\item Determinare $u$ a partire da $\hat{u}$ 
+	\[u_(x,t)=\mathcal F^{-1}_{x\to \xi}(\hat{u}_0(\xi))*\mathcal F^{-1}_{x\to \xi}(e^{-\xi^2t})\]
+	\[u_1(x,t)*_x u_2(x,t)= \int_{\R}^{} u_1(x-y,t)u(y,t)dy\] 
+	
+\end{enumerate}
+\begin{tcolorbox}
+	\[u(x,t)=u_0(x)*\frac{1}{\sqrt{4\pi t} }e^{- \frac{x^2}{4t}}\]
+\end{tcolorbox}
+\textbf{Commenti} 
+\begin{itemize}
+	\item Avendo preso $u_0 \in L^{2}(\R)$, il prodotto di convoluzione ha senso ($u_0\in L^2,$ gaussiana $\in L^1$)
+	\item Se il prodotto scritto  ha senso per $t>0$, si può far vedere che:
+		\[\lim_{t \to 0} u(x,t)=u_0(x)\text{ in }L^{2}(\R)\]
+		Infatti
+		\[ \|u(x,t)-u_0(x)\|^2_{L^2}=(2\pi)^{-1} \|\hat{u}(\xi,t)-\hat{u}_0(\xi)\|^2_{L^2}=(2\pi)^{-1} \int_{\R}^{} |\hat{u}(\xi, t)-\hat{u}_0(\xi)|^2d\xi\]
+		\[=(2\pi)^{-1}\int_{\R}^{} |\hat{u}_0(\xi) e^{-\xi^2 t}-\hat{u}_0(\xi)|^2d\xi=\]
+		\[(2\pi)^{-1}\int_{\R}^{} |\hat{u}_0(\xi)|^2 |e^{-\xi^2 t}-1|^2d\xi \xrightarrow[t\to 0]{}0\]
+		Per Plancherel. Inoltre il limite per $t\to 0$ passa sotto integrale per convergenza dominata.
+\end{itemize}
+\subsection{Effetto regolarizzante dell'operatore calore}
+$\ \forall t>0,x\mapsto u(x,t)$ è di classe $C^\infty$ per le proprietà del prod. di convoluzione.
+\\La formula mostra anche quella che si dice \emph{velocità di propagazione infinita} dell'operatore $\partial_t-\partial_{x x}$ 
+\\Ovvero: anche se $u_0(x)$ è a supporto compatto 
+\[\ \forall t>0,x\mapsto u(x,t)\text{ è diversa da 0 }\ \forall x\in \R\]
+\subsection{Problema di Cauchy per l'equazione delle onde}
+\[\begin{cases}
+	u_{t t}-u_{x x}=0\ \ x\in \R,\ t>0\\
+	u(x,0)=u_0(x)\ \ x\in \R
+	\\u_t(x,0)=u_1(x)\ \ x\in \R
+\end{cases}\]
+\textbf{Ipotesi:} $u_0\in C^2(\R)\cap L^{1}(\R),u_1\in C^1(\R)\cap L^{1}(\R)$
+\\Spezzando (P) in due problemi distinti
+\[(P_1) \begin{cases}
+	v_{t t}-v_{x x}=0\\
+	v(x,0)=u_0(x)\\
+	v_t(x,0)=0
+\end{cases}
+(P_2) \begin{cases}
+	w_{t t}-w_{x x}=0\\
+	w(x,0)=0\\
+	w_t(x,0)=u_1(x)
+\end{cases}\]
+Se trovo $v$ e $w$ soluzioni dei due problemi $\implies u=v+w$ soluzioni di (P)
+\\Risolvo $(P_1)$ 
+\begin{enumerate}
+	\item $\widehat{v_{t t}}-\widehat{v_{x x}}=0$, se $v$ sufficientemente regolare
+		\[(\hat{v})_{t t}=-\xi^2 \hat{v}\]
+		\[\hat{v}(\xi,0)=\hat{u}_0(\xi)\]
+		\[\hat{v}_t(\xi,0)=0\]
+		Problema di Cauchy per un'ODE (lineare, omogenea del II ordine)
+		Completare
+		\[\implies \varphi(t)=C_1e^{i\xi t}+C_2e^{-i\xi t}\]
+		Imponiamo i dati iniziali 
+		\[\varphi(0)=C_1+C_2=\hat{u}_0(\xi)\]
+		\[\varphi'(0)|_{t=0}=i\xi C_1e^{(i\xi t)}-i\xi C_2e^{-i\xi t}|_{t=0}=i\xi C_1-i\xi C_2=0 \iff C_1=C_2\]
+		Quindi $C_1=C_2=\frac{1}{2}\hat{u}_0(\xi)$ 
+		\[\implies \varphi(t)=\hat{v}(\xi,t)=\frac{1}{2}\hat{u}_0(\xi)e^{i\xi t}+\frac{1}{2}\hat{u}_0(\xi)e^{-i\xi t}\]
+	\item Ricavo $v$ a partire da $\hat{v}$, ricordando la regola di trasformazione (traslazione):
+		\[v(x,t)=\frac{1}{2}[u_0(x+t)+u_0(x-t)]\]
+		Somma di due onde, (progressiva e regressiva) che hanno stessa forma di $u_0$ e metà ampiezza
+		Procedendo in maniera analoga:
+		\[w(x,t)=\frac{1}{2}(U_1(x+t)-U_1(x-t))=\frac{1}{2}\int_{x-t}^{x+t} u_1(y)dy\]
+		Conclusione: \textbf{Formula di d'alembert}
+		\[u(x,t)=\frac{1}{2}[u_0(x+t)+u_0(x-t)]+\frac{1}{2} \int_{x-t}^{x+t} u_1(y)dy\]
+
+
+\end{enumerate}
+\textbf{Commenti} 
+\begin{itemize}
+	\item Non c'è effetto regolarizzante, nelle ipotesi sopra $u$ è di classe $C^2(\R)$.
+		\\Si può dimostrare che D'Alembert vale più in generale.
+	\item La velocità di propagazione è finita
+
+
+\end{itemize}
+
+

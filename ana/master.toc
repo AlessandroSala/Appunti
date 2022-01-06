@@ -54,10 +54,10 @@
 \contentsline {subsubsection}{\numberline {12.0.2}Spazi di Lebesgue (o spazi $L^p$)}{35}{subsubsection.12.0.2}%
 \contentsline {subsubsection}{\numberline {12.0.3}Caso limite L infinito}{36}{subsubsection.12.0.3}%
 \contentsline {subsection}{\numberline {12.1}Risultati di confronto}{37}{subsection.12.1}%
-\contentsline {subsubsection}{\numberline {12.1.1}Disuguaglianza di Holder}{37}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Disuguaglianza di Holder}{38}{subsubsection.12.1.1}%
 \contentsline {subsubsection}{\numberline {12.1.2}Conseguenze di Holder sul confronto tra i vari spazi}{38}{subsubsection.12.1.2}%
 \contentsline {subsection}{\numberline {12.2}Approssimazione con funzioni regolari}{39}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Supporto e Classe $C_0$}{39}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.3}Supporto e Classe $C_0$}{40}{subsection.12.3}%
 \contentsline {subsection}{\numberline {12.4}Prodotto di convoluzione}{40}{subsection.12.4}%
 \contentsline {subsection}{\numberline {12.5}Teorema fondamentale del calcolo}{42}{subsection.12.5}%
 \contentsline {section}{\numberline {13}Operatori lineari tra spazi vettoriali normati}{44}{section.13}%
@@ -106,3 +106,16 @@
 \contentsline {subsection}{\numberline {22.4}Teorema di Riemann-Lebesgue}{76}{subsection.22.4}%
 \contentsline {subsection}{\numberline {22.5}Proprietà algebriche}{77}{subsection.22.5}%
 \contentsline {subsection}{\numberline {22.6}Proprietà differenziali}{77}{subsection.22.6}%
+\contentsline {section}{\numberline {23}Applicazione della trasformata di Fourier alle equazioni differenziali}{78}{section.23}%
+\contentsline {subsection}{\numberline {23.1}Esempio}{78}{subsection.23.1}%
+\contentsline {subsection}{\numberline {23.2}Formule di inversione per la trasformata di Fourier in $L^1$ }{79}{subsection.23.2}%
+\contentsline {subsection}{\numberline {23.3}Trasformata di Fourier in $L^2$ }{79}{subsection.23.3}%
+\contentsline {subsubsection}{\numberline {23.3.1}Altre proprietà di $\mathcal F$ in $\mathcal S$}{80}{subsubsection.23.3.1}%
+\contentsline {subsubsection}{\numberline {23.3.2}Calcolo nella pratica}{81}{subsubsection.23.3.2}%
+\contentsline {section}{\numberline {24}Trasformata di Fourier di distribuzioni}{82}{section.24}%
+\contentsline {subsection}{\numberline {24.1}Spazio delle funzioni temperate}{82}{subsection.24.1}%
+\contentsline {subsection}{\numberline {24.2}Lista trasformate studiate}{84}{subsection.24.2}%
+\contentsline {section}{\numberline {25}Problemi di Cauchy per l'equazione del calore e delle onde}{84}{section.25}%
+\contentsline {subsection}{\numberline {25.1}Problema di Cauchy per l'equazione del calore}{85}{subsection.25.1}%
+\contentsline {subsection}{\numberline {25.2}Effetto regolarizzante dell'operatore calore}{86}{subsection.25.2}%
+\contentsline {subsection}{\numberline {25.3}Problema di Cauchy per l'equazione delle onde}{87}{subsection.25.3}%

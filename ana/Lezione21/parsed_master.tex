@@ -1,0 +1,102 @@
+
+\section{Trasformata di Fourier di distribuzioni}
+\textbf{Problema:} Data $T\in \mathcal D'(\R^n),$ come definire $\hat{T}$?
+\\\textbf{Idea:} Scaricare $\mathcal F$ sulle funzioni test, dal momento che sappiamo 
+\[\int_{\R^n}^{} \hat{v}u=\int_{\R^n}^{} v\hat{u}  \]
+Data $\varphi \in \mathcal D(\R^n)$, potremmo definire $\hat{T}$ 
+\[ \left< \hat{T},\varphi \right> := \left< T,\hat{\varphi} \right> \]
+La definizione posta non ha senso, perché
+\[\varphi \in \mathcal D(\R^n) \centernot\implies \hat{\varphi}\in \mathcal D(\R^n)\]
+cioé $\mathcal F:\mathcal D(\R^n)\not \to \mathcal D(\R^n)$, la trasformata di una $\varphi \in \mathcal D(\R^n) $ è analitica, quindi non può avere supporto compatto.
+\\Si utilizzano quindi funzini test in $\mathcal S(\R^n)$. Si introduce quindi una convergenza in $\mathcal S(\R^n)$
+\begin{tcolorbox}
+	\textbf{Definizione: }Data $\{\varphi_h\} \subseteq  \mathcal S(\R^n)$, e $\varphi \in \mathcal S(\R^n)$, diciamo che $\varphi_h\to \varphi$ in $\mathcal S(\R^n)$ se 
+	\[\ \forall \alpha,\beta,\ x^\alpha D^\beta \varphi_h\to x^\alpha D^\beta \varphi\text{ uniformemente su }\R^n\]
+\end{tcolorbox}
+\textbf{Osservazioni} 
+\begin{enumerate}
+	\item Data $\{\varphi_h\} \subseteq  \mathcal D(\R^n)\subseteq  \mathcal S(\R^n)$ (Riferimento a convergenza in $\mathcal D$)
+		\[\varphi_h\to \varphi\text{ in }\mathcal D(\R^n)\ \ \ \varphi_h\to \varphi\text{ in }\mathcal S(\R^n)\]
+	\item $\mathcal F:\mathcal S(\R^n)\to \mathcal S(\R^n)$ è lineare e continuo, ovvero $\varphi_h\to \varphi$ in $\mathcal S(\R^n)\implies \hat{\varphi}_h\to \hat{\varphi}$ in $\mathcal S(\R^n)$.
+		\[\xi^\alpha D^\beta \hat{\varphi}_h\to \xi ^\alpha D^\beta \hat{\varphi}\text{ uniformemente su }\R^n\]
+		(Poiché $\text{rispettivamente } \xi^\alpha D^\beta =\widehat{D^\alpha (x^\beta \varphi_h)},\ \xi^\alpha D^\beta \hat{\varphi}=\widehat{D^\alpha (x^\beta \varphi)}.$)\\
+	Perché $D^\alpha (x^\beta \varphi_h)\to D^\alpha (x^\beta \varphi)$ in $L^{1}(\R^n)$\\
+	\textbf{Esempio} 
+	\[\int_{\R}^{}  \frac{|D^\alpha(x^\beta\varphi_h)-D^\alpha (x^\beta \varphi)|}{1+x^2}(1+x^2)\le \]\[\le \sup_{\R^n} | |D^\alpha(x^\beta \varphi_h)-D^\alpha(x^\beta \varphi)|(1+x^2)|\cdot \int_{\R}^{}  \frac{1}{1+x^2}dx\to 0\] 
+
+\end{enumerate}
+\subsection{Spazio delle funzioni temperate}
+
+\begin{tcolorbox}
+	\textbf{Definizione: }Una distribuzione $T \in \mathcal D'(\R^n)$ si dice \emph{distribuzione temperata} se 
+	\[\varphi_h \subseteq  \mathcal D(\R^n):\varphi_h\to 0\text{ in }\mathcal S(\R^n)\implies \left< T,\varphi_h \right> \to 0\]
+\end{tcolorbox}
+\begin{tcolorbox}
+	\textbf{Definizione: }$\mathcal S'(\R^n):= \{\text{distribuzioni temperate}\} $
+\end{tcolorbox}
+\textbf{Esempi} 
+\begin{enumerate}
+	\item $u(x)=p(x)$ polinomio $\in L^1_{\text{loc}}(\R)\subseteq  \mathcal D'(\R^n)$, dico che $u(x)\in \mathcal S'(\R^n)$ 
+		\[\int_{\R}^{} u\varphi_h \le  \int_{\R}^{} |\frac{u}{p}p\varphi_h| dx\le \|\frac{u}{p}\|_{L^1}\|p\varphi_h\|_{L^\infty}\to 0\text{ se }\varphi_h\to 0\]
+		dove $p$ polinomio tale che $u / p \in L^{1}(\R)$ 
+	\item $u\in L^1_{\text{loc}}(\R)$ si dice a \emph{crescita lenta} se $u=qw$ con $q$ polinomio e $w\in L^{1}(\R)$, Tutte le funzioni a crescita lenta stanno in  $\mathcal S'$. Per ogni $\varphi \in \mathcal D(\R)$ 
+		\[|\int_{\R}^{} u\varphi |\le  \int_{\R}^{} |wq\varphi|\le \|w\|_{L^1}\|q\varphi\|_{L^\infty}\]
+		Quindi, se $\varphi_h\to 0$ in $\mathcal S(\R^n),$ $\|q\varphi_h\|_{\infty}\to 0$
+	\item Come caso particolare: $u\in L^{p}(\R)\implies $ u è a crescita lenta, e quindi sta in $\mathcal S'(\R^n)$.\\
+		Data $u\in L^{p}(\R), \ u=qw$ con $q$ polinomio e $w\in L^{1}(\R)$.
+		\begin{itemize}
+			\item $u\in L^{1}(\R)\rightarrow $ prendo $q=1$, $w \in L^1(\R)$ 
+			\item $u\in L^{\infty}(\R)\implies $ prendo $q:1 / q \in L^{1}(\R)$, $u=q\cdot \frac{u}{q}$, $w=u / q \in L^{1}(\R)$ applicando Holder.
+			\item $u \in L^{p}(\R)\implies $prendo $q:1 / q \in L^{p'}(\R)$, $u=q\cdot \frac{u}{q}$, $w=\frac{u}{q}\in L^{p}(\R)$, sempre per Holder.
+		\end{itemize}
+	\item $\delta_0\in \mathcal S'(\R)$, $D^{(k)}\delta_0\in S'(\R)$
+		\[\{\varphi_h\} \subseteq  \mathcal D(\R),\ \varphi_h\to 0\text{ in }\mathcal S(\R)\implies \left< \delta_0,\varphi_h \right> \to 0\]
+		Avendo la convergenza uniforme di $\varphi_h$, si avrà anche la convergenza puntuale (in $\varphi_h(0)$.
+
+\end{enumerate}
+\textbf{Altre osservazioni su }$\mathcal S'$ 
+\begin{enumerate}
+	\item $T\in \mathcal S'(\R^n)\implies T$ può agire più in generale su funzioni test di $\mathcal S(\R)$
+		\\Infatti, se $T\in S'(\R^n)$, posso definire 
+		\[\left< T,\varphi \right> \ \forall \varphi \in \mathcal S(\R^n):=\lim_{h \to +\infty} \left< T,\varphi_h \right> \text{dove }\varphi_h \subseteq  \mathcal D(\R^n):\varphi_h\to \varphi\text{ in }\mathcal S(\R^n)\]
+	\item Se $T\in \mathcal S '(\R^n)$, allora vale:
+		\[\{\varphi_h\} \subseteq  \mathcal S(\R^n)\text{ tale che }\varphi_h\to 0\text{ in }\mathcal S( \R^n)\implies \left< T,\varphi_h \right> \to 0\]
+
+\end{enumerate}
+\begin{tcolorbox}
+	\textbf{Trasformata di Fourier in $\mathcal S'(R^n)$}
+	\\Data $T \in \mathcal S'(\R^n)$, definisco $\hat{T}\in \mathcal S'(\R^n)$ come
+	\[\left< \hat{T}, \varphi \right> :=\left< T,\hat{\varphi} \right> \ \forall \varphi \in  \mathcal D(\R^n)\]
+
+\end{tcolorbox}
+\textbf{Osservazioni} 
+\begin{enumerate}
+	\item $\varphi \in \mathcal D(\R^n)\implies \varphi \in \mathcal S(\R^n)\implies \hat{\varphi}\in \mathcal S(\R^n)$. \\Quindi $\left< T, \hat{\varphi} \right> $ ha senso perché $T\in \mathcal S'(\R^n)$ 
+	\item Verifichiamo che $\hat{T} \in \mathcal D'(\R^n)$ 
+	\[\{\varphi_h\}\to 0\text{ in }\mathcal D(\R^n)\implies \left< \hat{T}, \varphi_h \right> \to 0 \]
+		Infatti $\{\varphi_h\} \to 0$ in $\mathcal S(\R^n)\implies \hat{\varphi_h}\to 0\text{ in }\mathcal S(\R^n)\implies $ $\left< T,\hat{\varphi_h} \right> \to 0$ perché $T\in \mathcal S'(\R^n)$ 
+	\item Si ha anche $\hat{ T}\in \mathcal S'(\R^n)$ (vedere sopra)
+\end{enumerate}
+Tutte le proprietà di $\mathcal F$ in $\mathcal S(\R^n)$ valgono anche in $\mathcal S'(\R^n)$,  
+\\\textbf{Inversione:}
+\[\check{T}=(2\pi)^{-n}\hat{\hat{T}}\]
+\textbf{Dimostrazione}
+\[\left< \hat{T},\varphi \right> =\left< T,\hat{\varphi} \right> =(2\pi)^{-n}\left< T,\hat{\hat{\varphi }}\right> = (2\pi)^{-n} \left< \hat{\hat{T}},\varphi \right> \]
+\textbf{Esempi} 
+\begin{enumerate}
+	\item $T=\delta_0$ 
+		\[\left< \hat{\delta_0},\varphi \right> =\left< \delta_0,\hat{\varphi} \right> = \int_{\R}^{} \varphi=\int_{\R}^{} 1\cdot \varphi=\left< 1,\varphi \right>  \]
+		\[\implies \hat{\delta_0}=1\]
+	\item $\hat{1}=\hat{\hat{\delta_0}}=2\pi\check\delta_0=(2\pi)\delta_0$, poiché
+		\[\left<   \check\delta_0,\varphi \right>= \left< \delta_0,\check\varphi \right> =\left< \delta_0,\varphi \right> \]
+
+	\item $\hat{x}=\mathcal F(x\cdot 1)=i(\hat{1})'=2\pi i(\delta_0)'$
+
+\end{enumerate}
+\subsection{Lista trasformate studiate}
+Ricapitolando, sono state studiate le seguenti trasformate:
+\begin{align*}
+&\mathcal F: L^1\to L^\infty\\&\mathcal F: L^2\to L^2	
+\\ &\mathcal F: \mathcal S\to \mathcal S
+\\ &\mathcal F: \mathcal S'\to \mathcal S'
+\end{align*}

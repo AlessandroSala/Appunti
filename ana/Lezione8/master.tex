@@ -49,17 +49,18 @@ Per il prodotto per scalare
 \begin{tcolorbox}
 	Sia $V$ uno spazio vettoriale su $\R$.
 	\\Una norma su $V$ è una funzione $\|.\|:V\to \R^+$ tale che:
-	\begin{itemize}
+	\begin{enumerate}
 		\item $\|v\|>0\forall v\in V-\{\underline 0\} $ (positività)
 		\item $\|tv\|=|t|\|v\|\forall t\in\R,\forall v\in V$ (omogeneità)
 		\item $\|u+v\|\le \|u\|+\|v\|\forall u,v\in V$ (dis. triangolare)
-	\end{itemize}
+	\end{enumerate}
 \end{tcolorbox}
 \begin{tcolorbox}
 	$(V,\|.\|)$ si dice \textbf{spazio vettoriale normato}.
 \end{tcolorbox}
-Seguono le seguenti proprietà (resettare counter)
+Seguono le seguenti proprietà
 \begin{enumerate}
+	\setcounter{enumi}{3}
 	\item $\|\underline 0\|=0$
 	\item $| \|u\|-\|v\| |\le \|u-v\|\forall u,v\in V (dim)$
 \end{enumerate}
@@ -102,13 +103,14 @@ Alcuni fatti veri in dimensione finita ma falsi in dimensione infinita:
 	\item Tutte le successioni di Cauchy convergono
 	\item Tutti i sottospazi vettoriali sono chiusi
 \end{enumerate}
-1) Norme equivalenti\\
+\begin{tcolorbox}
 \textbf{Definizione:} Sia $V$ uno spazio vettoriale (su $\R$), consideriamo su $V$ due possibili norme $ \|.\|,|\|.\||$.
 \\Queste due norme si dicono \textbf{equivalenti} se:
 \begin{enumerate}
 	\item $\exists c>0:\forall v\in V,\|v\|\le c|\|v\||$
 	\item $\exists c'>0:\forall v\in V,|\|v\||\le c\|v\|$
 \end{enumerate}
+\end{tcolorbox}
 Le successioni convergenti nelle due norme sono le stesse.
 \\Interpretazione geometrica:
 \[\|.\|_\infty\le \|.\|_1\iff B_1^1(0)\subseteq  B_1^\infty(0)\]
@@ -120,7 +122,7 @@ In uno spazio a dimensione infinita non è generalmente vero, ad esempio nello s
 	\textbf{Definizione:} Sia $(V,\|.\|)$ uno spazio vettoriale normato. Una successione $\{v_n\} \subseteq V$ si dice successione di cauchy se 
 	\[\forall \varepsilon>0 \exists \nu\in\N:d(v_n,v_m)<\varepsilon\ \forall n,m\ge \nu\]
 \end{tcolorbox}
-\textbf{Osservazione:} Vale sempre che se $\{v_n\} $converge allora è di Cauchy.
+\textbf{Osservazione:} Vale sempre che se $\{v_n\} $ converge allora è di Cauchy.
 \[(\|v_n-v_m\|=\|v_n-v+v-v_m\|\le \|v_n-v\|+\|v_m-v\|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon\]
 \begin{tcolorbox}
 	\textbf{Teorema:} Se $\text{dim}V<+\infty$ vale anche il viceversa, ovvero

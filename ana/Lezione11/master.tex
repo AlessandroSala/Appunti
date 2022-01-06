@@ -65,10 +65,11 @@ Dunque convergenza uniforme a meno di un insieme di misura nulla.
 \[\implies \lim_{p \to +\infty} \|f\|_{L^p(E)}=\|f\|_{L^\infty(E)}\]
 Analogo in $\R^2$
 \[\lim_{p \to +\infty} \|x\|_p=\lim_{p \to +\infty} (|x_1|^p+|x_2|^p)^{\frac{1}{p}}=\max \{|x_1|,|x_2|\}\] 
+\newpage
 \subsection{Risultati di confronto}
 $p\le q\ p,q\in[1,+\infty]\implies  L^p(E)\subseteq \text{ oppure }\supseteq L^q(E)?$
 \\In generale no
-\\\textbf{Controesempio 1:} $L^1(0,+\infty), \ L^2(o,+\infty),L^\infty(0,+\infty)$
+\\\textbf{Controesempio 1:} $L^1(0,+\infty), \ L^2(0,+\infty),L^\infty(0,+\infty)$
 \[f(x)=1,\ \text{ess-sup}_{x\in\R}|f(x)|=1,\ \int_{\R_+}^{} |f|=\int_{\R_+}^{} |f|^2=+\infty\]  
 \[f\in L^{\infty}(\R_+)\text{ ma }f\not\in L^1(\R_+),f\not\in L^2(\R_+)\]
 \textbf{Controesempio 2:} 
@@ -89,6 +90,7 @@ $p\le q\ p,q\in[1,+\infty]\implies  L^p(E)\subseteq \text{ oppure }\supseteq L^q
 \end{figure}
 Si ricava in modo immediato che 
 \[f\in L^2(\R_+)\text{ ma }f\not\in L^\infty(\R_+),\ f\not\in L^1(\R_+)\]
+\newpage
 \subsubsection{Disuguaglianza di Holder}
 \begin{tcolorbox}
 	Sia $E$ misurabile $\subseteq \R^n$ qualsiasi, e $p \in [1,+\infty]$.
@@ -110,7 +112,7 @@ Infatti
 \[\int_{E}^{} |f|^p\le \int_{E}^{} \text{ess-sup}_{x\in E}|f|^p=m(E)\cdot (\text{ess-sup}_{x\in E}|f|)^p\]
 Elevando a $\frac{1}{p}$
 \[\|f\|_p=\bigg(\int_{E}{|f|^p\bigg)^{\frac{1}{p}}}\le (m(E))^{\frac{1}{p}}\text{ess-sup}_{x\in E}|f|=m(E)^{1 / p}\|f\|_{L^\infty(E)}  \]
-\textbf{Dimostrazione di (*) a partire da Holder}\\
+\textbf{Dimostrazione di (1) a partire da Holder}\\
 Suppongo $f\in L^q(E)$, $\implies f\in L^{\frac{q}{p}}$
 \[\int_{E}^{} |f|^p=\int_{E}^{} |f|^p\chi_E \le \|f^p\|_{L^{\frac{q}{p}}}\cdot \|\chi_E\|_{L^{(q / p)'}}\]
 \begin{itemize}
@@ -133,7 +135,7 @@ Dove $\alpha\in (0,1)$ tale che $\frac{1}{r}=\frac{\alpha}{p}+\frac{1-\alpha}{q}
 \begin{tcolorbox}
 	\textbf{Teorema di approssimazione con funzioni regolari}\\
 	Sia $p\in[1,+\infty)$, e sia $E$ misurabile in $\R^n$
-	\\$C_o^\infty(E)$ è un sottospazio \textit{denso} in $L^p(E)$
+	\\$C_0^\infty(E)$ è un sottospazio \textit{denso} in $L^p(E)$
 	\\$C_0^\infty(E):=\{f:E\to \R\text{ di classe }C^\infty \text{ e aventi supporto compatto in }E\}$ 
 \end{tcolorbox}
 Ovvero 
