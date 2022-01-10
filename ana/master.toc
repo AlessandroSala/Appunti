@@ -1,121 +1,121 @@
 \babel@toc {italian}{}
 \babel@toc {italian}{}
-\contentsline {section}{\numberline {1}Introduzione Analisi Complessa}{3}{section.1}%
-\contentsline {section}{\numberline {2}Limiti}{4}{section.2}%
-\contentsline {subsubsection}{\numberline {2.0.1}Infinito nei complessi}{5}{subsubsection.2.0.1}%
-\contentsline {subsection}{\numberline {2.1}Derivabilità}{5}{subsection.2.1}%
-\contentsline {section}{\numberline {3}Funzioni olomorfe}{6}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Invertibilità locale}{6}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Ricerca delle primitive - antiderivazione}{7}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Funzioni analitiche in campo complesso}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Serie di potenze in $\mathbb {C}$}{9}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Un altro modo di calcolare i coefficienti $c_k$}{10}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Analiticità e olomorfia}{11}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Singolarità isolate e loro classificazione}{12}{section.5}%
-\contentsline {subsubsection}{\numberline {5.0.1}Singolarità eliminabile}{12}{subsubsection.5.0.1}%
-\contentsline {subsubsection}{\numberline {5.0.2}Polo}{12}{subsubsection.5.0.2}%
-\contentsline {subsubsection}{\numberline {5.0.3}Singolarità essenziale}{13}{subsubsection.5.0.3}%
-\contentsline {subsection}{\numberline {5.1}Sviluppabilità in serie di Laurent}{13}{subsection.5.1}%
-\contentsline {section}{\numberline {6}Riconoscere le singolarità}{13}{section.6}%
-\contentsline {subsubsection}{\numberline {6.0.1}Principio di identità}{14}{subsubsection.6.0.1}%
-\contentsline {subsubsection}{\numberline {6.0.2}Ordine di zeri}{14}{subsubsection.6.0.2}%
-\contentsline {subsection}{\numberline {6.1}Ordine dei poli}{14}{subsection.6.1}%
-\contentsline {subsubsection}{\numberline {6.1.1}Unicità del prolungamento analitico}{15}{subsubsection.6.1.1}%
-\contentsline {section}{\numberline {7}Teorema dei residui}{16}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Calcolo dei residui}{16}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Definizione e calcolo dell'indice di avvolgimento}{17}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}Modalità analitica per calcolare l'indice}{17}{subsubsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.3}Teorema dei residui}{18}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Applicazioni del teorema dei residui in campo reale}{18}{section.8}%
-\contentsline {subsection}{\numberline {8.1}Primo tipo}{18}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}Secondo tipo}{18}{subsection.8.2}%
-\contentsline {subsubsection}{\numberline {8.2.1}Lemma tecnico di decadimento}{20}{subsubsection.8.2.1}%
-\contentsline {subsection}{\numberline {8.3}Terzo tipo}{20}{subsection.8.3}%
-\contentsline {subsubsection}{\numberline {8.3.1}Lemma di Jordan}{21}{subsubsection.8.3.1}%
-\contentsline {subsection}{\numberline {8.4}Quarto tipo}{21}{subsection.8.4}%
-\contentsline {subsubsection}{\numberline {8.4.1}Lemma del polo semplice}{21}{subsubsection.8.4.1}%
-\contentsline {section}{\numberline {9}Cenni aggiuntivi sull'analisi complessa}{21}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Residuo all'infinito}{21}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}Funzioni polidrome}{22}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}Funzioni armoniche}{23}{subsection.9.3}%
-\contentsline {section}{\numberline {10}Analisi funzionale}{23}{section.10}%
-\contentsline {subsubsection}{\numberline {10.0.1}Norma}{23}{subsubsection.10.0.1}%
-\contentsline {subsubsection}{\numberline {10.0.2}Norma su uno spazio funzionale di dimensione infinita}{24}{subsubsection.10.0.2}%
-\contentsline {subsection}{\numberline {10.1}Spazio di Banach}{26}{subsection.10.1}%
-\contentsline {section}{\numberline {11}Integrazione secondo Lebesgue}{26}{section.11}%
-\contentsline {subsubsection}{\numberline {11.0.1}Misure e funzioni misurabili}{27}{subsubsection.11.0.1}%
-\contentsline {subsubsection}{\numberline {11.0.2}Definzione di integrale secondo Lebesgue}{29}{subsubsection.11.0.2}%
-\contentsline {subsubsection}{\numberline {11.0.3}Proprietà principali dell'integrale di Lebesgue}{30}{subsubsection.11.0.3}%
-\contentsline {subsection}{\numberline {11.1}Confronto Riemann-Lebesgue}{31}{subsection.11.1}%
-\contentsline {subsubsection}{\numberline {11.1.1}Integrali propri}{31}{subsubsection.11.1.1}%
-\contentsline {subsubsection}{\numberline {11.1.2}Integrali impropri}{32}{subsubsection.11.1.2}%
-\contentsline {section}{\numberline {12}Spazi di Lebesgue}{32}{section.12}%
-\contentsline {subsubsection}{\numberline {12.0.1}Integrali multipli}{35}{subsubsection.12.0.1}%
-\contentsline {subsubsection}{\numberline {12.0.2}Spazi di Lebesgue (o spazi $L^p$)}{35}{subsubsection.12.0.2}%
-\contentsline {subsubsection}{\numberline {12.0.3}Caso limite L infinito}{36}{subsubsection.12.0.3}%
-\contentsline {subsection}{\numberline {12.1}Risultati di confronto}{37}{subsection.12.1}%
-\contentsline {subsubsection}{\numberline {12.1.1}Disuguaglianza di Holder}{38}{subsubsection.12.1.1}%
-\contentsline {subsubsection}{\numberline {12.1.2}Conseguenze di Holder sul confronto tra i vari spazi}{38}{subsubsection.12.1.2}%
-\contentsline {subsection}{\numberline {12.2}Approssimazione con funzioni regolari}{39}{subsection.12.2}%
-\contentsline {subsection}{\numberline {12.3}Supporto e Classe $C_0$}{40}{subsection.12.3}%
-\contentsline {subsection}{\numberline {12.4}Prodotto di convoluzione}{40}{subsection.12.4}%
-\contentsline {subsection}{\numberline {12.5}Teorema fondamentale del calcolo}{42}{subsection.12.5}%
-\contentsline {section}{\numberline {13}Operatori lineari tra spazi vettoriali normati}{44}{section.13}%
-\contentsline {section}{\numberline {14}Distribuzioni}{46}{section.14}%
-\contentsline {subsection}{\numberline {14.1}Convergenza}{48}{subsection.14.1}%
-\contentsline {subsection}{\numberline {14.2}Delta di Dirac}{49}{subsection.14.2}%
-\contentsline {subsubsection}{\numberline {14.2.1}Ovvie generalizzazioni}{50}{subsubsection.14.2.1}%
-\contentsline {subsubsection}{\numberline {14.2.2}idk}{50}{subsubsection.14.2.2}%
-\contentsline {subsubsection}{\numberline {14.2.3}Derivazione di distribuzioni}{50}{subsubsection.14.2.3}%
-\contentsline {subsubsection}{\numberline {14.2.4}Motivo della definizione di derivata}{51}{subsubsection.14.2.4}%
-\contentsline {section}{\numberline {15}Esempi di distribuzioni}{51}{section.15}%
-\contentsline {subsection}{\numberline {15.1}Generalizzazione }{52}{subsection.15.1}%
-\contentsline {subsubsection}{\numberline {15.1.1}Operatori differenziali}{52}{subsubsection.15.1.1}%
-\contentsline {section}{\numberline {16}Spazi di Sobolev}{52}{section.16}%
-\contentsline {subsubsection}{\numberline {16.0.1}Disuguaglianza di Poincaré}{54}{subsubsection.16.0.1}%
-\contentsline {section}{\numberline {17}Spazi di Hilbert}{55}{section.17}%
-\contentsline {subsection}{\numberline {17.1}Disuguaglianza di Cauchy Schwartz}{55}{subsection.17.1}%
-\contentsline {subsubsection}{\numberline {17.1.1}Legge del parallelogramma}{56}{subsubsection.17.1.1}%
-\contentsline {subsubsection}{\numberline {17.1.2}Teorema di proiezione su un convesso chiuso}{57}{subsubsection.17.1.2}%
-\contentsline {subsection}{\numberline {17.2}Teoremi di Rappresenzatione}{60}{subsection.17.2}%
-\contentsline {subsubsection}{\numberline {17.2.1}Teorema di Reisz}{60}{subsubsection.17.2.1}%
-\contentsline {subsubsection}{\numberline {17.2.2}Forme bilineari}{60}{subsubsection.17.2.2}%
-\contentsline {subsubsection}{\numberline {17.2.3}Teorema di Lax Milgram}{62}{subsubsection.17.2.3}%
-\contentsline {subsubsection}{\numberline {17.2.4}Commenti sulla proprietà variazionale di $u$ }{62}{subsubsection.17.2.4}%
-\contentsline {section}{\numberline {18}Equazioni alle derivate parziali}{63}{section.18}%
-\contentsline {subsection}{\numberline {18.1}Formulazione variazionali di problemi ellittici}{63}{subsection.18.1}%
-\contentsline {subsubsection}{\numberline {18.1.1}PDE ellittiche del secondo ordine}{63}{subsubsection.18.1.1}%
-\contentsline {subsubsection}{\numberline {18.1.2}Formulazione variazionale del problema di Dirichlet}{64}{subsubsection.18.1.2}%
-\contentsline {subsubsection}{\numberline {18.1.3}Formulazione variazionale del problema di Neumann}{64}{subsubsection.18.1.3}%
-\contentsline {subsubsection}{\numberline {18.1.4}Esistenza delle soluzioni}{64}{subsubsection.18.1.4}%
-\contentsline {subsubsection}{\numberline {18.1.5}Esistenza delle soluzioni per Neumann}{65}{subsubsection.18.1.5}%
-\contentsline {subsubsection}{\numberline {18.1.6}Richiamo di Analisi Vettoriale}{66}{subsubsection.18.1.6}%
-\contentsline {subsubsection}{\numberline {18.1.7}Dimostrazione proposizione di Dirichlet}{66}{subsubsection.18.1.7}%
-\contentsline {section}{\numberline {19}Serie di Fourier in spazi di Hilbert}{67}{section.19}%
-\contentsline {subsubsection}{\numberline {19.0.1}Convergenza in H}{68}{subsubsection.19.0.1}%
-\contentsline {subsubsection}{\numberline {19.0.2}Sottospazio generato}{68}{subsubsection.19.0.2}%
-\contentsline {subsubsection}{\numberline {19.0.3}Disuguaglianza di Bessel}{68}{subsubsection.19.0.3}%
-\contentsline {subsubsection}{\numberline {19.0.4}Dimostrazione teorema di convergenza delle serie di Fourier}{69}{subsubsection.19.0.4}%
-\contentsline {section}{\numberline {20}Serie di Fourier in $L^2$}{71}{section.20}%
-\contentsline {subsubsection}{\numberline {20.0.1}Modi equivalenti di scrivere (*)}{71}{subsubsection.20.0.1}%
-\contentsline {section}{\numberline {21}Applicazioni delle serie di Fourier alle equazioni differenziali}{73}{section.21}%
-\contentsline {section}{\numberline {22}Trasformata di Fourier}{74}{section.22}%
-\contentsline {subsection}{\numberline {22.1}Varianti in letteratura}{75}{subsection.22.1}%
-\contentsline {subsection}{\numberline {22.2}Operatore Trasformata}{75}{subsection.22.2}%
-\contentsline {subsection}{\numberline {22.3}Trasformate notevoli}{75}{subsection.22.3}%
-\contentsline {subsection}{\numberline {22.4}Teorema di Riemann-Lebesgue}{76}{subsection.22.4}%
-\contentsline {subsection}{\numberline {22.5}Proprietà algebriche}{77}{subsection.22.5}%
-\contentsline {subsection}{\numberline {22.6}Proprietà differenziali}{77}{subsection.22.6}%
-\contentsline {section}{\numberline {23}Applicazione della trasformata di Fourier alle equazioni differenziali}{78}{section.23}%
-\contentsline {subsection}{\numberline {23.1}Esempio}{78}{subsection.23.1}%
-\contentsline {subsection}{\numberline {23.2}Formule di inversione per la trasformata di Fourier in $L^1$ }{79}{subsection.23.2}%
-\contentsline {subsection}{\numberline {23.3}Trasformata di Fourier in $L^2$ }{79}{subsection.23.3}%
-\contentsline {subsubsection}{\numberline {23.3.1}Altre proprietà di $\mathcal F$ in $\mathcal S$}{80}{subsubsection.23.3.1}%
-\contentsline {subsubsection}{\numberline {23.3.2}Calcolo nella pratica}{81}{subsubsection.23.3.2}%
-\contentsline {section}{\numberline {24}Trasformata di Fourier di distribuzioni}{82}{section.24}%
-\contentsline {subsection}{\numberline {24.1}Spazio delle funzioni temperate}{82}{subsection.24.1}%
-\contentsline {subsection}{\numberline {24.2}Lista trasformate studiate}{84}{subsection.24.2}%
-\contentsline {section}{\numberline {25}Problemi di Cauchy per l'equazione del calore e delle onde}{84}{section.25}%
-\contentsline {subsection}{\numberline {25.1}Problema di Cauchy per l'equazione del calore}{85}{subsection.25.1}%
-\contentsline {subsection}{\numberline {25.2}Effetto regolarizzante dell'operatore calore}{86}{subsection.25.2}%
-\contentsline {subsection}{\numberline {25.3}Problema di Cauchy per l'equazione delle onde}{87}{subsection.25.3}%
+\contentsline {section}{\numberline {1}Introduzione Analisi Complessa}{5}{section.1}%
+\contentsline {section}{\numberline {2}Limiti}{6}{section.2}%
+\contentsline {subsubsection}{\numberline {2.0.1}Infinito nei complessi}{6}{subsubsection.2.0.1}%
+\contentsline {subsection}{\numberline {2.1}Derivabilità}{7}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Funzioni olomorfe}{8}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Invertibilità locale}{8}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Ricerca delle primitive - antiderivazione}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Funzioni analitiche in campo complesso}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Serie di potenze in $\mathbb {C}$}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Un altro modo di calcolare i coefficienti $c_k$}{11}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Analiticità e olomorfia}{13}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Singolarità isolate e loro classificazione}{13}{section.5}%
+\contentsline {subsubsection}{\numberline {5.0.1}Singolarità eliminabile}{13}{subsubsection.5.0.1}%
+\contentsline {subsubsection}{\numberline {5.0.2}Polo}{14}{subsubsection.5.0.2}%
+\contentsline {subsubsection}{\numberline {5.0.3}Singolarità essenziale}{14}{subsubsection.5.0.3}%
+\contentsline {subsection}{\numberline {5.1}Sviluppabilità in serie di Laurent}{14}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Riconoscere le singolarità}{15}{section.6}%
+\contentsline {subsubsection}{\numberline {6.0.1}Principio di identità}{15}{subsubsection.6.0.1}%
+\contentsline {subsubsection}{\numberline {6.0.2}Ordine di zeri}{15}{subsubsection.6.0.2}%
+\contentsline {subsection}{\numberline {6.1}Ordine dei poli}{15}{subsection.6.1}%
+\contentsline {subsubsection}{\numberline {6.1.1}Unicità del prolungamento analitico}{17}{subsubsection.6.1.1}%
+\contentsline {section}{\numberline {7}Teorema dei residui}{17}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Calcolo dei residui}{17}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Definizione e calcolo dell'indice di avvolgimento}{18}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Modalità analitica per calcolare l'indice}{19}{subsubsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.3}Teorema dei residui}{19}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Applicazioni del teorema dei residui in campo reale}{19}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Primo tipo}{19}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Secondo tipo}{20}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Lemma tecnico di decadimento}{21}{subsubsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.3}Terzo tipo}{21}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}Lemma di Jordan}{22}{subsubsection.8.3.1}%
+\contentsline {subsection}{\numberline {8.4}Quarto tipo}{22}{subsection.8.4}%
+\contentsline {subsubsection}{\numberline {8.4.1}Lemma del polo semplice}{23}{subsubsection.8.4.1}%
+\contentsline {section}{\numberline {9}Cenni aggiuntivi sull'analisi complessa}{23}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Residuo all'infinito}{23}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Funzioni polidrome}{24}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}Funzioni armoniche}{24}{subsection.9.3}%
+\contentsline {section}{\numberline {10}Analisi funzionale}{24}{section.10}%
+\contentsline {subsubsection}{\numberline {10.0.1}Norma}{25}{subsubsection.10.0.1}%
+\contentsline {subsubsection}{\numberline {10.0.2}Norma su uno spazio funzionale di dimensione infinita}{25}{subsubsection.10.0.2}%
+\contentsline {subsection}{\numberline {10.1}Spazio di Banach}{27}{subsection.10.1}%
+\contentsline {section}{\numberline {11}Integrazione secondo Lebesgue}{28}{section.11}%
+\contentsline {subsubsection}{\numberline {11.0.1}Misure e funzioni misurabili}{28}{subsubsection.11.0.1}%
+\contentsline {subsubsection}{\numberline {11.0.2}Definzione di integrale secondo Lebesgue}{30}{subsubsection.11.0.2}%
+\contentsline {subsubsection}{\numberline {11.0.3}Proprietà principali dell'integrale di Lebesgue}{32}{subsubsection.11.0.3}%
+\contentsline {subsection}{\numberline {11.1}Confronto Riemann-Lebesgue}{32}{subsection.11.1}%
+\contentsline {subsubsection}{\numberline {11.1.1}Integrali propri}{32}{subsubsection.11.1.1}%
+\contentsline {subsubsection}{\numberline {11.1.2}Integrali impropri}{33}{subsubsection.11.1.2}%
+\contentsline {section}{\numberline {12}Spazi di Lebesgue}{33}{section.12}%
+\contentsline {subsubsection}{\numberline {12.0.1}Integrali multipli}{36}{subsubsection.12.0.1}%
+\contentsline {subsubsection}{\numberline {12.0.2}Spazi di Lebesgue (o spazi $L^p$)}{37}{subsubsection.12.0.2}%
+\contentsline {subsubsection}{\numberline {12.0.3}Caso limite L infinito}{38}{subsubsection.12.0.3}%
+\contentsline {subsection}{\numberline {12.1}Risultati di confronto}{39}{subsection.12.1}%
+\contentsline {subsubsection}{\numberline {12.1.1}Disuguaglianza di Holder}{40}{subsubsection.12.1.1}%
+\contentsline {subsubsection}{\numberline {12.1.2}Conseguenze di Holder sul confronto tra i vari spazi}{40}{subsubsection.12.1.2}%
+\contentsline {subsection}{\numberline {12.2}Approssimazione con funzioni regolari}{41}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Supporto e Classe $C_0$}{42}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Prodotto di convoluzione}{42}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Teorema fondamentale del calcolo}{44}{subsection.12.5}%
+\contentsline {section}{\numberline {13}Operatori lineari tra spazi vettoriali normati}{46}{section.13}%
+\contentsline {section}{\numberline {14}Distribuzioni}{48}{section.14}%
+\contentsline {subsection}{\numberline {14.1}Convergenza}{50}{subsection.14.1}%
+\contentsline {subsection}{\numberline {14.2}Delta di Dirac}{51}{subsection.14.2}%
+\contentsline {subsubsection}{\numberline {14.2.1}Ovvie generalizzazioni}{52}{subsubsection.14.2.1}%
+\contentsline {subsubsection}{\numberline {14.2.2}Commento sulla Delta}{52}{subsubsection.14.2.2}%
+\contentsline {subsubsection}{\numberline {14.2.3}Derivazione di distribuzioni}{52}{subsubsection.14.2.3}%
+\contentsline {subsubsection}{\numberline {14.2.4}Motivo della definizione di derivata}{53}{subsubsection.14.2.4}%
+\contentsline {section}{\numberline {15}Esempi di distribuzioni}{53}{section.15}%
+\contentsline {subsection}{\numberline {15.1}Generalizzazione }{54}{subsection.15.1}%
+\contentsline {subsubsection}{\numberline {15.1.1}Operatori differenziali}{54}{subsubsection.15.1.1}%
+\contentsline {section}{\numberline {16}Spazi di Sobolev}{54}{section.16}%
+\contentsline {subsubsection}{\numberline {16.0.1}Disuguaglianza di Poincaré}{56}{subsubsection.16.0.1}%
+\contentsline {section}{\numberline {17}Spazi di Hilbert}{57}{section.17}%
+\contentsline {subsection}{\numberline {17.1}Disuguaglianza di Cauchy Schwartz}{57}{subsection.17.1}%
+\contentsline {subsubsection}{\numberline {17.1.1}Legge del parallelogramma}{58}{subsubsection.17.1.1}%
+\contentsline {subsubsection}{\numberline {17.1.2}Teorema di proiezione su un convesso chiuso}{59}{subsubsection.17.1.2}%
+\contentsline {subsection}{\numberline {17.2}Teoremi di Rappresenzatione}{62}{subsection.17.2}%
+\contentsline {subsubsection}{\numberline {17.2.1}Teorema di Reisz}{62}{subsubsection.17.2.1}%
+\contentsline {subsubsection}{\numberline {17.2.2}Forme bilineari}{62}{subsubsection.17.2.2}%
+\contentsline {subsubsection}{\numberline {17.2.3}Teorema di Lax Milgram}{64}{subsubsection.17.2.3}%
+\contentsline {subsubsection}{\numberline {17.2.4}Commenti sulla proprietà variazionale di $u$ }{64}{subsubsection.17.2.4}%
+\contentsline {section}{\numberline {18}Equazioni alle derivate parziali}{65}{section.18}%
+\contentsline {subsection}{\numberline {18.1}Formulazione variazionali di problemi ellittici}{65}{subsection.18.1}%
+\contentsline {subsubsection}{\numberline {18.1.1}PDE ellittiche del secondo ordine}{65}{subsubsection.18.1.1}%
+\contentsline {subsubsection}{\numberline {18.1.2}Formulazione variazionale del problema di Dirichlet}{66}{subsubsection.18.1.2}%
+\contentsline {subsubsection}{\numberline {18.1.3}Formulazione variazionale del problema di Neumann}{66}{subsubsection.18.1.3}%
+\contentsline {subsubsection}{\numberline {18.1.4}Esistenza delle soluzioni}{66}{subsubsection.18.1.4}%
+\contentsline {subsubsection}{\numberline {18.1.5}Esistenza delle soluzioni per Neumann}{67}{subsubsection.18.1.5}%
+\contentsline {subsubsection}{\numberline {18.1.6}Richiamo di Analisi Vettoriale}{68}{subsubsection.18.1.6}%
+\contentsline {subsubsection}{\numberline {18.1.7}Dimostrazione proposizione di Dirichlet}{68}{subsubsection.18.1.7}%
+\contentsline {section}{\numberline {19}Serie di Fourier in spazi di Hilbert}{69}{section.19}%
+\contentsline {subsubsection}{\numberline {19.0.1}Convergenza in H}{70}{subsubsection.19.0.1}%
+\contentsline {subsubsection}{\numberline {19.0.2}Sottospazio generato}{70}{subsubsection.19.0.2}%
+\contentsline {subsubsection}{\numberline {19.0.3}Disuguaglianza di Bessel}{70}{subsubsection.19.0.3}%
+\contentsline {subsubsection}{\numberline {19.0.4}Dimostrazione teorema di convergenza delle serie di Fourier}{71}{subsubsection.19.0.4}%
+\contentsline {section}{\numberline {20}Serie di Fourier in $L^2$}{73}{section.20}%
+\contentsline {subsubsection}{\numberline {20.0.1}Modi equivalenti di scrivere (*)}{73}{subsubsection.20.0.1}%
+\contentsline {section}{\numberline {21}Applicazioni delle serie di Fourier alle equazioni differenziali}{75}{section.21}%
+\contentsline {section}{\numberline {22}Trasformata di Fourier}{76}{section.22}%
+\contentsline {subsection}{\numberline {22.1}Varianti in letteratura}{77}{subsection.22.1}%
+\contentsline {subsection}{\numberline {22.2}Operatore Trasformata}{77}{subsection.22.2}%
+\contentsline {subsection}{\numberline {22.3}Trasformate notevoli}{77}{subsection.22.3}%
+\contentsline {subsection}{\numberline {22.4}Teorema di Riemann-Lebesgue}{78}{subsection.22.4}%
+\contentsline {subsection}{\numberline {22.5}Proprietà algebriche}{79}{subsection.22.5}%
+\contentsline {subsection}{\numberline {22.6}Proprietà differenziali}{79}{subsection.22.6}%
+\contentsline {section}{\numberline {23}Applicazione della trasformata di Fourier alle equazioni differenziali}{80}{section.23}%
+\contentsline {subsection}{\numberline {23.1}Esempio}{80}{subsection.23.1}%
+\contentsline {subsection}{\numberline {23.2}Formule di inversione per la trasformata di Fourier in $L^1$ }{81}{subsection.23.2}%
+\contentsline {subsection}{\numberline {23.3}Trasformata di Fourier in $L^2$ }{81}{subsection.23.3}%
+\contentsline {subsubsection}{\numberline {23.3.1}Altre proprietà di $\mathcal F$ in $\mathcal S$}{82}{subsubsection.23.3.1}%
+\contentsline {subsubsection}{\numberline {23.3.2}Calcolo nella pratica}{83}{subsubsection.23.3.2}%
+\contentsline {section}{\numberline {24}Trasformata di Fourier di distribuzioni}{84}{section.24}%
+\contentsline {subsection}{\numberline {24.1}Spazio delle funzioni temperate}{84}{subsection.24.1}%
+\contentsline {subsection}{\numberline {24.2}Lista trasformate studiate}{86}{subsection.24.2}%
+\contentsline {section}{\numberline {25}Problemi di Cauchy per l'equazione del calore e delle onde}{86}{section.25}%
+\contentsline {subsection}{\numberline {25.1}Problema di Cauchy per l'equazione del calore}{87}{subsection.25.1}%
+\contentsline {subsection}{\numberline {25.2}Effetto regolarizzante dell'operatore calore}{88}{subsection.25.2}%
+\contentsline {subsection}{\numberline {25.3}Problema di Cauchy per l'equazione delle onde}{89}{subsection.25.3}%
